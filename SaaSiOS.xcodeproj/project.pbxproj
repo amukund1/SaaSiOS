@@ -11,13 +11,19 @@
 		57A5A5F4073B4F632D42D6D9 /* Pods_SaaSiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */; };
 		7314D5462C47CFBF3F78AA9F /* Pods_SaaSiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C961F0BF4BB9F0EEA1F762F /* Pods_SaaSiOSUITests.framework */; };
 		89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE057B2224DC67007029D3 /* AppDelegate.swift */; };
-		89AE057E2224DC67007029D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE057D2224DC67007029D3 /* ViewController.swift */; };
 		89AE05812224DC67007029D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AE057F2224DC67007029D3 /* Main.storyboard */; };
 		89AE05832224DC68007029D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05822224DC68007029D3 /* Assets.xcassets */; };
 		89AE05862224DC68007029D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05842224DC68007029D3 /* LaunchScreen.storyboard */; };
 		89AE05912224DC68007029D3 /* SaaSiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE05902224DC68007029D3 /* SaaSiOSTests.swift */; };
 		89AE059C2224DC68007029D3 /* SaaSiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE059B2224DC68007029D3 /* SaaSiOSUITests.swift */; };
 		89AE05AA2224DC79007029D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05A92224DC79007029D3 /* GoogleService-Info.plist */; };
+		89F2F1392225CFF8003CA047 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F1382225CFF8003CA047 /* WelcomeViewController.swift */; };
+		89F2F13B2225D04F003CA047 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F13A2225D04F003CA047 /* LoginViewController.swift */; };
+		89F2F13D2225D097003CA047 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F13C2225D097003CA047 /* RegistrationViewController.swift */; };
+		89F2F13F2225D0C9003CA047 /* StudiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F13E2225D0C9003CA047 /* StudiesViewController.swift */; };
+		89F2F1412225D11B003CA047 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F1402225D11B003CA047 /* DataViewController.swift */; };
+		89F2F1432225D153003CA047 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F1422225D153003CA047 /* ProfileViewController.swift */; };
+		89F2F1452225D179003CA047 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F1442225D179003CA047 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +54,6 @@
 		7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaaSiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE05782224DC67007029D3 /* SaaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE057B2224DC67007029D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89AE057D2224DC67007029D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		89AE05802224DC67007029D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89AE05822224DC68007029D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89AE05852224DC68007029D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +65,13 @@
 		89AE059B2224DC68007029D3 /* SaaSiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaaSiOSUITests.swift; sourceTree = "<group>"; };
 		89AE059D2224DC68007029D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89AE05A92224DC79007029D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		89F2F1382225CFF8003CA047 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		89F2F13A2225D04F003CA047 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		89F2F13C2225D097003CA047 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		89F2F13E2225D0C9003CA047 /* StudiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiesViewController.swift; sourceTree = "<group>"; };
+		89F2F1402225D11B003CA047 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		89F2F1422225D153003CA047 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		89F2F1442225D179003CA047 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B337D9EA89BAB4C1724531FF /* Pods-SaaSiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaaSiOS.release.xcconfig"; path = "Target Support Files/Pods-SaaSiOS/Pods-SaaSiOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,8 +129,14 @@
 			isa = PBXGroup;
 			children = (
 				89AE057B2224DC67007029D3 /* AppDelegate.swift */,
-				89AE057D2224DC67007029D3 /* ViewController.swift */,
 				89AE057F2224DC67007029D3 /* Main.storyboard */,
+				89F2F1382225CFF8003CA047 /* WelcomeViewController.swift */,
+				89F2F13A2225D04F003CA047 /* LoginViewController.swift */,
+				89F2F13C2225D097003CA047 /* RegistrationViewController.swift */,
+				89F2F13E2225D0C9003CA047 /* StudiesViewController.swift */,
+				89F2F1402225D11B003CA047 /* DataViewController.swift */,
+				89F2F1422225D153003CA047 /* ProfileViewController.swift */,
+				89F2F1442225D179003CA047 /* SettingsViewController.swift */,
 				89AE05822224DC68007029D3 /* Assets.xcassets */,
 				89AE05842224DC68007029D3 /* LaunchScreen.storyboard */,
 				89AE05872224DC68007029D3 /* Info.plist */,
@@ -155,7 +173,6 @@
 				1BF4EDF3DA01D21AC54AACF4 /* Pods-SaaSiOSUITests.debug.xcconfig */,
 				0CDEA9432DDBBF4812CAAECA /* Pods-SaaSiOSUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -400,8 +417,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89AE057E2224DC67007029D3 /* ViewController.swift in Sources */,
+				89F2F13B2225D04F003CA047 /* LoginViewController.swift in Sources */,
 				89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */,
+				89F2F13D2225D097003CA047 /* RegistrationViewController.swift in Sources */,
+				89F2F13F2225D0C9003CA047 /* StudiesViewController.swift in Sources */,
+				89F2F1432225D153003CA047 /* ProfileViewController.swift in Sources */,
+				89F2F1412225D11B003CA047 /* DataViewController.swift in Sources */,
+				89F2F1392225CFF8003CA047 /* WelcomeViewController.swift in Sources */,
+				89F2F1452225D179003CA047 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

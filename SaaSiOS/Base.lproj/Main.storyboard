@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="935" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="Slo-u9-4Ys">
             <objects>
-                <viewController id="mbR-Ux-LOa" sceneMemberID="viewController">
+                <viewController id="mbR-Ux-LOa" customClass="RegistrationViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0H-rz-URW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
         <!--Studies-->
         <scene sceneID="Gbd-0r-07x">
             <objects>
-                <viewController id="D2Q-RU-hx9" sceneMemberID="viewController">
+                <viewController id="D2Q-RU-hx9" customClass="StudiesViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Di-gQ-e5l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,17 +217,17 @@
             </objects>
             <point key="canvasLocation" x="2286" y="-536"/>
         </scene>
-        <!--Analytics-->
+        <!--Data-->
         <scene sceneID="vwb-rh-bDp">
             <objects>
-                <viewController id="5dx-zC-nDm" sceneMemberID="viewController">
+                <viewController id="5dx-zC-nDm" customClass="DataViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WhH-Xa-o7V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qdd-uf-7Dp"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Analytics" id="oTa-wu-RqU"/>
+                    <tabBarItem key="tabBarItem" title="Data" id="oTa-wu-RqU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdF-3s-90E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +236,7 @@
         <!--Settings-->
         <scene sceneID="0RA-2y-a6u">
             <objects>
-                <viewController id="nDe-ki-T0f" sceneMemberID="viewController">
+                <viewController id="nDe-ki-T0f" customClass="SettingsViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Oz-on-cHR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,7 +270,7 @@
         <!--Profile-->
         <scene sceneID="YW5-XN-NWR">
             <objects>
-                <viewController id="DPs-hH-9HF" sceneMemberID="viewController">
+                <viewController id="DPs-hH-9HF" customClass="ProfileViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quF-sS-SIf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,10 +283,10 @@
             </objects>
             <point key="canvasLocation" x="3061.5999999999999" y="814.54272863568224"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ClT-ug-ELJ">
             <objects>
-                <viewController id="5yJ-6a-8ai" customClass="ViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5yJ-6a-8ai" customClass="LoginViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9H-tT-LUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,7 +369,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="axA-q0-d2z"/>
         <segue reference="q5S-Jq-23p"/>
     </inferredMetricsTieBreakers>
 </document>
