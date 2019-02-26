@@ -274,20 +274,7 @@
                     <view key="view" contentMode="scaleToFill" id="quF-sS-SIf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Profile Table View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8C-r0-PEK">
-                                <rect key="frame" x="140" y="80" width="114" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="E8C-r0-PEK" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="140" id="2Ax-Db-dmB"/>
-                            <constraint firstItem="E8C-r0-PEK" firstAttribute="top" secondItem="Hov-da-PXU" secondAttribute="top" constant="60" id="2UC-5f-5Td"/>
-                            <constraint firstItem="Hov-da-PXU" firstAttribute="trailing" secondItem="E8C-r0-PEK" secondAttribute="trailing" constant="140" id="MtX-Q4-XZj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Hov-da-PXU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="WWD-gT-HQF"/>
@@ -328,7 +315,7 @@
                                     <segue destination="8qQ-26-rJw" kind="push" identifier="completeLoginSegue" id="axA-q0-d2z"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rlq-tA-Trd">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rlq-tA-Trd">
                                 <rect key="frame" x="40" y="222" width="295" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
@@ -382,6 +369,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="axA-q0-d2z"/>
         <segue reference="q5S-Jq-23p"/>
     </inferredMetricsTieBreakers>
 </document>
