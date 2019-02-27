@@ -11,6 +11,9 @@ import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var welcomeEmail: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,9 +21,24 @@ class WelcomeViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil{
+        if Auth.auth().currentUser != nil {
             self.performSegue(withIdentifier: "resumeUseSegue", sender: self)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is LoginViewController
+        {
+            if segue.destination is LoginViewController
+            {
+                let vc = segue.destination as? LoginViewController
+                vc?.emailText = welcomeEmail.text!
+            }
+        }
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        self.performSegue(withIdentifier: "beginLoginSegue", sender: self)
     }
     
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
