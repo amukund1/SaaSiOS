@@ -24,8 +24,11 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
             let isLoginSuccessful = error == nil && user != nil
             
-            if !isLoginSuccessful
+            if isLoginSuccessful
             {
+                self.performSegue(withIdentifier: "completeLoginSegue", sender: sender)
+            }
+            else {
                 let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                     NSLog("The \"OK\" alert occured.")
@@ -33,15 +36,10 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
-        if shouldPerformSegue(withIdentifier: "completeLoginSegue", sender: sender)
-        {
-            print("Segue Succeeded")
-        }
     }
     
     
-    
+    /*
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "completeLoginSegue"
         {
@@ -49,7 +47,7 @@ class LoginViewController: UIViewController {
         }
         
         return true
-    }
+    }*/
     
     /*
     // MARK: - Navigation
