@@ -38,17 +38,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
-    /*
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "completeLoginSegue"
-        {
-            return Auth.auth().currentUser != nil
-        }
-        
-        return true
-    }*/
-    
     /*
     // MARK: - Navigation
 

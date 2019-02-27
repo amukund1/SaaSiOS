@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
 
@@ -14,6 +15,12 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil{
+            self.performSegue(withIdentifier: "resumeUseSegue", sender: self)
+        }
     }
     
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
