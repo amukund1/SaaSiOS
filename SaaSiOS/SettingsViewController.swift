@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
@@ -16,7 +17,18 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logout(_ sender: UIButton) {
+        do
+        {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "logoutSegue", sender: self)
+        }
+        catch
+        {
+            print("Logout failed");
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

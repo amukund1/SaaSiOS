@@ -9,6 +9,7 @@ target 'SaaSiOS' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
   target 'SaaSiOSTests' do
     inherit! :search_paths

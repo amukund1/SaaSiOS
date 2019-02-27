@@ -93,6 +93,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="completeRegistration:" destination="mbR-Ux-LOa" eventType="touchUpInside" id="eyX-1E-PVr"/>
                                     <segue destination="BYZ-38-t0r" kind="push" identifier="completeRegisterSegue" id="F4H-uS-LdE"/>
                                 </connections>
                             </button>
@@ -178,6 +179,10 @@
                         <viewLayoutGuide key="safeArea" id="19q-dI-8oi"/>
                     </view>
                     <navigationItem key="navigationItem" id="yPg-zF-F9k"/>
+                    <connections>
+                        <outlet property="registrationEmail" destination="yey-rY-OY2" id="7t1-7z-5xU"/>
+                        <outlet property="registrationPassword" destination="NtK-4F-nVQ" id="8hG-Op-JyB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ezn-ay-Gma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,6 +254,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="logout:" destination="nDe-ki-T0f" eventType="touchUpInside" id="Iv0-4y-6c8"/>
                                     <segue destination="BYZ-38-t0r" kind="push" identifier="logoutSegue" id="q5S-Jq-23p"/>
                                 </connections>
                             </button>
@@ -369,6 +375,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q5S-Jq-23p"/>
+        <segue reference="F4H-uS-LdE"/>
     </inferredMetricsTieBreakers>
 </document>
