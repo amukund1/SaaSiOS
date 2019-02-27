@@ -22,18 +22,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func completeLogin(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
-            
-            if error == nil && user != nil
-            {
-                print("Login successful.")
-            }
-            else
-            {
-                print("Error logging in: \(error!.localizedDescription)")
-                let alertController = UIAlertController(title: "Login Error", message: error!.localizedDescription, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
-                self.present(alertController, animated: true, completion: nil)
-            }
         }
     }
     
