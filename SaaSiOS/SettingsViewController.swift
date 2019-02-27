@@ -21,7 +21,6 @@ class SettingsViewController: UIViewController {
         do
         {
             try Auth.auth().signOut()
-            self.performSegue(withIdentifier: "logoutSegue", sender: self)
         }
         catch
         {

@@ -22,7 +22,19 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func completeRegistration(_ sender: UIButton) {
-        Auth.auth().createUser(withEmail: registrationEmail.text!, password: registrationEmail.text!) { authResult, error in
+        Auth.auth().createUser(withEmail: registrationEmail.text!, password: registrationEmail.text!) { (user, error) in
+            if error == nil && user != nil
+            {
+                print("User Created");
+            }
+            else
+            {
+                print("Error creating user: \(error!.localizedDescription)");
+                let alertController = UIAlertController(title: "Email already in use.", message: error!.localizedDescription, preferredStyle: .alert)
+                
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     

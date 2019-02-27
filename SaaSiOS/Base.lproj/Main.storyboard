@@ -318,6 +318,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="wm0-Rz-6t6"/>
                                     <segue destination="8qQ-26-rJw" kind="push" identifier="completeLoginSegue" id="axA-q0-d2z"/>
                                 </connections>
                             </button>
@@ -347,6 +348,10 @@
                         <viewLayoutGuide key="safeArea" id="cDS-7e-f69"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Yh-dy-kkj"/>
+                    <connections>
+                        <outlet property="loginEmail" destination="WES-Zz-9FI" id="UHR-H2-tRM"/>
+                        <outlet property="loginPassword" destination="Rlq-tA-Trd" id="DcB-je-7LW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3g-dc-drp" sceneMemberID="firstResponder"/>
             </objects>
