@@ -26,13 +26,12 @@ class RegistrationViewController: UIViewController {
             if error == nil && user != nil
             {
                 print("User Created");
+                self.performSegue(withIdentifier: "completeRegisterSegue", sender: self)
             }
             else
             {
-                print("Error creating user: \(error!.localizedDescription)");
+                print("Error creating user: \(error!.localizedDescription)")
                 let alertController = UIAlertController(title: "Email already in use.", message: error!.localizedDescription, preferredStyle: .alert)
-                
-                
                 self.present(alertController, animated: true, completion: nil)
             }
         }
