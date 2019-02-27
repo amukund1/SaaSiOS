@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
         do
         {
             try Auth.auth().signOut()
+            print("Logout succeeded");
         }
         catch
         {

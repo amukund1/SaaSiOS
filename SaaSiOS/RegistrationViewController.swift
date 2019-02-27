@@ -26,9 +26,11 @@ class RegistrationViewController: UIViewController {
             if error == nil && user != nil
             {
                 print("User Created");
+                Auth.auth().currentUser?.sendEmailVerification {
+                    (error) in
+                }
             }
-            else
-            {
+            else {
                 print("Error creating user: \(error!.localizedDescription)")
                 let alertController = UIAlertController(title: "Email already in use.", message: error!.localizedDescription, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
