@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Mn-8G-i6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286" y="-536"/>
+            <point key="canvasLocation" x="2657" y="-631"/>
         </scene>
         <!--Data-->
         <scene sceneID="vwb-rh-bDp">
@@ -273,7 +273,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6g-D5-7wU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="szR-D6-nP9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="806"/>
+            <point key="canvasLocation" x="2364" y="879"/>
         </scene>
         <!--Profile-->
         <scene sceneID="YW5-XN-NWR">
@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpC-Js-xV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3061.5999999999999" y="814.54272863568224"/>
+            <point key="canvasLocation" x="3062" y="880"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ClT-ug-ELJ">
@@ -331,6 +331,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc4-lG-9gq">
+                                <rect key="frame" x="133" y="476" width="109" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="ExX-HQ-eKU"/>
+                                    <segue destination="rFB-aH-tXR" kind="push" identifier="resetPasswordSegue" id="vS8-oN-lme"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -342,7 +354,10 @@
                             <constraint firstItem="WES-Zz-9FI" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="40" id="f9k-QW-C1c"/>
                             <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="1R1-Ld-7U6" secondAttribute="trailing" constant="140" id="gEZ-0t-vBW"/>
                             <constraint firstItem="D4O-KC-Arv" firstAttribute="top" secondItem="cDS-7e-f69" secondAttribute="top" constant="45" id="hCs-oz-a8B"/>
+                            <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="rc4-lG-9gq" secondAttribute="trailing" constant="133" id="iEk-Kk-hew"/>
                             <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="D4O-KC-Arv" secondAttribute="trailing" constant="80" id="lVM-yn-4DV"/>
+                            <constraint firstItem="rc4-lG-9gq" firstAttribute="top" secondItem="1R1-Ld-7U6" secondAttribute="bottom" constant="80" id="mMj-z7-bXU"/>
+                            <constraint firstItem="rc4-lG-9gq" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="133" id="sGR-S8-1pI"/>
                             <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="Rlq-tA-Trd" secondAttribute="trailing" constant="40" id="sbL-A0-NyJ"/>
                             <constraint firstItem="1R1-Ld-7U6" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="140" id="u5A-hU-jMI"/>
                             <constraint firstItem="Rlq-tA-Trd" firstAttribute="top" secondItem="WES-Zz-9FI" secondAttribute="bottom" constant="20" id="v8p-16-nRQ"/>
@@ -357,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3g-dc-drp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620" y="134"/>
+            <point key="canvasLocation" x="1620" y="133.5832083958021"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4gR-L5-oJH">
@@ -379,6 +394,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ej7-om-EGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2287" y="133"/>
+        </scene>
+        <!--Password Reset View Controller-->
+        <scene sceneID="z1X-iQ-Iin">
+            <objects>
+                <viewController id="rFB-aH-tXR" customClass="PasswordResetViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xEA-zH-2fr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laU-cN-zmT">
+                                <rect key="frame" x="40" y="225" width="295" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9y-zI-sXs">
+                                <rect key="frame" x="58" y="139" width="259" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-1d-EI7">
+                                <rect key="frame" x="132" y="311" width="111" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="4Vf-6p-DaY"/>
+                                    <action selector="resetPassword:" destination="rFB-aH-tXR" eventType="touchUpInside" id="5Ib-ec-LSW"/>
+                                    <segue destination="wPn-yd-R9V" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="FJL-P7-AjZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j9y-zI-sXs" firstAttribute="leading" secondItem="Uej-ti-Q4Q" secondAttribute="leading" constant="58" id="7AD-6f-gNe"/>
+                            <constraint firstItem="Uej-ti-Q4Q" firstAttribute="trailing" secondItem="j9y-zI-sXs" secondAttribute="trailing" constant="58" id="F8C-es-qUG"/>
+                            <constraint firstItem="laU-cN-zmT" firstAttribute="leading" secondItem="Uej-ti-Q4Q" secondAttribute="leading" constant="40" id="Iee-83-Psn"/>
+                            <constraint firstItem="aIu-1d-EI7" firstAttribute="leading" secondItem="Uej-ti-Q4Q" secondAttribute="leading" constant="132" id="Vuu-rw-618"/>
+                            <constraint firstItem="Uej-ti-Q4Q" firstAttribute="trailing" secondItem="laU-cN-zmT" secondAttribute="trailing" constant="40" id="c1S-z3-apr"/>
+                            <constraint firstItem="Uej-ti-Q4Q" firstAttribute="trailing" secondItem="aIu-1d-EI7" secondAttribute="trailing" constant="132" id="jm4-en-7hw"/>
+                            <constraint firstItem="aIu-1d-EI7" firstAttribute="top" secondItem="laU-cN-zmT" secondAttribute="bottom" constant="65" id="s1a-Qh-VbL"/>
+                            <constraint firstItem="laU-cN-zmT" firstAttribute="top" secondItem="j9y-zI-sXs" secondAttribute="bottom" constant="40" id="s4F-Iw-iO9"/>
+                            <constraint firstItem="j9y-zI-sXs" firstAttribute="top" secondItem="Uej-ti-Q4Q" secondAttribute="top" constant="75" id="vQY-wO-PfR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uej-ti-Q4Q"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qcL-je-O3J"/>
+                    <connections>
+                        <outlet property="passwordResetEmail" destination="laU-cN-zmT" id="0Xl-ji-K1i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfw-qF-fSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wPn-yd-R9V" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="863"/>
         </scene>
     </scenes>
 </document>
