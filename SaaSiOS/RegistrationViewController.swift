@@ -28,11 +28,26 @@ class RegistrationViewController: UIViewController {
             if error == nil && user != nil
             {
                 print("User Created");
+                
                 Auth.auth().currentUser?.sendEmailVerification {
                     (error) in
                 }
                 
-                self.ref.child("Participants").childByAutoId().setValue(["Email": self.registrationEmail.text])
+                //injected method to enter into database TBD
+                /*
+                self.ref.child("Participants").childByAutoId().setValue(["Email": self.registrationEmail.text])*/
+                
+                /* need to logout as Firebase automatically logs in created users
+                   should be part of the injected method*/
+                do
+                {
+                    try Auth.auth().signOut()
+                    print("Logout succeeded");
+                }
+                catch
+                {
+                    print("Logout failed");
+                }
             }
             else {
                 print("Error creating user: \(error!.localizedDescription)")
