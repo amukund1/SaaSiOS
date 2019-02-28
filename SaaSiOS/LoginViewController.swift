@@ -23,12 +23,31 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func completeLogin(_ sender: UIButton) {
+        //firebase auth injection model public login method
         Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
             let isLoginSuccessful = error == nil && user != nil
             
             if isLoginSuccessful
             {
-                self.performSegue(withIdentifier: "completeLoginSegue", sender: sender)
+                //Firebase auth injection model private method
+                if Auth.auth().currentUser!.isEmailVerified
+                {
+                    self.performSegue(withIdentifier: "completeLoginSegue", sender: sender)
+                }
+                else
+                {
+                    //force logout private method injection
+                    do
+                    {
+                        try Auth.auth().signOut()
+                        print("Force Logout succeeded");
+                    }
+                    catch
+                    {
+                        print("Force Logout failed");
+                    }
+                }
+                
             }
             else {
                 let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -38,6 +57,10 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    @IBAction func resetPassword(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "resetPasswordSegue", sender: sender)
     }
     
     /*

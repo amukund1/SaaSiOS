@@ -24,6 +24,7 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func completeRegistration(_ sender: UIButton) {
+        //create user injected public method firebase database model
         Auth.auth().createUser(withEmail: registrationEmail.text!, password: registrationEmail.text!) { (user, error) in
             if error == nil && user != nil
             {
@@ -33,7 +34,7 @@ class RegistrationViewController: UIViewController {
                     (error) in
                 }
                 
-                //injected method to enter into database TBD
+                //injected private method to enter into database TBD
                 /*
                 self.ref.child("Participants").childByAutoId().setValue(["Email": self.registrationEmail.text])*/
                 
@@ -48,6 +49,8 @@ class RegistrationViewController: UIViewController {
                 {
                     print("Logout failed");
                 }
+                
+                self.performSegue(withIdentifier: "completeRegistrationSegue", sender: sender)
             }
             else {
                 print("Error creating user: \(error!.localizedDescription)")

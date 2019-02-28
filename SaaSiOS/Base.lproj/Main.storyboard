@@ -98,7 +98,6 @@
                                 </state>
                                 <connections>
                                     <action selector="completeRegistration:" destination="mbR-Ux-LOa" eventType="touchUpInside" id="eyX-1E-PVr"/>
-                                    <segue destination="uIv-DG-6uw" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="esr-nc-ssS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzj-Gt-eXE">
@@ -187,6 +186,7 @@
                         <outlet property="registrationEmail" destination="yey-rY-OY2" id="7t1-7z-5xU"/>
                         <outlet property="registrationFirstName" destination="g2C-qe-bhc" id="fEh-2O-PjH"/>
                         <outlet property="registrationPassword" destination="NtK-4F-nVQ" id="8hG-Op-JyB"/>
+                        <segue destination="uIv-DG-6uw" kind="unwind" identifier="completeRegistrationSegue" unwindAction="unwindToThisViewControllerWithSegue:" id="hE3-xY-zOa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ezn-ay-Gma" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,7 +337,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="ExX-HQ-eKU"/>
-                                    <segue destination="rFB-aH-tXR" kind="push" identifier="resetPasswordSegue" id="vS8-oN-lme"/>
+                                    <action selector="resetPassword:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="lfk-Yu-4at"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-Sz-2jg">
@@ -372,6 +372,7 @@
                         <outlet property="loginEmail" destination="jWh-Sz-2jg" id="xSs-IY-syx"/>
                         <outlet property="loginPassword" destination="Rlq-tA-Trd" id="DcB-je-7LW"/>
                         <segue destination="8qQ-26-rJw" kind="showDetail" identifier="completeLoginSegue" id="jdJ-iK-tYx"/>
+                        <segue destination="rFB-aH-tXR" kind="show" identifier="resetPasswordSegue" id="hfi-Kc-EB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3g-dc-drp" sceneMemberID="firstResponder"/>
