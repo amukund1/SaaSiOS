@@ -8,17 +8,19 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class RegistrationViewController: UIViewController {
-
+    var ref : DatabaseReference!
     
+    @IBOutlet weak var registrationFirstName: UITextField!
     @IBOutlet weak var registrationEmail: UITextField!
     @IBOutlet weak var registrationPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        ref = Database.database().reference()
     }
     
     @IBAction func completeRegistration(_ sender: UIButton) {
@@ -29,6 +31,8 @@ class RegistrationViewController: UIViewController {
                 Auth.auth().currentUser?.sendEmailVerification {
                     (error) in
                 }
+                
+                self.ref.child("Participants").childByAutoId().setValue(["Email": self.registrationEmail.text])
             }
             else {
                 print("Error creating user: \(error!.localizedDescription)")

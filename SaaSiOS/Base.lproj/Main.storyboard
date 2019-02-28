@@ -185,6 +185,7 @@
                     <navigationItem key="navigationItem" id="yPg-zF-F9k"/>
                     <connections>
                         <outlet property="registrationEmail" destination="yey-rY-OY2" id="7t1-7z-5xU"/>
+                        <outlet property="registrationFirstName" destination="g2C-qe-bhc" id="fEh-2O-PjH"/>
                         <outlet property="registrationPassword" destination="NtK-4F-nVQ" id="8hG-Op-JyB"/>
                     </connections>
                 </viewController>
