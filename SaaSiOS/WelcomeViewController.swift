@@ -42,7 +42,10 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        self.performSegue(withIdentifier: "beginLoginSegue", sender: self)
+        if welcomeEmail.text!.count > 0
+        {
+            self.performSegue(withIdentifier: "beginLoginSegue", sender: self)
+        }
     }
     
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
