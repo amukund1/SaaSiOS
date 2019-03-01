@@ -11,6 +11,7 @@
 		57A5A5F4073B4F632D42D6D9 /* Pods_SaaSiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */; };
 		7314D5462C47CFBF3F78AA9F /* Pods_SaaSiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C961F0BF4BB9F0EEA1F762F /* Pods_SaaSiOSUITests.framework */; };
 		893CD1C7222646600083B260 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1C6222646600083B260 /* PasswordResetViewController.swift */; };
+		893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */; };
 		89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE057B2224DC67007029D3 /* AppDelegate.swift */; };
 		89AE05812224DC67007029D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AE057F2224DC67007029D3 /* Main.storyboard */; };
 		89AE05832224DC68007029D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05822224DC68007029D3 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		78E027979769568A86BC57E2 /* Pods-SaaSiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaaSiOSTests.release.xcconfig"; path = "Target Support Files/Pods-SaaSiOSTests/Pods-SaaSiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaaSiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		893CD1C6222646600083B260 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerificationViewController.swift; sourceTree = "<group>"; };
 		89AE05782224DC67007029D3 /* SaaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE057B2224DC67007029D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89AE05802224DC67007029D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				89AE05842224DC68007029D3 /* LaunchScreen.storyboard */,
 				89AE05872224DC68007029D3 /* Info.plist */,
 				89AE05A92224DC79007029D3 /* GoogleService-Info.plist */,
+				893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */,
 			);
 			path = SaaSiOS;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89F2F13B2225D04F003CA047 /* LoginViewController.swift in Sources */,
+				893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */,
 				893CD1C7222646600083B260 /* PasswordResetViewController.swift in Sources */,
 				89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */,
 				89F2F13D2225D097003CA047 /* RegistrationViewController.swift in Sources */,

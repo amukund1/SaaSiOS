@@ -73,8 +73,9 @@
                     <navigationItem key="navigationItem" id="CIs-Td-uVq"/>
                     <connections>
                         <outlet property="welcomeEmail" destination="z96-NQ-Vsx" id="O1M-Es-yop"/>
-                        <segue destination="8qQ-26-rJw" kind="showDetail" identifier="resumeUseSegue" id="Hky-B4-GKm"/>
+                        <segue destination="8qQ-26-rJw" kind="showDetail" identifier="resumeVerifiedUseSegue" id="Hky-B4-GKm"/>
                         <segue destination="5yJ-6a-8ai" kind="showDetail" identifier="beginLoginSegue" id="gAO-7L-c4H"/>
+                        <segue destination="ucj-82-4hk" kind="showDetail" identifier="resumeUnverifiedUseSegue" id="ILg-NS-hUr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -186,11 +187,10 @@
                         <outlet property="registrationEmail" destination="yey-rY-OY2" id="7t1-7z-5xU"/>
                         <outlet property="registrationFirstName" destination="g2C-qe-bhc" id="fEh-2O-PjH"/>
                         <outlet property="registrationPassword" destination="NtK-4F-nVQ" id="8hG-Op-JyB"/>
-                        <segue destination="uIv-DG-6uw" kind="unwind" identifier="completeRegistrationSegue" unwindAction="unwindToThisViewControllerWithSegue:" id="hE3-xY-zOa"/>
+                        <segue destination="ucj-82-4hk" kind="showDetail" identifier="completeRegistrationSegue" id="ns0-Qi-JyN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ezn-ay-Gma" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="uIv-DG-6uw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="863.1184407796103"/>
         </scene>
@@ -211,6 +211,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iza-Vq-xke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="209" y="134"/>
+        </scene>
+        <!--Account Verification View Controller-->
+        <scene sceneID="aTG-Ws-LbI">
+            <objects>
+                <viewController id="ucj-82-4hk" customClass="AccountVerificationViewController" customModule="SaaSiOS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wGn-Fa-V2b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please verify your account via the link sent to your email address." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGz-z9-4dS">
+                                <rect key="frame" x="80" y="90" width="215" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFT-NO-6EW">
+                                <rect key="frame" x="105" y="171" width="165" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Resend Verification Link">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z8L-xt-CzG"/>
+                                    <action selector="resendVerificationLink:" destination="ucj-82-4hk" eventType="touchUpInside" id="Vwt-6r-uhi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh9-e4-6vr">
+                                <rect key="frame" x="130" y="261" width="115" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="ucj-82-4hk" eventType="touchUpInside" id="6OT-A3-Yud"/>
+                                    <action selector="logout:" destination="nDe-ki-T0f" eventType="touchUpInside" id="AqL-Up-4zf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oeV-gq-XE1" firstAttribute="trailing" secondItem="hFT-NO-6EW" secondAttribute="trailing" constant="105" id="85e-dL-cDd"/>
+                            <constraint firstItem="bGz-z9-4dS" firstAttribute="top" secondItem="oeV-gq-XE1" secondAttribute="top" constant="70" id="APw-dn-y3p"/>
+                            <constraint firstItem="oeV-gq-XE1" firstAttribute="trailing" secondItem="dh9-e4-6vr" secondAttribute="trailing" constant="130" id="IJV-p6-0Px"/>
+                            <constraint firstItem="dh9-e4-6vr" firstAttribute="leading" secondItem="oeV-gq-XE1" secondAttribute="leading" constant="130" id="ahh-jN-x2e"/>
+                            <constraint firstItem="hFT-NO-6EW" firstAttribute="leading" secondItem="oeV-gq-XE1" secondAttribute="leading" constant="105" id="bBj-Qr-vpM"/>
+                            <constraint firstItem="oeV-gq-XE1" firstAttribute="trailing" secondItem="bGz-z9-4dS" secondAttribute="trailing" constant="80" id="g0d-Zo-xqC"/>
+                            <constraint firstItem="hFT-NO-6EW" firstAttribute="top" secondItem="bGz-z9-4dS" secondAttribute="bottom" constant="60" id="lDq-iY-adc"/>
+                            <constraint firstItem="bGz-z9-4dS" firstAttribute="leading" secondItem="oeV-gq-XE1" secondAttribute="leading" constant="80" id="nXi-yl-kjd"/>
+                            <constraint firstItem="dh9-e4-6vr" firstAttribute="top" secondItem="hFT-NO-6EW" secondAttribute="bottom" constant="60" id="wX0-lH-hkG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oeV-gq-XE1"/>
+                    </view>
+                    <connections>
+                        <outlet property="verificationLabel" destination="bGz-z9-4dS" id="YTi-kv-uJ1"/>
+                        <segue destination="ZL1-SM-KzM" kind="unwind" identifier="accountVerificationLogoutUnwindSegue" unwindAction="unwindToThisViewControllerWithSegue:" id="SOe-Hj-Pys"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIn-Iw-HAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZL1-SM-KzM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="807"/>
         </scene>
         <!--Studies-->
         <scene sceneID="Gbd-0r-07x">
@@ -371,8 +434,9 @@
                     <connections>
                         <outlet property="loginEmail" destination="jWh-Sz-2jg" id="xSs-IY-syx"/>
                         <outlet property="loginPassword" destination="Rlq-tA-Trd" id="DcB-je-7LW"/>
-                        <segue destination="8qQ-26-rJw" kind="showDetail" identifier="completeLoginSegue" id="jdJ-iK-tYx"/>
+                        <segue destination="8qQ-26-rJw" kind="showDetail" identifier="completeVerifiedLoginSegue" id="jdJ-iK-tYx"/>
                         <segue destination="rFB-aH-tXR" kind="show" identifier="resetPasswordSegue" id="hfi-Kc-EB0"/>
+                        <segue destination="ucj-82-4hk" kind="showDetail" identifier="completeUnverifiedLoginSegue" id="yhy-iS-PK9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3g-dc-drp" sceneMemberID="firstResponder"/>
@@ -461,6 +525,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jdJ-iK-tYx"/>
+        <segue reference="Hky-B4-GKm"/>
+        <segue reference="ns0-Qi-JyN"/>
     </inferredMetricsTieBreakers>
 </document>

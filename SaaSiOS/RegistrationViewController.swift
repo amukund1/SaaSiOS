@@ -38,18 +38,6 @@ class RegistrationViewController: UIViewController {
                 /*
                 self.ref.child("Participants").childByAutoId().setValue(["Email": self.registrationEmail.text])*/
                 
-                /* need to logout as Firebase automatically logs in created users
-                   should be part of the injected method*/
-                do
-                {
-                    try Auth.auth().signOut()
-                    print("Logout succeeded");
-                }
-                catch
-                {
-                    print("Logout failed");
-                }
-                
                 self.performSegue(withIdentifier: "completeRegistrationSegue", sender: sender)
             }
             else {

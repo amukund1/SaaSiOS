@@ -22,18 +22,22 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "resumeUseSegue", sender: self)
+            if Auth.auth().currentUser!.isEmailVerified
+            {
+                self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
+            }
+            else
+            {
+                self.performSegue(withIdentifier: "resumeUnverifiedUseSegue", sender: self)
+            }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is LoginViewController
         {
-            if segue.destination is LoginViewController
-            {
-                let vc = segue.destination as? LoginViewController
-                vc?.emailText = welcomeEmail.text!
-            }
+            let vc = segue.destination as? LoginViewController
+            vc?.emailText = welcomeEmail.text!
         }
     }
     

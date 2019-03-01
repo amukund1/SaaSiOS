@@ -29,23 +29,13 @@ class LoginViewController: UIViewController {
             
             if isLoginSuccessful
             {
-                //Firebase auth injection model private method
                 if Auth.auth().currentUser!.isEmailVerified
                 {
-                    self.performSegue(withIdentifier: "completeLoginSegue", sender: sender)
+                   self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
                 }
                 else
                 {
-                    //force logout private method injection
-                    do
-                    {
-                        try Auth.auth().signOut()
-                        print("Force Logout succeeded");
-                    }
-                    catch
-                    {
-                        print("Force Logout failed");
-                    }
+                    self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
                 }
                 
             }
