@@ -125,7 +125,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-0o-9cY">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate (mm/dd/yyyy)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-0o-9cY">
                                 <rect key="frame" x="40" y="235" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -184,9 +184,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="yPg-zF-F9k"/>
                     <connections>
+                        <outlet property="registrationBirthdate" destination="RsN-0o-9cY" id="Whd-TD-tQf"/>
                         <outlet property="registrationEmail" destination="yey-rY-OY2" id="7t1-7z-5xU"/>
                         <outlet property="registrationFirstName" destination="g2C-qe-bhc" id="fEh-2O-PjH"/>
+                        <outlet property="registrationLastName" destination="fsc-LL-GO5" id="Ur4-at-lSd"/>
                         <outlet property="registrationPassword" destination="NtK-4F-nVQ" id="8hG-Op-JyB"/>
+                        <outlet property="registrationZipCode" destination="4Qx-dq-neC" id="XUB-Sy-Rmf"/>
                         <segue destination="ucj-82-4hk" kind="showDetail" identifier="completeRegistrationSegue" id="ns0-Qi-JyN"/>
                     </connections>
                 </viewController>
