@@ -25,7 +25,7 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func completeRegistration(_ sender: UIButton) {
         //create user injected public method firebase database model
-        Auth.auth().createUser(withEmail: registrationEmail.text!, password: registrationEmail.text!) { (user, error) in
+        Auth.auth().createUser(withEmail: registrationEmail.text!, password: registrationPassword.text!) { (user, error) in
             if error == nil && user != nil
             {
                 print("User Created");

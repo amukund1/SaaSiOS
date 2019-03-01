@@ -24,10 +24,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func completeLogin(_ sender: UIButton) {
         //firebase auth injection model public login method
+        
         Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
-            let isLoginSuccessful = error == nil && user != nil
-            
-            if isLoginSuccessful
+            if error == nil
             {
                 if Auth.auth().currentUser!.isEmailVerified
                 {
@@ -37,7 +36,6 @@ class LoginViewController: UIViewController {
                 {
                     self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
                 }
-                
             }
             else {
                 let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
