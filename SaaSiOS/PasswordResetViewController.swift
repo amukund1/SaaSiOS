@@ -22,7 +22,8 @@ class PasswordResetViewController: UIViewController {
     
     @IBAction func resetPassword(_ sender: Any) {
         Auth.auth().sendPasswordReset(withEmail: passwordResetEmail.text!) { error in
-
+            
+            //email regex check needed
         }
     }
     
