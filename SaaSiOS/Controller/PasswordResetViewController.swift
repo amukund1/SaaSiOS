@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class PasswordResetViewController: UIViewController {
-
+    let auth = FirebaseAuthentication()
     
     @IBOutlet weak var passwordResetEmail: UITextField!
     
@@ -21,10 +20,7 @@ class PasswordResetViewController: UIViewController {
     }
     
     @IBAction func resetPassword(_ sender: Any) {
-        Auth.auth().sendPasswordReset(withEmail: passwordResetEmail.text!) { error in
-            
-            //email regex check needed
-        }
+        auth.resetPassword(email: passwordResetEmail.text!)
     }
     
     /*

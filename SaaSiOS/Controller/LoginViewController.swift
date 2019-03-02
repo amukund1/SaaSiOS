@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginViewController: UIViewController {
-
+    let auth = FirebaseAuthentication()
     
     var emailText : String = ""
     @IBOutlet weak var loginEmail: UILabel!
@@ -23,27 +22,26 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func completeLogin(_ sender: UIButton) {
-        //firebase auth injection model public login method
+       auth.signIn(email: loginEmail.text!, password: loginPassword.text!)
         
-        Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
-            if error == nil
+        if auth.isSignedIn()
+        {
+            if auth.isVerified()
             {
-                if Auth.auth().currentUser!.isEmailVerified
-                {
-                   self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
-                }
-                else
-                {
-                    self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
-                }
+                self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
             }
-            else {
-                let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                    NSLog("The \"OK\" alert occured.")
-                }))
-                self.present(alert, animated: true, completion: nil)
+            else
+            {
+                self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
             }
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Login Error", message: "Your email or passsword is invalid.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
-
+    let auth = FirebaseAuthentication()
     
     @IBOutlet weak var welcomeEmail: UITextField!
     
@@ -21,8 +20,8 @@ class WelcomeViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-            if Auth.auth().currentUser!.isEmailVerified
+        if auth.isSignedIn() {
+            if auth.isVerified()
             {
                 self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
             }

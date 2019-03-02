@@ -12,6 +12,8 @@
 		7314D5462C47CFBF3F78AA9F /* Pods_SaaSiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C961F0BF4BB9F0EEA1F762F /* Pods_SaaSiOSUITests.framework */; };
 		893CD1C7222646600083B260 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1C6222646600083B260 /* PasswordResetViewController.swift */; };
 		893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */; };
+		893CD1CC222A0EF00083B260 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1CB222A0EF00083B260 /* Authentication.swift */; };
+		893CD1CE222A176C0083B260 /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */; };
 		89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE057B2224DC67007029D3 /* AppDelegate.swift */; };
 		89AE05812224DC67007029D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AE057F2224DC67007029D3 /* Main.storyboard */; };
 		89AE05832224DC68007029D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05822224DC68007029D3 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaaSiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		893CD1C6222646600083B260 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerificationViewController.swift; sourceTree = "<group>"; };
+		893CD1CB222A0EF00083B260 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		89AE05782224DC67007029D3 /* SaaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE057B2224DC67007029D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89AE05802224DC67007029D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		893CD1CA222A09400083B260 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				893CD1CB222A0EF00083B260 /* Authentication.swift */,
+				893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		893CD1CF222A289A0083B260 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				89F2F1382225CFF8003CA047 /* WelcomeViewController.swift */,
+				89F2F13A2225D04F003CA047 /* LoginViewController.swift */,
+				893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */,
+				893CD1C6222646600083B260 /* PasswordResetViewController.swift */,
+				89F2F13C2225D097003CA047 /* RegistrationViewController.swift */,
+				89F2F13E2225D0C9003CA047 /* StudiesViewController.swift */,
+				89F2F1402225D11B003CA047 /* DataViewController.swift */,
+				89F2F1422225D153003CA047 /* ProfileViewController.swift */,
+				89F2F1442225D179003CA047 /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		893CD1D0222A28EC0083B260 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89AE05842224DC68007029D3 /* LaunchScreen.storyboard */,
+				89AE057F2224DC67007029D3 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		89AE056F2224DC67007029D3 = {
 			isa = PBXGroup;
 			children = (
@@ -132,21 +170,13 @@
 		89AE057A2224DC67007029D3 /* SaaSiOS */ = {
 			isa = PBXGroup;
 			children = (
+				893CD1CA222A09400083B260 /* Model */,
+				893CD1D0222A28EC0083B260 /* View */,
+				893CD1CF222A289A0083B260 /* Controller */,
 				89AE057B2224DC67007029D3 /* AppDelegate.swift */,
-				89AE057F2224DC67007029D3 /* Main.storyboard */,
-				89F2F1382225CFF8003CA047 /* WelcomeViewController.swift */,
-				89F2F13A2225D04F003CA047 /* LoginViewController.swift */,
-				893CD1C6222646600083B260 /* PasswordResetViewController.swift */,
-				89F2F13C2225D097003CA047 /* RegistrationViewController.swift */,
-				89F2F13E2225D0C9003CA047 /* StudiesViewController.swift */,
-				89F2F1402225D11B003CA047 /* DataViewController.swift */,
-				89F2F1422225D153003CA047 /* ProfileViewController.swift */,
-				89F2F1442225D179003CA047 /* SettingsViewController.swift */,
 				89AE05822224DC68007029D3 /* Assets.xcassets */,
-				89AE05842224DC68007029D3 /* LaunchScreen.storyboard */,
 				89AE05872224DC68007029D3 /* Info.plist */,
 				89AE05A92224DC79007029D3 /* GoogleService-Info.plist */,
-				893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */,
 			);
 			path = SaaSiOS;
 			sourceTree = "<group>";
@@ -433,8 +463,10 @@
 				89F2F13F2225D0C9003CA047 /* StudiesViewController.swift in Sources */,
 				89F2F1432225D153003CA047 /* ProfileViewController.swift in Sources */,
 				89F2F1412225D11B003CA047 /* DataViewController.swift in Sources */,
+				893CD1CE222A176C0083B260 /* FirebaseAuthentication.swift in Sources */,
 				89F2F1392225CFF8003CA047 /* WelcomeViewController.swift in Sources */,
 				89F2F1452225D179003CA047 /* SettingsViewController.swift in Sources */,
+				893CD1CC222A0EF00083B260 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

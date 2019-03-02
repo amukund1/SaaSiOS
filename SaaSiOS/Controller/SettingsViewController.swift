@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class SettingsViewController: UIViewController {
+    let auth = FirebaseAuthentication()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +18,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: UIButton) {
-        do
-        {
-            try Auth.auth().signOut()
-            print("Logout succeeded");
-        }
-        catch
-        {
-            print("Logout failed");
-        }
+        auth.signOut()
     }
     
     /*

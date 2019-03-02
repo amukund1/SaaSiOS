@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class AccountVerificationViewController: UIViewController {
-
+    let auth = FirebaseAuthentication()
+    
+    
     @IBOutlet weak var verificationLabel: UILabel!
     
     override func viewDidLoad() {
@@ -20,9 +21,7 @@ class AccountVerificationViewController: UIViewController {
     }
     
     @IBAction func resendVerificationLink(_ sender: UIButton) {
-        Auth.auth().currentUser?.sendEmailVerification {
-            (error) in
-        }
+        auth.sendVerificationLink()
         
         let alertController = UIAlertController(title: "A verification link has been sent.", message: "Please verify your account using the link sent to your email address.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
@@ -30,15 +29,11 @@ class AccountVerificationViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: UIButton) {
-        do
+        auth.signOut()
+        
+        if !auth.isSignedIn()
         {
-            try Auth.auth().signOut()
-            print("Logout succeeded");
             self.performSegue(withIdentifier: "accountVerificationLogoutUnwindSegue", sender: sender)
-        }
-        catch
-        {
-            print("Logout failed");
         }
     }
     

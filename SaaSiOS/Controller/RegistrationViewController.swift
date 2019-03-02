@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
 
 class RegistrationViewController: UIViewController {
-    var ref : DatabaseReference!
+    let auth = FirebaseAuthentication()
     
     @IBOutlet weak var registrationFirstName: UITextField!
     @IBOutlet weak var registrationLastName: UITextField!
@@ -22,35 +20,24 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        ref = Database.database().reference()
     }
     
     @IBAction func completeRegistration(_ sender: UIButton) {
+        /*
         if !areAllFieldsComplete()
         {
             return
-        }
+        }*/
         
-        //create user injected public method firebase database model
-        Auth.auth().createUser(withEmail: registrationEmail.text!, password: registrationPassword.text!) { (user, error) in
-            if error == nil && user != nil
+        auth.createUser(email: registrationEmail.text!, password: registrationPassword.text!) { error in
+            if error == nil
             {
-                print("User Created");
-                
-                Auth.auth().currentUser?.sendEmailVerification {
-                    (error) in
-                }
-                
-                //injected private method to enter into database TBD
-                /*
-                self.ref.child("Participants").childByAutoId().setValue(["Email": self.registrationEmail.text])*/
-                
+                self.auth.sendVerificationLink()
                 self.performSegue(withIdentifier: "completeRegistrationSegue", sender: sender)
             }
-            else {
-                print("Error creating user: \(error!.localizedDescription)")
-                let alertController = UIAlertController(title: "Registration Error", message: error!.localizedDescription, preferredStyle: .alert)
+            else
+            {
+                let alertController = UIAlertController(title: "Registration Error", message: "An account already exists with this email address.", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
                 self.present(alertController, animated: true, completion: nil)
             }
