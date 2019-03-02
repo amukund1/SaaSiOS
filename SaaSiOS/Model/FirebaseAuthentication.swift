@@ -9,9 +9,16 @@
 import FirebaseAuth
 
 class FirebaseAuthentication : Authentication {
-    func signIn(email : String, password : String) -> Void {
+    func signIn(email: String, password: String, completion: @escaping(Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            //responsibility of controller to do segues
+            if error == nil && user != nil
+            {
+                completion(nil)
+            }
+            else
+            {
+                completion(error)
+            }
         }
     }
     

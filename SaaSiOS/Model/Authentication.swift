@@ -7,9 +7,7 @@
 //
 
 protocol Authentication {
-    func signIn(email : String, password : String) -> Void
-    
-    //func createUser(email : String, password : String) -> Void
+    func signIn(email: String, password: String, completion: @escaping(Error?) -> Void)
     
     func createUser(email: String, password: String, completion: @escaping(Error?) -> Void)
     

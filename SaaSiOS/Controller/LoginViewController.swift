@@ -22,6 +22,26 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func completeLogin(_ sender: UIButton) {
+        auth.signIn(email: loginEmail.text!, password: loginPassword.text!) { error in
+            if error == nil
+            {
+                if self.auth.isVerified()
+                {
+                    self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
+                }
+                else
+                {
+                    self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
+                }
+            }
+            else
+            {
+                let alertController = UIAlertController(title: "Registration Error", message: error?.localizedDescription, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+       /*
        auth.signIn(email: loginEmail.text!, password: loginPassword.text!)
         
         if auth.isSignedIn()
@@ -42,7 +62,7 @@ class LoginViewController: UIViewController {
                 NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
-        }
+        }*/
     }
     
     @IBAction func resetPassword(_ sender: UIButton) {

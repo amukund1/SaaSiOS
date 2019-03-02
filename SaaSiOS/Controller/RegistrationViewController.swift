@@ -23,11 +23,11 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func completeRegistration(_ sender: UIButton) {
-        /*
+        
         if !areAllFieldsComplete()
         {
             return
-        }*/
+        }
         
         auth.createUser(email: registrationEmail.text!, password: registrationPassword.text!) { error in
             if error == nil
@@ -37,7 +37,7 @@ class RegistrationViewController: UIViewController {
             }
             else
             {
-                let alertController = UIAlertController(title: "Registration Error", message: "An account already exists with this email address.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Registration Error", message: error?.localizedDescription, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
                 self.present(alertController, animated: true, completion: nil)
             }
