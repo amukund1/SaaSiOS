@@ -1,5 +1,5 @@
 //
-//  Authentication.swift
+//  FirebaseAuthentication.swift
 //  SaaSiOS
 //
 //  Created by Adithya Mukund on 3/1/19.
@@ -22,7 +22,7 @@ class FirebaseAuthentication : Authentication {
         }
     }
     
-    func createUser(email: String, password: String, completion: @escaping(Error?) -> Void) {
+    func createStudyParticipant(email: String, password: String, completion: @escaping(Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if error == nil && user != nil
             {

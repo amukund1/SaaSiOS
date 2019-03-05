@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     let auth = FirebaseAuthentication()
     
-    var emailText : String = ""
+    private var emailText : String = ""
     @IBOutlet weak var loginEmail: UILabel!
     @IBOutlet weak var loginPassword: UITextField!
     
@@ -41,33 +41,17 @@ class LoginViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
-       /*
-       auth.signIn(email: loginEmail.text!, password: loginPassword.text!)
-        
-        if auth.isSignedIn()
-        {
-            if auth.isVerified()
-            {
-                self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
-            }
-            else
-            {
-                self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
-            }
-        }
-        else
-        {
-            let alert = UIAlertController(title: "Login Error", message: "Your email or passsword is invalid.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }*/
     }
     
     @IBAction func resetPassword(_ sender: UIButton) {
         self.performSegue(withIdentifier: "resetPasswordSegue", sender: sender)
     }
+    
+    func setEmailText(emailText: String) -> Void {
+        self.emailText = emailText
+    }
+    
+    //private setter method for emailText
     
     /*
     // MARK: - Navigation

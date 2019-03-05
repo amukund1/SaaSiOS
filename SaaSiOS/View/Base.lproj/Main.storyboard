@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -185,6 +186,7 @@
                     <navigationItem key="navigationItem" id="yPg-zF-F9k"/>
                     <connections>
                         <outlet property="registrationBirthdate" destination="RsN-0o-9cY" id="Whd-TD-tQf"/>
+                        <outlet property="registrationCountry" destination="nea-bd-K4v" id="LK0-cJ-76r"/>
                         <outlet property="registrationEmail" destination="yey-rY-OY2" id="7t1-7z-5xU"/>
                         <outlet property="registrationFirstName" destination="g2C-qe-bhc" id="fEh-2O-PjH"/>
                         <outlet property="registrationLastName" destination="fsc-LL-GO5" id="Ur4-at-lSd"/>
@@ -392,7 +394,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc4-lG-9gq">
                                 <rect key="frame" x="133" y="433" width="109" height="30"/>
@@ -528,7 +530,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hky-B4-GKm"/>
-        <segue reference="ns0-Qi-JyN"/>
+        <segue reference="jdJ-iK-tYx"/>
+        <segue reference="yhy-iS-PK9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,8 @@
 		893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */; };
 		893CD1CC222A0EF00083B260 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1CB222A0EF00083B260 /* Authentication.swift */; };
 		893CD1CE222A176C0083B260 /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */; };
+		893CD1D2222B17DF0083B260 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1D1222B17DF0083B260 /* DatabaseService.swift */; };
+		893CD1D4222B198D0083B260 /* StudyParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1D3222B198D0083B260 /* StudyParticipant.swift */; };
 		89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE057B2224DC67007029D3 /* AppDelegate.swift */; };
 		89AE05812224DC67007029D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AE057F2224DC67007029D3 /* Main.storyboard */; };
 		89AE05832224DC68007029D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05822224DC68007029D3 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 		89AE05912224DC68007029D3 /* SaaSiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE05902224DC68007029D3 /* SaaSiOSTests.swift */; };
 		89AE059C2224DC68007029D3 /* SaaSiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE059B2224DC68007029D3 /* SaaSiOSUITests.swift */; };
 		89AE05AA2224DC79007029D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05A92224DC79007029D3 /* GoogleService-Info.plist */; };
+		89EBD120222D8D5F00E96AF3 /* FirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EBD11F222D8D5F00E96AF3 /* FirebaseDatabase.swift */; };
+		89EBD122222D9ED700E96AF3 /* Study.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EBD121222D9ED700E96AF3 /* Study.swift */; };
 		89F2F1392225CFF8003CA047 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F1382225CFF8003CA047 /* WelcomeViewController.swift */; };
 		89F2F13B2225D04F003CA047 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F13A2225D04F003CA047 /* LoginViewController.swift */; };
 		89F2F13D2225D097003CA047 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F13C2225D097003CA047 /* RegistrationViewController.swift */; };
@@ -60,6 +64,8 @@
 		893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerificationViewController.swift; sourceTree = "<group>"; };
 		893CD1CB222A0EF00083B260 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
+		893CD1D1222B17DF0083B260 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		893CD1D3222B198D0083B260 /* StudyParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyParticipant.swift; sourceTree = "<group>"; };
 		89AE05782224DC67007029D3 /* SaaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE057B2224DC67007029D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89AE05802224DC67007029D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +79,8 @@
 		89AE059B2224DC68007029D3 /* SaaSiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaaSiOSUITests.swift; sourceTree = "<group>"; };
 		89AE059D2224DC68007029D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89AE05A92224DC79007029D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		89EBD11F222D8D5F00E96AF3 /* FirebaseDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabase.swift; sourceTree = "<group>"; };
+		89EBD121222D9ED700E96AF3 /* Study.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Study.swift; sourceTree = "<group>"; };
 		89F2F1382225CFF8003CA047 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		89F2F13A2225D04F003CA047 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		89F2F13C2225D097003CA047 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +124,10 @@
 			children = (
 				893CD1CB222A0EF00083B260 /* Authentication.swift */,
 				893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */,
+				893CD1D1222B17DF0083B260 /* DatabaseService.swift */,
+				893CD1D3222B198D0083B260 /* StudyParticipant.swift */,
+				89EBD11F222D8D5F00E96AF3 /* FirebaseDatabase.swift */,
+				89EBD121222D9ED700E96AF3 /* Study.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,7 +470,9 @@
 				89F2F13B2225D04F003CA047 /* LoginViewController.swift in Sources */,
 				893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */,
 				893CD1C7222646600083B260 /* PasswordResetViewController.swift in Sources */,
+				893CD1D4222B198D0083B260 /* StudyParticipant.swift in Sources */,
 				89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */,
+				89EBD120222D8D5F00E96AF3 /* FirebaseDatabase.swift in Sources */,
 				89F2F13D2225D097003CA047 /* RegistrationViewController.swift in Sources */,
 				89F2F13F2225D0C9003CA047 /* StudiesViewController.swift in Sources */,
 				89F2F1432225D153003CA047 /* ProfileViewController.swift in Sources */,
@@ -466,7 +480,9 @@
 				893CD1CE222A176C0083B260 /* FirebaseAuthentication.swift in Sources */,
 				89F2F1392225CFF8003CA047 /* WelcomeViewController.swift in Sources */,
 				89F2F1452225D179003CA047 /* SettingsViewController.swift in Sources */,
+				893CD1D2222B17DF0083B260 /* DatabaseService.swift in Sources */,
 				893CD1CC222A0EF00083B260 /* Authentication.swift in Sources */,
+				89EBD122222D9ED700E96AF3 /* Study.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

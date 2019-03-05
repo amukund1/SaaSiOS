@@ -36,7 +36,7 @@ class WelcomeViewController: UIViewController {
         if segue.destination is LoginViewController
         {
             let vc = segue.destination as? LoginViewController
-            vc?.emailText = welcomeEmail.text!
+            vc?.setEmailText(emailText: welcomeEmail.text!)
         }
     }
     

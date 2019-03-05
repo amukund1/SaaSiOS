@@ -10,11 +10,13 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
     let auth = FirebaseAuthentication()
+    let database = FirebaseDatabaseService()
     
     @IBOutlet weak var registrationFirstName: UITextField!
     @IBOutlet weak var registrationLastName: UITextField!
     @IBOutlet weak var registrationBirthdate: UITextField!
     @IBOutlet weak var registrationZipCode: UITextField!
+    @IBOutlet weak var registrationCountry: UITextField!
     @IBOutlet weak var registrationEmail: UITextField!
     @IBOutlet weak var registrationPassword: UITextField!
     
@@ -23,13 +25,14 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func completeRegistration(_ sender: UIButton) {
-        
         if !areAllFieldsComplete()
         {
             return
         }
         
-        auth.createUser(email: registrationEmail.text!, password: registrationPassword.text!) { error in
+        let sp = StudyParticipant(firstName: registrationFirstName.text!, lastName: registrationLastName.text!, birthdate: registrationBirthdate.text!, zipCode: registrationZipCode.text!, country: registrationCountry.text!, email: registrationEmail.text!, password: registrationPassword.text!)
+        
+        auth.createStudyParticipant(email: sp.getEmail(), password: sp.getPassword()) { error in
             if error == nil
             {
                 self.auth.sendVerificationLink()
@@ -42,11 +45,13 @@ class RegistrationViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
+        
+        database.addStudyParticipant(sp: sp)
     }
     
     private func areAllFieldsComplete() -> Bool
     {
-        return isFirstNameFieldComplete() && isLastNameFieldComplete() && isBirthdateFieldComplete() && isZipcodeComplete() && isEmailFieldComplete() && isPasswordFieldComplete()
+        return isFirstNameFieldComplete() && isLastNameFieldComplete() && isBirthdateFieldComplete() && isZipcodeFieldComplete() && isCountryFieldComplete() && isEmailFieldComplete() && isPasswordFieldComplete()
     }
     
     private func isFirstNameFieldComplete() -> Bool
@@ -64,9 +69,14 @@ class RegistrationViewController: UIViewController {
         return registrationBirthdate.text!.count > 0
     }
     
-    private func isZipcodeComplete() -> Bool
+    private func isZipcodeFieldComplete() -> Bool
     {
         return registrationZipCode.text!.count > 0
+    }
+    
+    private func isCountryFieldComplete() -> Bool
+    {
+        return registrationCountry.text!.count > 0
     }
     
     private func isEmailFieldComplete() -> Bool
