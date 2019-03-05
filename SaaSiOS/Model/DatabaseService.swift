@@ -7,5 +7,5 @@
 //
 
 protocol DatabaseService {
-    func addStudyParticipant(sp: StudyParticipant) -> Void
+    func addStudyParticipant(studyParticipant: StudyParticipant, userID: String) -> Void
 }

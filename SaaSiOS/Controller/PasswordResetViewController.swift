@@ -9,7 +9,7 @@
 import UIKit
 
 class PasswordResetViewController: UIViewController {
-    let auth = FirebaseAuthentication()
+    let auth: Authentication = FirebaseAuthentication()
     
     @IBOutlet weak var passwordResetEmail: UITextField!
     

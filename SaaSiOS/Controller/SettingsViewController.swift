@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    let auth = FirebaseAuthentication()
+    let auth: Authentication = FirebaseAuthentication()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -49,6 +49,10 @@ class StudyParticipant {
         return country
     }
     
+    func setCountry(country: String) -> Void {
+        self.country = country
+    }
+    
     func getEmail() -> String {
         return email
     }

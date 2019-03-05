@@ -9,7 +9,23 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    private var profileFirstNameText: String = "";
+    private var profileLastNameText: String = "";
+    private var profileBirthdateText: String = "";
+    private var profileZipCodeText: String = "";
+    private var profileCountryText: String = "";
+    private var profileEmailText: String = "";
+    private var profilePasswordText: String = "";
+    
+    @IBOutlet weak var profileFirstName: UILabel!
+    @IBOutlet weak var profileLastName: UILabel!
+    @IBOutlet weak var profileBirthdate: UILabel!
+    @IBOutlet weak var profileZipCode: UITextField!
+    @IBOutlet weak var profileCountry: UITextField!
+    @IBOutlet weak var profileEmail: UITextField!
+    @IBOutlet weak var profilePassword: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

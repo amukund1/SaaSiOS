@@ -20,4 +20,6 @@ protocol Authentication {
     func resetPassword(email: String) -> Void
     
     func sendVerificationLink() -> Void
+    
+    func getUserID() -> String
 }

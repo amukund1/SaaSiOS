@@ -9,7 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    let auth = FirebaseAuthentication()
+    let auth: Authentication = CurrentState.getAuthentication()
+    let database: DatabaseService = CurrentState.getDatabase()
     
     private var emailText : String = ""
     @IBOutlet weak var loginEmail: UILabel!
@@ -25,6 +26,9 @@ class LoginViewController: UIViewController {
         auth.signIn(email: loginEmail.text!, password: loginPassword.text!) { error in
             if error == nil
             {
+                //pull from database
+                //create object
+                //set Current state
                 if self.auth.isVerified()
                 {
                     self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)

@@ -9,8 +9,8 @@
 import UIKit
 
 class RegistrationViewController: UIViewController {
-    let auth = FirebaseAuthentication()
-    let database = FirebaseDatabaseService()
+    let auth: Authentication = CurrentState.getAuthentication()
+    let database: DatabaseService = CurrentState.getDatabase()
     
     @IBOutlet weak var registrationFirstName: UITextField!
     @IBOutlet weak var registrationLastName: UITextField!
@@ -36,6 +36,10 @@ class RegistrationViewController: UIViewController {
             if error == nil
             {
                 self.auth.sendVerificationLink()
+                
+                let userID = self.auth.getUserID()
+                self.database.addStudyParticipant(studyParticipant: sp, userID: userID)
+                
                 self.performSegue(withIdentifier: "completeRegistrationSegue", sender: sender)
             }
             else
@@ -45,8 +49,6 @@ class RegistrationViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
-        
-        database.addStudyParticipant(sp: sp)
     }
     
     private func areAllFieldsComplete() -> Bool

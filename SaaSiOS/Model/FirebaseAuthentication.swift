@@ -55,7 +55,6 @@ class FirebaseAuthentication : Authentication {
         return Auth.auth().currentUser != nil && Auth.auth().currentUser!.isEmailVerified
     }
     
-    
     func resetPassword(email: String) -> Void {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             
@@ -67,5 +66,9 @@ class FirebaseAuthentication : Authentication {
         Auth.auth().currentUser?.sendEmailVerification {
             (error) in
         }
+    }
+    
+    func getUserID() -> String {
+        return Auth.auth().currentUser!.uid
     }
 }

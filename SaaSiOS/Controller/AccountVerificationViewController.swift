@@ -9,7 +9,7 @@
 import UIKit
 
 class AccountVerificationViewController: UIViewController {
-    let auth = FirebaseAuthentication()
+    let auth: Authentication = FirebaseAuthentication()
     
     
     @IBOutlet weak var verificationLabel: UILabel!

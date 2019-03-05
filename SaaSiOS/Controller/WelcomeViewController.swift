@@ -9,7 +9,7 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    let auth = FirebaseAuthentication()
+    let auth: Authentication = CurrentState.getAuthentication()
     
     @IBOutlet weak var welcomeEmail: UITextField!
     
