@@ -27,5 +27,6 @@ class FirebaseDatabaseService : DatabaseService {
         ]
         
         self.ref.child("study_participant").child(userID).setValue(spInfo)
+        CurrentState.setStudyParticipant(studyParticipant: studyParticipant)
     }
 }
