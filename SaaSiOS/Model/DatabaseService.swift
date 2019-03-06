@@ -8,4 +8,6 @@
 
 protocol DatabaseService {
     func addStudyParticipant(studyParticipant: StudyParticipant, userID: String) -> Void
+    
+    func retrieveStudyParticipant(userID: String, completion: @escaping(Error?) -> Void)
 }

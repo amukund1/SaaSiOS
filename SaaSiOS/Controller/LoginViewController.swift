@@ -23,24 +23,34 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func completeLogin(_ sender: UIButton) {
-        auth.signIn(email: loginEmail.text!, password: loginPassword.text!) { error in
-            if error == nil
+        auth.signIn(email: loginEmail.text!, password: loginPassword.text!) { authError in
+            if authError == nil
             {
-                //pull from database
-                //create object
-                //set Current state
-                if self.auth.isVerified()
-                {
-                    self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
-                }
-                else
-                {
-                    self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
+                let userID = self.auth.getUserID()
+                
+                self.database.retrieveStudyParticipant(userID: userID) { databaseError in
+                    if databaseError == nil
+                    {
+                        if self.auth.isVerified()
+                        {
+                            self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
+                        }
+                        else
+                        {
+                            self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
+                        }
+                    }
+                    else
+                    {
+                        let alertController = UIAlertController(title: "Login Error", message: databaseError?.localizedDescription, preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
             }
             else
             {
-                let alertController = UIAlertController(title: "Registration Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Login Error", message: authError?.localizedDescription, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
                 self.present(alertController, animated: true, completion: nil)
             }
