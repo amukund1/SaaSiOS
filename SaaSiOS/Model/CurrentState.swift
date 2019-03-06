@@ -23,7 +23,7 @@ class CurrentState {
         return studyParticipant!
     }
     
-    static func setStudyParticipant(studyParticipant: StudyParticipant) -> Void {
+    static func setStudyParticipant(studyParticipant: StudyParticipant?) -> Void {
         self.studyParticipant = studyParticipant
     }
 }

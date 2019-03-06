@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     let auth: Authentication = FirebaseAuthentication()
+    let database: DatabaseService = FirebaseDatabaseService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logout(_ sender: UIButton) {
         auth.signOut()
+        database.resetStudyParticipant()
     }
     
     /*

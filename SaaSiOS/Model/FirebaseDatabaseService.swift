@@ -51,4 +51,8 @@ class FirebaseDatabaseService : DatabaseService {
             completion(error)
         }
     }
+    
+    func resetStudyParticipant() -> Void {
+        CurrentState.setStudyParticipant(studyParticipant: nil)
+    }
 }

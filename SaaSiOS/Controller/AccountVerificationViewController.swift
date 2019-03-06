@@ -10,6 +10,7 @@ import UIKit
 
 class AccountVerificationViewController: UIViewController {
     let auth: Authentication = FirebaseAuthentication()
+    let database: DatabaseService = FirebaseDatabaseService()
     
     
     @IBOutlet weak var verificationLabel: UILabel!
@@ -33,6 +34,7 @@ class AccountVerificationViewController: UIViewController {
         
         if !auth.isSignedIn()
         {
+            database.resetStudyParticipant()
             self.performSegue(withIdentifier: "accountVerificationLogoutUnwindSegue", sender: sender)
         }
     }
