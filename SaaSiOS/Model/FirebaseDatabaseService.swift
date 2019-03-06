@@ -16,6 +16,16 @@ class FirebaseDatabaseService : DatabaseService {
     }
     
     func addStudyParticipant(studyParticipant: StudyParticipant, userID: String) -> Void {
-        self.ref.child("study_participant").child(userID).setValue(["first_name": studyParticipant.getFirstName(), "last_name": studyParticipant.getLastName(), "date_of_birth": studyParticipant.getBirthdate(), "zipcode": studyParticipant.getZipCode(), "country": studyParticipant.getCountry(), "email": studyParticipant.getEmail(), "password": studyParticipant.getPassword()])
+        let spInfo = [
+            "first_name": studyParticipant.getFirstName(),
+            "last_name": studyParticipant.getLastName(),
+            "date_of_birth": studyParticipant.getBirthdate(),
+            "zipcode": studyParticipant.getZipCode(),
+            "country": studyParticipant.getCountry(),
+            "email": studyParticipant.getEmail(),
+            "password": studyParticipant.getPassword()
+        ]
+        
+        self.ref.child("study_participant").child(userID).setValue(spInfo)
     }
 }

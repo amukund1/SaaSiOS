@@ -32,7 +32,7 @@ class RegistrationViewController: UIViewController {
         
         let sp = StudyParticipant(firstName: registrationFirstName.text!, lastName: registrationLastName.text!, birthdate: registrationBirthdate.text!, zipCode: registrationZipCode.text!, country: registrationCountry.text!, email: registrationEmail.text!, password: registrationPassword.text!)
         
-        auth.createStudyParticipant(email: sp.getEmail(), password: sp.getPassword()) { error in
+        auth.register(studyParticipant: sp) { error in
             if error == nil
             {
                 self.auth.sendVerificationLink()

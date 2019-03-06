@@ -22,8 +22,8 @@ class FirebaseAuthentication : Authentication {
         }
     }
     
-    func createStudyParticipant(email: String, password: String, completion: @escaping(Error?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+    func register(studyParticipant: StudyParticipant, completion: @escaping(Error?) -> Void) {
+        Auth.auth().createUser(withEmail: studyParticipant.getEmail(), password: studyParticipant.getPassword()) { (user, error) in
             if error == nil && user != nil
             {
                 completion(nil)

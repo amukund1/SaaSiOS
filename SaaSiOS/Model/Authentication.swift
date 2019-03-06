@@ -9,7 +9,7 @@
 protocol Authentication {
     func signIn(email: String, password: String, completion: @escaping(Error?) -> Void)
     
-    func createStudyParticipant(email: String, password: String, completion: @escaping(Error?) -> Void)
+    func register(studyParticipant: StudyParticipant, completion: @escaping(Error?) -> Void)
     
     func signOut() -> Void
     
