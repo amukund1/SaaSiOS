@@ -24,5 +24,6 @@ class CurrentState {
     }
     
     static func setStudyParticipant(studyParticipant: StudyParticipant) -> Void {
+        self.studyParticipant = studyParticipant
     }
 }

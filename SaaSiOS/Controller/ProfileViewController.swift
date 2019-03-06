@@ -9,14 +9,6 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    private var profileFirstNameText: String = "";
-    private var profileLastNameText: String = "";
-    private var profileBirthdateText: String = "";
-    private var profileZipCodeText: String = "";
-    private var profileCountryText: String = "";
-    private var profileEmailText: String = "";
-    private var profilePasswordText: String = "";
-    
     @IBOutlet weak var profileFirstName: UILabel!
     @IBOutlet weak var profileLastName: UILabel!
     @IBOutlet weak var profileBirthdate: UILabel!
@@ -28,8 +20,16 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let sp = CurrentState.getStudyParticipant()
 
-        // Do any additional setup after loading the view.
+        profileFirstName.text = sp.getFirstName()
+        profileLastName.text = sp.getLastName()
+        profileBirthdate.text = sp.getBirthdate()
+        profileZipCode.text = sp.getZipCode()
+        profileCountry.text = sp.getCountry()
+        profileEmail.text = sp.getEmail()
+        profilePassword.text = sp.getPassword()
     }
     
 

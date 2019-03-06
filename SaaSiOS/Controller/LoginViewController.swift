@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
             {
                 let userID = self.auth.getUserID()
                 
-                self.database.retrieveStudyParticipant(userID: userID) { databaseError in
+                self.database.retrieveStudyParticipant(userID: userID) { (databaseError) in
                     if databaseError == nil
                     {
                         if self.auth.isVerified()

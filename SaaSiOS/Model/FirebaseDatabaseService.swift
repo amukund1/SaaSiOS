@@ -26,8 +26,8 @@ class FirebaseDatabaseService : DatabaseService {
             "password": studyParticipant.getPassword()
         ]
         
-        self.ref.child("study_participant").child(userID).setValue(spInfo)
         CurrentState.setStudyParticipant(studyParticipant: studyParticipant)
+        self.ref.child("study_participant").child(userID).setValue(spInfo)
     }
     
     func retrieveStudyParticipant(userID: String, completion: @escaping(Error?) -> Void) {
@@ -45,8 +45,9 @@ class FirebaseDatabaseService : DatabaseService {
             let sp = StudyParticipant(firstName: firstName, lastName: lastName, birthdate: birthdate, zipCode: zipCode, country: country, email: email, password: password)
             
             CurrentState.setStudyParticipant(studyParticipant: sp)
+            
             completion(nil)
-        }) { (error) in
+        }) { error in
             completion(error)
         }
     }
