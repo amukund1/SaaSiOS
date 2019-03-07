@@ -8,18 +8,7 @@
 
 import UIKit
 
-class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CurrentState.getGlobalStudyList().count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "studyCell")
-        cell.textLabel?.text = CurrentState.getGlobalStudyList()[indexPath.row].getStudyName()
-        return cell
-    }
-    
-    
+class StudiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

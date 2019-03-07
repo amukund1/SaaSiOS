@@ -11,6 +11,7 @@
 		57A5A5F4073B4F632D42D6D9 /* Pods_SaaSiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */; };
 		7314D5462C47CFBF3F78AA9F /* Pods_SaaSiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C961F0BF4BB9F0EEA1F762F /* Pods_SaaSiOSUITests.framework */; };
 		891850012230952800AEBF93 /* Researcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891850002230952800AEBF93 /* Researcher.swift */; };
+		891850032230C14300AEBF93 /* StudyRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891850022230C14300AEBF93 /* StudyRepositoryViewController.swift */; };
 		893CD1C7222646600083B260 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1C6222646600083B260 /* PasswordResetViewController.swift */; };
 		893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */; };
 		893CD1CC222A0EF00083B260 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1CB222A0EF00083B260 /* Authentication.swift */; };
@@ -63,6 +64,7 @@
 		78E027979769568A86BC57E2 /* Pods-SaaSiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaaSiOSTests.release.xcconfig"; path = "Target Support Files/Pods-SaaSiOSTests/Pods-SaaSiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaaSiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891850002230952800AEBF93 /* Researcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Researcher.swift; sourceTree = "<group>"; };
+		891850022230C14300AEBF93 /* StudyRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRepositoryViewController.swift; sourceTree = "<group>"; };
 		893CD1C6222646600083B260 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		893CD1C82228CBA20083B260 /* AccountVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerificationViewController.swift; sourceTree = "<group>"; };
 		893CD1CB222A0EF00083B260 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				89F2F1402225D11B003CA047 /* DataViewController.swift */,
 				89F2F1422225D153003CA047 /* ProfileViewController.swift */,
 				89F2F1442225D179003CA047 /* SettingsViewController.swift */,
+				891850022230C14300AEBF93 /* StudyRepositoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				89F2F13B2225D04F003CA047 /* LoginViewController.swift in Sources */,
 				891850012230952800AEBF93 /* Researcher.swift in Sources */,
 				893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */,
+				891850032230C14300AEBF93 /* StudyRepositoryViewController.swift in Sources */,
 				893CD1C7222646600083B260 /* PasswordResetViewController.swift in Sources */,
 				893CD1D4222B198D0083B260 /* StudyParticipant.swift in Sources */,
 				89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */,
