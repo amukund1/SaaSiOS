@@ -359,6 +359,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completeRegistration:" destination="mbR-Ux-LOa" eventType="touchUpInside" id="4FC-an-snV"/>
+                                    <segue destination="cDj-zm-kVG" kind="unwind" unwindAction="unwindToStudiesViewControllerWithSegue:" id="ZDN-5k-6kd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,6 +378,7 @@
                     <navigationItem key="navigationItem" id="NuB-Q9-Hg3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sP8-pF-ezf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cDj-zm-kVG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3306" y="-623"/>
         </scene>
