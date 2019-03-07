@@ -13,5 +13,5 @@ protocol DatabaseService {
     
     func resetStudyParticipant() -> Void
     
-    func retrieveGlobalStudyList(completion: @escaping([Study]) -> Void)
+    func retrieveGlobalStudyList(completion: @escaping(Error?) -> Void)
 }

@@ -44,6 +44,13 @@ class WelcomeViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
+            
+            self.database!.retrieveGlobalStudyList() { error in
+                if error != nil
+                {
+                    print(error?.localizedDescription)
+                }
+            }
         }
     }
     

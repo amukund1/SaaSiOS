@@ -10,6 +10,7 @@ class CurrentState {
     private static let authentication: Authentication = FirebaseAuthentication()
     private static let database: DatabaseService = FirebaseDatabaseService()
     private static var studyParticipant: StudyParticipant? = nil
+    private static var globalStudyList: [Study]? = nil
     
     static func getAuthentication() -> Authentication {
         return authentication
@@ -25,5 +26,13 @@ class CurrentState {
     
     static func setStudyParticipant(studyParticipant: StudyParticipant?) -> Void {
         self.studyParticipant = studyParticipant
+    }
+    
+    static func getGlobalStudyList() -> [Study] {
+        return globalStudyList!
+    }
+    
+    static func setGlobalStudyList(globalStudyList: [Study]) -> Void {
+        self.globalStudyList = globalStudyList
     }
 }

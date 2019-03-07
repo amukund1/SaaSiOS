@@ -134,7 +134,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573614535.241186"
+            timestampString = "573619018.721432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -182,7 +182,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573614535.2413"
+            timestampString = "573619018.721519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -198,7 +198,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Controller/WelcomeViewController.swift"
-            timestampString = "573614535.241388"
+            timestampString = "573619018.7215919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -261,7 +261,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573614535.241455"
+            timestampString = "573619018.722023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -277,7 +277,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573614535.2415119"
+            timestampString = "573619018.72209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -293,13 +293,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Controller/StudiesViewController.swift"
-            timestampString = "573614535.241569"
+            timestampString = "573619018.7221529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "StudiesViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SaaSiOS/Controller/StudiesViewController.swift"
+            timestampString = "573619018.722235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "StudiesViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
