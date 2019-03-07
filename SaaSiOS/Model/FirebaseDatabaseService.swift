@@ -12,8 +12,6 @@ class FirebaseDatabaseService : DatabaseService {
     var ref: DatabaseReference!
     var handle: DatabaseHandle?
     
-    var globalStudyList = [Study]()
-    
     init() {
         ref = Database.database().reference()
     }
@@ -60,6 +58,7 @@ class FirebaseDatabaseService : DatabaseService {
     }
     
     func retrieveGlobalStudyList() -> Void {
+        var globalStudyList = [Study]()
         handle = ref?.child("study").observe(.childAdded, with: { snapshot in
             print("handler entered")
             if let study = snapshot.value as? NSDictionary
@@ -82,9 +81,10 @@ class FirebaseDatabaseService : DatabaseService {
                     
                     let studyObject = Study(name: name!, description: description!, owner: ownerResearcher)
                     
-                    self.globalStudyList.append(studyObject)
+                    globalStudyList.append(studyObject)
                 }
             }
+            print(globalStudyList)
         })
     }
 }
