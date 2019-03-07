@@ -9,18 +9,12 @@
 class Study {
     private var name: String
     private var description: String
-    private var owner: String
-    private var ownerEmail: String
-    private var affiliation: String
-    private var jobTitle: String
+    private var owner: Researcher
     
-    init(name: String, description: String, owner: String, ownerEmail: String, affiliation: String, jobTitle: String) {
+    init(name: String, description: String, owner: Researcher) {
         self.name = name
         self.description = description
         self.owner = owner
-        self.ownerEmail = ownerEmail
-        self.affiliation = affiliation
-        self.jobTitle = jobTitle
     }
     
     func getStudyName() -> String {
@@ -28,22 +22,10 @@ class Study {
     }
     
     func getDescription() -> String {
-        return name
+        return description
     }
     
-    func getOwner() -> String {
+    func getOwner() -> Researcher {
         return owner
-    }
-    
-    func getOwnerEmail() -> String {
-        return ownerEmail
-    }
-    
-    func getAffiliation() -> String {
-        return affiliation
-    }
-    
-    func getJobTitle() -> String {
-        return jobTitle
     }
 }

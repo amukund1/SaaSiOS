@@ -9,25 +9,40 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    let auth: Authentication = CurrentState.getAuthentication()
+    var auth: Authentication? = nil
+    var database: DatabaseService? = nil
     
     @IBOutlet weak var welcomeEmail: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        auth = CurrentState.getAuthentication()
+        database = CurrentState.getDatabase()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if auth.isSignedIn() {
-            if auth.isVerified()
-            {
-                self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
-            }
-            else
-            {
-                self.performSegue(withIdentifier: "resumeUnverifiedUseSegue", sender: self)
+        if auth!.isSignedIn() {
+            let userID = self.auth!.getUserID()
+            
+            self.database!.retrieveStudyParticipant(userID: userID) { (databaseError) in
+                if databaseError == nil
+                {
+                    if self.auth!.isVerified()
+                    {
+                        self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
+                    }
+                    else
+                    {
+                        self.performSegue(withIdentifier: "resumeUnverifiedUseSegue", sender: self)
+                    }
+                }
+                else
+                {
+                    let alertController = UIAlertController(title: "Login Error", message: databaseError?.localizedDescription, preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
     }
