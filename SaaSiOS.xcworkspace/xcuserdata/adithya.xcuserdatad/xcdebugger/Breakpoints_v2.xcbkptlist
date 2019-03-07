@@ -134,7 +134,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573613168.918043"
+            timestampString = "573614535.241186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -182,7 +182,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573613168.9184901"
+            timestampString = "573614535.2413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -198,7 +198,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Controller/WelcomeViewController.swift"
-            timestampString = "573613168.918721"
+            timestampString = "573614535.241388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -261,12 +261,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573613168.918779"
+            timestampString = "573614535.241455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "retrieveGlobalStudyList()"
+            landmarkName = "retrieveGlobalStudyList(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -277,12 +277,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/FirebaseDatabaseService.swift"
-            timestampString = "573613168.919174"
+            timestampString = "573614535.2415119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "retrieveGlobalStudyList()"
+            landmarkName = "retrieveGlobalStudyList(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -293,11 +293,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Controller/StudiesViewController.swift"
-            timestampString = "573613168.919448"
+            timestampString = "573614535.241569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

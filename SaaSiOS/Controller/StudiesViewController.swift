@@ -10,11 +10,16 @@ import UIKit
 
 class StudiesViewController: UIViewController {
     let database: DatabaseService = CurrentState.getDatabase()
+    
+    private var globalStudyList: [Study]? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        database.retrieveGlobalStudyList()
+        database.retrieveGlobalStudyList() { globalStudyList in
+            self.globalStudyList = globalStudyList
+            print(globalStudyList)
+        }
     }
     
 

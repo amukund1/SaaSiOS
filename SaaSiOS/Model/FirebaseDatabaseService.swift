@@ -57,7 +57,7 @@ class FirebaseDatabaseService : DatabaseService {
         CurrentState.setStudyParticipant(studyParticipant: nil)
     }
     
-    func retrieveGlobalStudyList() -> Void {
+    func retrieveGlobalStudyList(completion: @escaping([Study]) -> Void) {
         var globalStudyList = [Study]()
         handle = ref?.child("study").observe(.childAdded, with: { snapshot in
             print("handler entered")
@@ -84,7 +84,7 @@ class FirebaseDatabaseService : DatabaseService {
                     globalStudyList.append(studyObject)
                 }
             }
-            print(globalStudyList)
+            completion(globalStudyList)
         })
     }
 }
