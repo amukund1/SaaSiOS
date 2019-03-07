@@ -10,6 +10,9 @@ import FirebaseDatabase
 
 class FirebaseDatabaseService : DatabaseService {
     var ref: DatabaseReference!
+    var handle: DatabaseHandle?
+    
+    var globalStudyList = [Study]()
     
     init() {
         ref = Database.database().reference()
@@ -54,5 +57,34 @@ class FirebaseDatabaseService : DatabaseService {
     
     func resetStudyParticipant() -> Void {
         CurrentState.setStudyParticipant(studyParticipant: nil)
+    }
+    
+    func retrieveGlobalStudyList() -> Void {
+        handle = ref?.child("study").observe(.childAdded, with: { snapshot in
+            print("handler entered")
+            if let study = snapshot.value as? NSDictionary
+            {
+                let status = study["status"] as? String
+                
+                if status == "active"
+                {
+                    let name = study["name"] as? String
+                    let description = study["desc"] as? String
+                    
+                    let owner = study["owner"] as? NSDictionary
+                    let ownerFirstName = owner?["firstName"] as? String ?? "Owner First Name"
+                    let ownerLastName = owner?["lastName"] as? String ?? "Owner First Name"
+                    let ownerEmail = owner?["email"] as? String ?? "Owner Email"
+                    let ownerAffiliation = owner?["firstName"] as? String ?? "Owner Affiliation"
+                    let ownerJobTitle = owner?["firstName"] as? String ?? "Owner Job Title"
+                    
+                    let ownerResearcher = Researcher(firstName: ownerFirstName, lastName: ownerLastName, email: ownerEmail, affiliaton: ownerAffiliation, jobTitle: ownerJobTitle)
+                    
+                    let studyObject = Study(name: name!, description: description!, owner: ownerResearcher)
+                    
+                    self.globalStudyList.append(studyObject)
+                }
+            }
+        })
     }
 }

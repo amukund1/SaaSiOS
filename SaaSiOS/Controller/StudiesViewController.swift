@@ -9,11 +9,12 @@
 import UIKit
 
 class StudiesViewController: UIViewController {
+    let database: DatabaseService = CurrentState.getDatabase()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        database.retrieveGlobalStudyList()
     }
     
 
