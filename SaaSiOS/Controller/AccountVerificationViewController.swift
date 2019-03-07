@@ -9,8 +9,8 @@
 import UIKit
 
 class AccountVerificationViewController: UIViewController {
-    let auth: Authentication = FirebaseAuthentication()
-    let database: DatabaseService = FirebaseDatabaseService()
+    let auth: Authentication = CurrentState.getAuthentication()
+    let database: DatabaseService = CurrentState.getDatabase()
     
     
     @IBOutlet weak var verificationLabel: UILabel!
