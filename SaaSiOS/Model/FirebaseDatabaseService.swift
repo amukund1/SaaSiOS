@@ -90,4 +90,8 @@ class FirebaseDatabaseService : DatabaseService {
             completion(error)
         }
     }
+    
+    func joinStudy(userID: String, studyID: String) -> Void {
+        self.ref.child("study_participant").child(userID).child("studies").setValue(studyID)
+    }
 }
