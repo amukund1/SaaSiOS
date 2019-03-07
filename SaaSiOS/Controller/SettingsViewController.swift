@@ -9,8 +9,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    let auth: Authentication = FirebaseAuthentication()
-    let database: DatabaseService = FirebaseDatabaseService()
+    let auth: Authentication = CurrentState.getAuthentication()
+    let database: DatabaseService = CurrentState.getDatabase()
 
     override func viewDidLoad() {
         super.viewDidLoad()
