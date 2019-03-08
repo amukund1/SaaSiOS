@@ -103,4 +103,17 @@ class FirebaseDatabaseService : DatabaseService {
     func joinStudy(userID: String, studyID: String) -> Void {
         self.ref.child("study_participant").child(userID).child("studies").setValue(studyID)
     }
+    
+    func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void) {
+        ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { (snapshot) in
+            let studies = snapshot.value as? NSArray
+            
+            var individualStudyList = NSMutableArray(array: studies!)
+            let actualIndivStudyList = individualStudyList.flatMap({ $0 as? String })
+            
+            completion(nil)
+        }) { error in
+            completion(error)
+        }
+    }
 }
