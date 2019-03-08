@@ -9,13 +9,16 @@
 import UIKit
 
 class StudyRepositoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private var selectedStudy: Study? = nil
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CurrentState.getGlobalStudyList().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "studyCell")
-        cell.textLabel?.text = CurrentState.getGlobalStudyList()[indexPath.row].getStudyName()
+        selectedStudy = CurrentState.getGlobalStudyList()[indexPath.row]
+        cell.textLabel?.text = selectedStudy!.getStudyName()
         return cell
     }
     
@@ -28,6 +31,14 @@ class StudyRepositoryViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is StudyInformationViewController
+        {
+            let vc = segue.destination as? StudyInformationViewController
+            vc?.setStudy(study: selectedStudy!)
+        }
     }
     
     

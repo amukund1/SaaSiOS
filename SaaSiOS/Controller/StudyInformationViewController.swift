@@ -9,11 +9,17 @@
 import UIKit
 
 class StudyInformationViewController: UIViewController {
+    
+    private var study: Study? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setStudy(study: Study) -> Void {
+        self.study = study
     }
     
 
