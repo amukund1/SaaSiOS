@@ -67,28 +67,37 @@ class FirebaseDatabaseService : DatabaseService {
                 
                 if status == "active"
                 {
-                    let name = study["name"] as? String
-                    let description = study["desc"] as? String
+                    let name = study["name"] as? String ?? ""
+                    let description = study["desc"] as? String ?? ""
+                    let ownerID = study["owner"] as? String ?? ""
                     
-                    let owner = study["owner"] as? NSDictionary
-                    let ownerFirstName = owner?["firstName"] as? String ?? "Owner First Name"
-                    let ownerLastName = owner?["lastName"] as? String ?? "Owner First Name"
-                    let ownerEmail = owner?["email"] as? String ?? "Owner Email"
-                    let ownerAffiliation = owner?["firstName"] as? String ?? "Owner Affiliation"
-                    let ownerJobTitle = owner?["firstName"] as? String ?? "Owner Job Title"
-                    
-                    let ownerResearcher = Researcher(firstName: ownerFirstName, lastName: ownerLastName, email: ownerEmail, affiliation: ownerAffiliation, jobTitle: ownerJobTitle)
-                    
-                    let studyObject = Study(name: name!, description: description!, owner: ownerResearcher)
-                    
-                    globalStudyList.append(studyObject)
+                    self.retrieveOwner(ownerID: ownerID) { owner in
+                        let studyObject = Study(name: name, description: description, owner: owner!)
+                        globalStudyList.append(studyObject)
+                        CurrentState.setGlobalStudyList(globalStudyList: globalStudyList)
+                        completion(nil)
+                    }
                 }
             }
-            CurrentState.setGlobalStudyList(globalStudyList: globalStudyList)
-            completion(nil)
         }) { error in
             completion(error)
         }
+    }
+    
+    private func retrieveOwner(ownerID: String, completion: @escaping(Researcher?) -> Void) {
+        ref.child("researchers").child(ownerID).observeSingleEvent(of: .value, with: { (snapshot) in
+            let owner = snapshot.value as? NSDictionary
+            
+            let firstName = owner?["firstName"] as? String ?? ""
+            let lastName = owner?["lastName"] as? String ?? ""
+            let email = owner?["email"] as? String ?? ""
+            let affiliation = owner?["affiliation"] as? String ?? "TBD"
+            let jobTitle = owner?["jobTitle"] as? String ?? "TBD"
+            
+            let ownerResearcher = Researcher(firstName: firstName, lastName: lastName, email: email, affiliation: affiliation, jobTitle: jobTitle)
+            
+            completion(ownerResearcher)
+        })
     }
     
     func joinStudy(userID: String, studyID: String) -> Void {
