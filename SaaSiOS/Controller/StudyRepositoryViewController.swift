@@ -19,12 +19,18 @@ class StudyRepositoryViewController: UIViewController, UITableViewDelegate, UITa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "studyInfoSegue", sender: self)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     /*
