@@ -10,14 +10,14 @@ class Researcher {
     private var firstName: String
     private var lastName: String
     private var email: String
-    private var affiliaton: String
+    private var affiliation: String
     private var jobTitle: String
     
-    init(firstName: String, lastName: String, email: String, affiliaton: String, jobTitle: String) {
+    init(firstName: String, lastName: String, email: String, affiliation: String, jobTitle: String) {
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        self.affiliaton = affiliaton
+        self.affiliation = affiliation
         self.jobTitle = jobTitle
     }
     
@@ -34,7 +34,7 @@ class Researcher {
     }
     
     func getAffiliation() -> String {
-        return affiliaton
+        return affiliation
     }
     
     func getJobTitle() -> String {

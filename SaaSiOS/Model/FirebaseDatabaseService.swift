@@ -77,7 +77,7 @@ class FirebaseDatabaseService : DatabaseService {
                     let ownerAffiliation = owner?["firstName"] as? String ?? "Owner Affiliation"
                     let ownerJobTitle = owner?["firstName"] as? String ?? "Owner Job Title"
                     
-                    let ownerResearcher = Researcher(firstName: ownerFirstName, lastName: ownerLastName, email: ownerEmail, affiliaton: ownerAffiliation, jobTitle: ownerJobTitle)
+                    let ownerResearcher = Researcher(firstName: ownerFirstName, lastName: ownerLastName, email: ownerEmail, affiliation: ownerAffiliation, jobTitle: ownerJobTitle)
                     
                     let studyObject = Study(name: name!, description: description!, owner: ownerResearcher)
                     
