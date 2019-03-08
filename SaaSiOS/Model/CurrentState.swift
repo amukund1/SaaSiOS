@@ -37,7 +37,7 @@ class CurrentState {
         self.globalStudyList = globalStudyList
     }
     
-    static func setIndividualList(individualStudyList: [Study]) -> Void {
+    static func setIndividualStudyList(individualStudyList: [Study]) -> Void {
         self.individualStudyList = individualStudyList
     }
 }

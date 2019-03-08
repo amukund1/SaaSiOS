@@ -104,16 +104,19 @@ class FirebaseDatabaseService : DatabaseService {
         self.ref.child("study_participant").child(userID).child("studies").setValue(studyID)
     }
     
+    /*
     func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void) {
         ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { (snapshot) in
-            let studies = snapshot.value as? NSArray
+            let studyIDs = snapshot.value as? NSArray
+            
+            //studies will be array of IDs, so retrieve the studies themselves and add the list to the current state
             
             let individualStudyList = NSMutableArray(array: studies!)
             let actualIndivStudyList = individualStudyList.flatMap({ $0 as? String })
-            
+            CurrentState.setIndividualStudyList(individualStudyList: actualIndivStudyList)
             completion(nil)
         }) { error in
             completion(error)
         }
-    }
+    }*/
 }
