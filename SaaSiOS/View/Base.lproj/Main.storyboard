@@ -461,6 +461,14 @@
                         <viewLayoutGuide key="safeArea" id="eQY-qk-0yZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="a8q-uI-y7G"/>
+                    <connections>
+                        <outlet property="ownerAffiliation" destination="x34-Vt-cfw" id="7w5-uW-Z3t"/>
+                        <outlet property="ownerEmail" destination="ybo-Sk-NvD" id="gpc-L8-DWp"/>
+                        <outlet property="ownerJobTitle" destination="baO-Ik-YSx" id="hdg-yg-rUV"/>
+                        <outlet property="ownerName" destination="6VB-Cw-xe3" id="Kh7-hX-5OW"/>
+                        <outlet property="studyDescription" destination="ZtM-G4-W0Z" id="Etb-7U-WM0"/>
+                        <outlet property="studyName" destination="BbI-mA-cgB" id="8yk-h4-ErM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K2-2b-OVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
