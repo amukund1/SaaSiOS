@@ -108,7 +108,7 @@ class FirebaseDatabaseService : DatabaseService {
         ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { (snapshot) in
             let studies = snapshot.value as? NSArray
             
-            var individualStudyList = NSMutableArray(array: studies!)
+            let individualStudyList = NSMutableArray(array: studies!)
             let actualIndivStudyList = individualStudyList.flatMap({ $0 as? String })
             
             completion(nil)
