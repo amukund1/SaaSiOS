@@ -37,8 +37,8 @@ class CurrentState {
         self.globalStudyList = globalStudyList
     }
     
-    static func getGlobalStudyList() -> [Study] {
-        return globalStudyList!
+    static func getIndividualStudyList() -> [Study] {
+        return individualStudyList!
     }
     
     static func setIndividualStudyList(individualStudyList: [Study]) -> Void {
