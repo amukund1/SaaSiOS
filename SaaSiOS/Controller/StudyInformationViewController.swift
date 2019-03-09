@@ -9,6 +9,9 @@
 import UIKit
 
 class StudyInformationViewController: UIViewController {
+    let auth: Authentication = CurrentState.getAuthentication()
+    let database: DatabaseService = CurrentState.getDatabase()
+    
     private var study: Study? = nil
     
     
@@ -42,6 +45,12 @@ class StudyInformationViewController: UIViewController {
     func setStudy(study: Study) -> Void {
         self.study = study
     }
+    
+    @IBAction func joinStudy(_ sender: UIButton) {
+        //add studyID field to study class
+        database.joinStudy(userID: auth.getUserID(), studyID: study!.getID())
+    }
+    
     
 
     /*

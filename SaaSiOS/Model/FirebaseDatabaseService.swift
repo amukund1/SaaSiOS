@@ -61,6 +61,7 @@ class FirebaseDatabaseService : DatabaseService {
         var globalStudyList = [Study]()
         handle = ref?.child("study").observe(.childAdded, with: { snapshot in
             print("handler entered")
+            let studyID = snapshot.key
             if let study = snapshot.value as? NSDictionary
             {
                 let status = study["status"] as? String
@@ -72,7 +73,7 @@ class FirebaseDatabaseService : DatabaseService {
                     let ownerID = study["owner"] as? String ?? ""
                     
                     self.retrieveOwner(ownerID: ownerID) { owner in
-                        let studyObject = Study(name: name, description: description, owner: owner!)
+                        let studyObject = Study(name: name, description: description, owner: owner!, id: studyID)
                         globalStudyList.append(studyObject)
                         CurrentState.setGlobalStudyList(globalStudyList: globalStudyList)
                         completion(nil)

@@ -423,11 +423,13 @@
                                 <rect key="frame" x="140" y="534" width="95" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Join a Study">
+                                <state key="normal" title="Join Study">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="completeRegistration:" destination="mbR-Ux-LOa" eventType="touchUpInside" id="bTS-Tw-GBQ"/>
+                                    <action selector="joinStudy:" destination="kfm-EX-i6h" eventType="touchUpInside" id="2M4-5r-LpE"/>
+                                    <segue destination="9Hs-MJ-I4G" kind="unwind" unwindAction="unwindToStudiesViewControllerWithSegue:" id="7yu-iA-sz7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -471,6 +473,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K2-2b-OVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9Hs-MJ-I4G" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4901.6000000000004" y="-624.73763118440786"/>
         </scene>

@@ -10,11 +10,13 @@ class Study {
     private var name: String
     private var description: String
     private var owner: Researcher
+    private var id: String
     
-    init(name: String, description: String, owner: Researcher) {
+    init(name: String, description: String, owner: Researcher, id: String) {
         self.name = name
         self.description = description
         self.owner = owner
+        self.id = id
     }
     
     func getStudyName() -> String {
@@ -27,5 +29,9 @@ class Study {
     
     func getOwner() -> Researcher {
         return owner
+    }
+    
+    func getID() -> String {
+        return id
     }
 }
