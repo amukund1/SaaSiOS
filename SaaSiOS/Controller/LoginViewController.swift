@@ -55,12 +55,13 @@ class LoginViewController: UIViewController {
                     }
                 }
                 
+                /*
                 self.database.retrieveIndividualStudyList(userID: self.auth.getUserID(), completion: { error in
                     if error != nil
                     {
                         print(error?.localizedDescription)
                     }
-                })
+                })*/
             }
             else
             {

@@ -103,16 +103,17 @@ class FirebaseDatabaseService : DatabaseService {
     }
     
     func joinStudy(userID: String, studyID: String) -> Void {
-        self.ref.child("study_participant").child(userID).child("studies").setValue(studyID)
+        self.ref.child("study_participant").child(userID).child("studies").setValue([studyID])
     }
     
     
     func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void) {
         //var indivStudyList = [Study]()
+        //retrieve entire participant, then extract the study part of it
         ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { snapshot in
             print("indiv handler entered")
             let studyID = snapshot.value as? NSValue
-            print(studyID!);
+            print(studyID!)
             completion(nil)
         }) { error in
             completion(error)

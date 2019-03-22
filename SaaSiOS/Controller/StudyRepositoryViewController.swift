@@ -17,12 +17,12 @@ class StudyRepositoryViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "studyCell")
-        selectedStudy = CurrentState.getGlobalStudyList()[indexPath.row]
-        cell.textLabel?.text = selectedStudy!.getStudyName()
+        cell.textLabel?.text = CurrentState.getGlobalStudyList()[indexPath.row].getStudyName()
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedStudy = CurrentState.getGlobalStudyList()[indexPath.row]
         performSegue(withIdentifier: "studyInfoSegue", sender: self)
     }
     
