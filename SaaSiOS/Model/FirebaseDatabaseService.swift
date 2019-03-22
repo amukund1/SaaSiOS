@@ -112,23 +112,34 @@ class FirebaseDatabaseService : DatabaseService {
         var indivStudyList = [Study]()
         indivListHandle = ref?.child("study_participant").child(userID).child("studies").observe(.childAdded, with: { snapshot in
             print("indiv handler entered")
-            if let studyIDMap = snapshot.value as? NSDictionary
+            
+            
+            if let studyID = snapshot.value as? NSString
             {
-                let studyIDs = studyIDMap.allValues
-                print(studyIDs)
+                self.retrieveStudy(studyID: studyID as String, completion: { study in
+                    indivStudyList.append(study!)
+                    CurrentState.setIndividualStudyList(individualStudyList: indivStudyList)
+                    print(CurrentState.getIndividualStudyList())
+                    completion(nil)
+                })
             }
         }) { error in
             completion(error)
         }
-        
-        /*
-        ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { snapshot in
-            print("indiv handler entered")
-            let studyID = snapshot.value as? NSValue
-            print(studyID!)
-            completion(nil)
-        }) { error in
-            completion(error)
-        }*/
+    }
+    
+    private func retrieveStudy(studyID: String, completion: @escaping(Study?) -> Void) {
+        ref.child("study").child(studyID).observeSingleEvent(of: .value, with: { snapshot in
+            let study = snapshot.value as? NSDictionary
+            
+            let name = study?["name"] as? String ?? ""
+            let description = study?["desc"] as? String ?? ""
+            let ownerID = study?["owner"] as? String ?? ""
+            
+            self.retrieveOwner(ownerID: ownerID) { owner in
+                let studyObject = Study(name: name, description: description, owner: owner!, id: studyID)
+                completion(studyObject)
+            }
+        })
     }
 }
