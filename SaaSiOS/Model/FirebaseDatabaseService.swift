@@ -109,28 +109,23 @@ class FirebaseDatabaseService : DatabaseService {
     
     
     func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void) {
-        //var indivStudyList = [Study]()
-        //retrieve entire participant, then extract the study part of it
+        var indivStudyList = [Study]()
+        indivListHandle = ref?.child("study_participant").child(userID).child("studies").observe(.childAdded, with: { snapshot in
+            print("indiv handler entered")
+            if let studyIDMap = snapshot.value as? NSDictionary
+            {
+                let studyIDs = studyIDMap.allValues
+                print(studyIDs)
+            }
+        }) { error in
+            completion(error)
+        }
+        
+        /*
         ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { snapshot in
             print("indiv handler entered")
             let studyID = snapshot.value as? NSValue
             print(studyID!)
-            completion(nil)
-        }) { error in
-            completion(error)
-        }
-       /*
-        ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { (snapshot) in
-            let studyIDs = snapshot.value as? NSArray
-            
-            //studies will be array of IDs, so retrieve the studies themselves and add the list to the current state
-            
-            let individualStudyList = NSMutableArray(array: studyIDs!)
-            let actualIndivStudyList = individualStudyList.compactMap({ $0 as? String })
-            
-            
-            
-            CurrentState.setIndividualStudyList(individualStudyList: actualIndivStudyList)
             completion(nil)
         }) { error in
             completion(error)
