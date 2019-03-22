@@ -8,19 +8,19 @@
 
 import UIKit
 
-class StudiesViewController: UIViewController {
+class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //private var selectedStudy: Study? = nil
-    /*
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CurrentState.getIndividualStudyList().count
-    }*/
+    }
     
-    /*
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "studyCell")
         cell.textLabel?.text = CurrentState.getIndividualStudyList()[indexPath.row].getStudyName()
         return cell
-    }*/
+    }
     
     
     /*
