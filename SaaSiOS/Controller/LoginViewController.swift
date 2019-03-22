@@ -33,7 +33,24 @@ class LoginViewController: UIViewController {
                     {
                         if self.auth.isVerified()
                         {
-                            self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
+                            
+                            self.database.retrieveGlobalStudyList() { error in
+                                if error != nil
+                                {
+                                    print(error?.localizedDescription)
+                                }
+                            }
+                            
+                            self.database.retrieveIndividualStudyList(userID: self.auth.getUserID()) { error in
+                                if error != nil
+                                {
+                                    print(error?.localizedDescription)
+                                }
+                                else
+                                {
+                                    self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: self)
+                                }
+                            }
                         }
                         else
                         {
@@ -47,7 +64,7 @@ class LoginViewController: UIViewController {
                         self.present(alertController, animated: true, completion: nil)
                     }
                 }
-                
+                /*
                 self.database.retrieveGlobalStudyList() { error in
                     if error != nil
                     {
@@ -61,7 +78,7 @@ class LoginViewController: UIViewController {
                     {
                         print(error?.localizedDescription)
                     }
-                })
+                })*/
             }
             else
             {

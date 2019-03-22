@@ -30,7 +30,23 @@ class WelcomeViewController: UIViewController {
                 {
                     if self.auth!.isVerified()
                     {
-                        self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
+                        self.database!.retrieveGlobalStudyList() { error in
+                            if error != nil
+                            {
+                                print(error?.localizedDescription)
+                            }
+                        }
+                        
+                        self.database!.retrieveIndividualStudyList(userID: self.auth!.getUserID()) { error in
+                            if error != nil
+                            {
+                                print(error?.localizedDescription)
+                            }
+                            else
+                            {
+                                self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
+                            }
+                        }
                     }
                     else
                     {
@@ -44,7 +60,7 @@ class WelcomeViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-            
+            /*
             self.database!.retrieveGlobalStudyList() { error in
                 if error != nil
                 {
@@ -52,12 +68,12 @@ class WelcomeViewController: UIViewController {
                 }
             }
             
-            self.database!.retrieveIndividualStudyList(userID: self.auth!.getUserID(), completion: { error in
-                if error != nil
-                {
-                    print(error?.localizedDescription)
-                }
-            })
+             self.database!.retrieveIndividualStudyList(userID: (self.auth?.getUserID())!) { error in
+                 if error != nil
+                 {
+                 print(error?.localizedDescription)
+                 }
+             }*/
         }
     }
     

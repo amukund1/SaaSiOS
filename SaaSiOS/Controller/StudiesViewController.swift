@@ -11,6 +11,7 @@ import UIKit
 class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //private var selectedStudy: Study? = nil
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CurrentState.getIndividualStudyList().count
     }
