@@ -16,4 +16,6 @@ protocol DatabaseService {
     func retrieveGlobalStudyList(completion: @escaping(Error?) -> Void)
     
     func joinStudy(userID: String, studyID: String)
+    
+    func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void)
 }

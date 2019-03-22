@@ -513,6 +513,18 @@
                                     <segue destination="szR-D6-nP9" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="ZV5-bF-r3V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lT-Qn-5de">
+                                <rect key="frame" x="140" y="153" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Connect Device">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="Qsd-bM-2dx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -897,7 +909,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hky-B4-GKm"/>
-        <segue reference="ILg-NS-hUr"/>
+        <segue reference="jdJ-iK-tYx"/>
+        <segue reference="yhy-iS-PK9"/>
     </inferredMetricsTieBreakers>
 </document>

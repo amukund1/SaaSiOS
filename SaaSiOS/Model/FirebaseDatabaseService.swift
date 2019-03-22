@@ -10,7 +10,8 @@ import FirebaseDatabase
 
 class FirebaseDatabaseService : DatabaseService {
     var ref: DatabaseReference!
-    var handle: DatabaseHandle?
+    var globalListHandle: DatabaseHandle?
+    var indivListHandle: DatabaseHandle?
     
     init() {
         ref = Database.database().reference()
@@ -59,8 +60,8 @@ class FirebaseDatabaseService : DatabaseService {
     
     func retrieveGlobalStudyList(completion: @escaping(Error?) -> Void) {
         var globalStudyList = [Study]()
-        handle = ref?.child("study").observe(.childAdded, with: { snapshot in
-            print("handler entered")
+        globalListHandle = ref?.child("study").observe(.childAdded, with: { snapshot in
+            print("global handler entered")
             let studyID = snapshot.key
             if let study = snapshot.value as? NSDictionary
             {
@@ -105,19 +106,32 @@ class FirebaseDatabaseService : DatabaseService {
         self.ref.child("study_participant").child(userID).child("studies").setValue(studyID)
     }
     
-    /*
+    
     func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void) {
+        //var indivStudyList = [Study]()
+        ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { snapshot in
+            print("indiv handler entered")
+            let studyID = snapshot.value as? NSValue
+            print(studyID!);
+            completion(nil)
+        }) { error in
+            completion(error)
+        }
+       /*
         ref.child("study_participant").child(userID).child("studies").observeSingleEvent(of: .value, with: { (snapshot) in
             let studyIDs = snapshot.value as? NSArray
             
             //studies will be array of IDs, so retrieve the studies themselves and add the list to the current state
             
-            let individualStudyList = NSMutableArray(array: studies!)
-            let actualIndivStudyList = individualStudyList.flatMap({ $0 as? String })
+            let individualStudyList = NSMutableArray(array: studyIDs!)
+            let actualIndivStudyList = individualStudyList.compactMap({ $0 as? String })
+            
+            
+            
             CurrentState.setIndividualStudyList(individualStudyList: actualIndivStudyList)
             completion(nil)
         }) { error in
             completion(error)
-        }
-    }*/
+        }*/
+    }
 }
