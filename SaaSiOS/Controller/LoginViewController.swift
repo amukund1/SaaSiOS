@@ -23,55 +23,52 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func completeLogin(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            self.auth.signIn(email: self.loginEmail.text!, password: self.loginPassword.text!) { authError in
-                if authError == nil
-                {
-                    let userID = self.auth.getUserID()
-                    
-                    self.database.retrieveStudyParticipant(userID: userID) { (databaseError) in
-                        if databaseError == nil
+        self.auth.signIn(email: self.loginEmail.text!, password: self.loginPassword.text!) { authError in
+            if authError == nil
+            {
+                let userID = self.auth.getUserID()
+                
+                self.database.retrieveStudyParticipant(userID: userID) { (databaseError) in
+                    if databaseError == nil
+                    {
+                        if self.auth.isVerified()
                         {
-                            if self.auth.isVerified()
-                            {
-                                self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
-                            }
-                            else
-                            {
-                                self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
-                            }
+                            self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: sender)
                         }
                         else
                         {
-                            let alertController = UIAlertController(title: "Login Error", message: databaseError?.localizedDescription, preferredStyle: .alert)
-                            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
-                            self.present(alertController, animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "completeUnverifiedLoginSegue", sender: sender)
                         }
                     }
-                    
-                    self.database.retrieveGlobalStudyList() { error in
-                        if error != nil
-                        {
-                            print(error?.localizedDescription)
-                        }
+                    else
+                    {
+                        let alertController = UIAlertController(title: "Login Error", message: databaseError?.localizedDescription, preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+                        self.present(alertController, animated: true, completion: nil)
                     }
-                    
-                    self.database.retrieveIndividualStudyList(userID: self.auth.getUserID(), completion: { error in
-                        if error != nil
-                        {
-                            print(error?.localizedDescription)
-                        }
-                    })
                 }
-                else
-                {
-                    let alertController = UIAlertController(title: "Login Error", message: authError?.localizedDescription, preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
-                    self.present(alertController, animated: true, completion: nil)
+                
+                self.database.retrieveGlobalStudyList() { error in
+                    if error != nil
+                    {
+                        print(error?.localizedDescription)
+                    }
                 }
+                
+                self.database.retrieveIndividualStudyList(userID: self.auth.getUserID(), completion: { error in
+                    if error != nil
+                    {
+                        print(error?.localizedDescription)
+                    }
+                })
+            }
+            else
+            {
+                let alertController = UIAlertController(title: "Login Error", message: authError?.localizedDescription, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+                self.present(alertController, animated: true, completion: nil)
             }
         }
-        
     }
     
     @IBAction func resetPassword(_ sender: UIButton) {
