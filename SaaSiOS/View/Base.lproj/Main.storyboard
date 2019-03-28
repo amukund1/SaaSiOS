@@ -535,9 +535,8 @@
                                     <segue destination="szR-D6-nP9" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="ZV5-bF-r3V"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lT-Qn-5de">
-                                <rect key="frame" x="140" y="153" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lT-Qn-5de">
+                                <rect key="frame" x="120" y="140" width="135" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Connect Device">
@@ -552,7 +551,10 @@
                         <constraints>
                             <constraint firstItem="Y2b-sw-LZK" firstAttribute="bottom" secondItem="dnI-s1-hzm" secondAttribute="bottom" constant="130" id="GM9-BF-b40"/>
                             <constraint firstItem="Y2b-sw-LZK" firstAttribute="trailing" secondItem="dnI-s1-hzm" secondAttribute="trailing" constant="140" id="JIM-JE-hGB"/>
+                            <constraint firstItem="Y2b-sw-LZK" firstAttribute="trailing" secondItem="7lT-Qn-5de" secondAttribute="trailing" constant="120" id="ags-zK-jMt"/>
+                            <constraint firstItem="7lT-Qn-5de" firstAttribute="leading" secondItem="Y2b-sw-LZK" secondAttribute="leading" constant="120" id="dVo-N1-TT2"/>
                             <constraint firstItem="dnI-s1-hzm" firstAttribute="leading" secondItem="Y2b-sw-LZK" secondAttribute="leading" constant="140" id="sD6-Az-bJW"/>
+                            <constraint firstItem="7lT-Qn-5de" firstAttribute="top" secondItem="Y2b-sw-LZK" secondAttribute="top" constant="120" id="sMY-aR-jeP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y2b-sw-LZK"/>
                     </view>
