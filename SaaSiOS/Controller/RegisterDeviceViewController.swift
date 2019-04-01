@@ -41,7 +41,7 @@ class RegisterDeviceViewController: UIViewController {
         //oauthswift.authorizeURLHandler = getURLHandler()
         let state = generateState(withLength: 20)
         let _ = oauthswift!.authorize(
-            withCallbackURL: URL(string: "https://sleepasasymptom.firebaseio.com/")!, scope: "activity heartrate location nutrition profile settings sleep social weight", state: state,
+            withCallbackURL: URL(string: "https://www.fitbit.com/user/79WRWH")!, scope: "activity heartrate location nutrition profile settings sleep social weight", state: state,
             success: { credential, response, parameters in
                 //self.showTokenAlert(name: serviceParameters["name"], credential: credential)
                 print(credential.oauthToken)
