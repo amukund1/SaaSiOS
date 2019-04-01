@@ -35,16 +35,20 @@ class RegisterDeviceViewController: UIViewController {
             accessTokenUrl: "https://api.fitbit.com/oauth2/token",
             responseType:   "code"
         )
-        let handle = oauthswift!.authorize(
-            withCallbackURL: URL(string: "oauth-swift://oauth-callback/instagram")!,
-            scope: "likes+comments", state:"INSTAGRAM",
+        oauthswift!.accessTokenBasicAuthentification = true
+        
+        //self.oauthswift = oauthswift
+        //oauthswift.authorizeURLHandler = getURLHandler()
+        let state = generateState(withLength: 20)
+        let _ = oauthswift!.authorize(
+            withCallbackURL: URL(string: "https://sleepasasymptom.firebaseio.com/")!, scope: "activity heartrate location nutrition profile settings sleep social weight", state: state,
             success: { credential, response, parameters in
+                //self.showTokenAlert(name: serviceParameters["name"], credential: credential)
                 print(credential.oauthToken)
-                //perform request
                 self.getFitbitUser()
         },
             failure: { error in
-                print(error.localizedDescription)
+                print(error.description)
         }
         )
     }
