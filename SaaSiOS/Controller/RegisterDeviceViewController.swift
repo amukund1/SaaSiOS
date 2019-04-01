@@ -18,6 +18,13 @@ class RegisterDeviceViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handle(url: url)
+        }
+        return true
+    }
+    
 
     /*
     // MARK: - Navigation
