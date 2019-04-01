@@ -40,6 +40,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		898CA76E2252BF020082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F435027A1A6791B200038A29;
+			remoteInfo = OAuthSwift;
+		};
+		898CA7702252BF020082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C48B28021AFA598D00C7DEF6;
+			remoteInfo = OAuthSwiftMacOS;
+		};
+		898CA7722252BF020082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C4B6EE1E1BF74CE300443596;
+			remoteInfo = OAuthSwiftTVOS;
+		};
+		898CA7742252BF020082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C40890C01C11B37000E3146A;
+			remoteInfo = OAuthSwiftWatchOS;
+		};
+		898CA7762252BF020082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F451E3C5195B8CD80051434C;
+			remoteInfo = OAuthSwiftDemo;
+		};
+		898CA7782252BF020082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C49FD5241AFB5DF500791E1A;
+			remoteInfo = OAuthSwiftMacOSDemo;
+		};
+		898CA77A2252BF020082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C4D50DF71BFB693F0053B624;
+			remoteInfo = OAuthSwiftTests;
+		};
+		898CA77C2252BF2C0082E1EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F43502791A6791B200038A29;
+			remoteInfo = OAuthSwift;
+		};
 		89AE058D2224DC68007029D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89AE05702224DC67007029D3 /* Project object */;
@@ -75,6 +131,7 @@
 		893CD1D1222B17DF0083B260 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		893CD1D3222B198D0083B260 /* StudyParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyParticipant.swift; sourceTree = "<group>"; };
 		898CA7622252BD000082E1EF /* RegisterDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceViewController.swift; sourceTree = "<group>"; };
+		898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = ../OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		89AE05782224DC67007029D3 /* SaaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE057B2224DC67007029D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89AE05802224DC67007029D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,9 +229,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		898CA7652252BF020082E1EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				898CA76F2252BF020082E1EF /* OAuthSwift.framework */,
+				898CA7712252BF020082E1EF /* OAuthSwift.framework */,
+				898CA7732252BF020082E1EF /* OAuthSwift.framework */,
+				898CA7752252BF020082E1EF /* OAuthSwift.framework */,
+				898CA7772252BF020082E1EF /* OAuthSwiftDemo.app */,
+				898CA7792252BF020082E1EF /* OAuthSwiftMacOSDemo.app */,
+				898CA77B2252BF020082E1EF /* OAuthSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		89AE056F2224DC67007029D3 = {
 			isa = PBXGroup;
 			children = (
+				898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */,
 				89AE057A2224DC67007029D3 /* SaaSiOS */,
 				89AE058F2224DC68007029D3 /* SaaSiOSTests */,
 				89AE059A2224DC68007029D3 /* SaaSiOSUITests */,
@@ -265,6 +337,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				898CA77D2252BF2C0082E1EF /* PBXTargetDependency */,
 			);
 			name = SaaSiOS;
 			productName = SaaSiOS;
@@ -343,6 +416,12 @@
 			mainGroup = 89AE056F2224DC67007029D3;
 			productRefGroup = 89AE05792224DC67007029D3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 898CA7652252BF020082E1EF /* Products */;
+					ProjectRef = 898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				89AE05772224DC67007029D3 /* SaaSiOS */,
@@ -351,6 +430,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		898CA76F2252BF020082E1EF /* OAuthSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuthSwift.framework;
+			remoteRef = 898CA76E2252BF020082E1EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		898CA7712252BF020082E1EF /* OAuthSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuthSwift.framework;
+			remoteRef = 898CA7702252BF020082E1EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		898CA7732252BF020082E1EF /* OAuthSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuthSwift.framework;
+			remoteRef = 898CA7722252BF020082E1EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		898CA7752252BF020082E1EF /* OAuthSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuthSwift.framework;
+			remoteRef = 898CA7742252BF020082E1EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		898CA7772252BF020082E1EF /* OAuthSwiftDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OAuthSwiftDemo.app;
+			remoteRef = 898CA7762252BF020082E1EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		898CA7792252BF020082E1EF /* OAuthSwiftMacOSDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OAuthSwiftMacOSDemo.app;
+			remoteRef = 898CA7782252BF020082E1EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		898CA77B2252BF020082E1EF /* OAuthSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OAuthSwiftTests.xctest;
+			remoteRef = 898CA77A2252BF020082E1EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		89AE05762224DC67007029D3 /* Resources */ = {
@@ -525,6 +656,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		898CA77D2252BF2C0082E1EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuthSwift;
+			targetProxy = 898CA77C2252BF2C0082E1EF /* PBXContainerItemProxy */;
+		};
 		89AE058E2224DC68007029D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89AE05772224DC67007029D3 /* SaaSiOS */;

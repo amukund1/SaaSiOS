@@ -8,6 +8,8 @@
 
 import UIKit
 
+import OAuthSwift
+
 class RegisterDeviceViewController: UIViewController {
 
     override func viewDidLoad() {
