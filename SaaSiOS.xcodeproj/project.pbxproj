@@ -19,6 +19,7 @@
 		893CD1CE222A176C0083B260 /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */; };
 		893CD1D2222B17DF0083B260 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1D1222B17DF0083B260 /* DatabaseService.swift */; };
 		893CD1D4222B198D0083B260 /* StudyParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1D3222B198D0083B260 /* StudyParticipant.swift */; };
+		898CA7632252BD000082E1EF /* RegisterDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898CA7622252BD000082E1EF /* RegisterDeviceViewController.swift */; };
 		89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE057B2224DC67007029D3 /* AppDelegate.swift */; };
 		89AE05812224DC67007029D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AE057F2224DC67007029D3 /* Main.storyboard */; };
 		89AE05832224DC68007029D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05822224DC68007029D3 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		893CD1D1222B17DF0083B260 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		893CD1D3222B198D0083B260 /* StudyParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyParticipant.swift; sourceTree = "<group>"; };
+		898CA7622252BD000082E1EF /* RegisterDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceViewController.swift; sourceTree = "<group>"; };
 		89AE05782224DC67007029D3 /* SaaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE057B2224DC67007029D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89AE05802224DC67007029D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				89F2F1442225D179003CA047 /* SettingsViewController.swift */,
 				891850022230C14300AEBF93 /* StudyRepositoryViewController.swift */,
 				891850042232D47300AEBF93 /* StudyInformationViewController.swift */,
+				898CA7622252BD000082E1EF /* RegisterDeviceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				891850012230952800AEBF93 /* Researcher.swift in Sources */,
 				893CD1C92228CBA20083B260 /* AccountVerificationViewController.swift in Sources */,
 				891850032230C14300AEBF93 /* StudyRepositoryViewController.swift in Sources */,
+				898CA7632252BD000082E1EF /* RegisterDeviceViewController.swift in Sources */,
 				893CD1C7222646600083B260 /* PasswordResetViewController.swift in Sources */,
 				893CD1D4222B198D0083B260 /* StudyParticipant.swift in Sources */,
 				89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */,

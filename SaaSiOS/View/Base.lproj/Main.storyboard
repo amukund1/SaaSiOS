@@ -544,6 +544,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="Qsd-bM-2dx"/>
+                                    <segue destination="ZDd-aW-tQe" kind="show" id="qfg-Ip-ea0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -930,6 +931,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldO-yU-y9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Register Device View Controller-->
+        <scene sceneID="Ghg-wx-mnJ">
+            <objects>
+                <viewController id="ZDd-aW-tQe" customClass="RegisterDeviceViewController" customModule="SaaSiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zX0-Uz-bf2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fitbit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKG-Wz-TuR">
+                                <rect key="frame" x="166" y="98" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lkc-uW-m5v"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-il-0mP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="1621"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
