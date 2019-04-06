@@ -67,7 +67,7 @@ class FirebaseDatabaseService : DatabaseService {
                 
                 if status == "active"
                 {
-                    let name = study["name"] as? String ?? ""
+                    let name = study["studyName"] as? String ?? ""
                     let description = study["description"] as? String ?? ""
                     let ownerID = study["owner"] as? String ?? ""
                     
@@ -131,7 +131,7 @@ class FirebaseDatabaseService : DatabaseService {
         ref.child("study").child(studyID).observeSingleEvent(of: .value, with: { snapshot in
             let study = snapshot.value as? NSDictionary
             
-            let name = study?["name"] as? String ?? ""
+            let name = study?["studyName"] as? String ?? ""
             let description = study?["description"] as? String ?? ""
             let ownerID = study?["owner"] as? String ?? ""
             
