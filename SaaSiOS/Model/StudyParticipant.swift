@@ -64,8 +64,4 @@ class StudyParticipant {
     func getPassword() -> String {
         return password
     }
-    
-    func setPassword(password: String) -> Void {
-        self.password = password
-    }
 }

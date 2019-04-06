@@ -19,13 +19,12 @@ class FirebaseDatabaseService : DatabaseService {
     
     func addStudyParticipant(studyParticipant: StudyParticipant, userID: String) -> Void {
         let spInfo = [
-            "first_name": studyParticipant.getFirstName(),
-            "last_name": studyParticipant.getLastName(),
-            "date_of_birth": studyParticipant.getBirthdate(),
+            "firstName": studyParticipant.getFirstName(),
+            "lastName": studyParticipant.getLastName(),
+            "birthdate": studyParticipant.getBirthdate(),
             "zipcode": studyParticipant.getZipCode(),
             "country": studyParticipant.getCountry(),
             "email": studyParticipant.getEmail(),
-            "password": studyParticipant.getPassword()
         ]
         
         CurrentState.setStudyParticipant(studyParticipant: studyParticipant)
@@ -36,15 +35,14 @@ class FirebaseDatabaseService : DatabaseService {
         ref.child("study_participant").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             
-            let firstName = value?["first_name"] as? String ?? ""
-            let lastName = value?["last_name"] as? String ?? ""
+            let firstName = value?["firstName"] as? String ?? ""
+            let lastName = value?["lastName"] as? String ?? ""
             let birthdate = value?["birthdate"] as? String ?? ""
             let country = value?["country"] as? String ?? ""
             let zipCode = value?["zipcode"] as? String ?? ""
             let email = value?["email"] as? String ?? ""
-            let password = value?["password"] as? String ?? ""
             
-            let sp = StudyParticipant(firstName: firstName, lastName: lastName, birthdate: birthdate, zipCode: zipCode, country: country, email: email, password: password)
+            let sp = StudyParticipant(firstName: firstName, lastName: lastName, birthdate: birthdate, zipCode: zipCode, country: country, email: email, password: "")
             
             CurrentState.setStudyParticipant(studyParticipant: sp)
             
@@ -70,7 +68,7 @@ class FirebaseDatabaseService : DatabaseService {
                 if status == "active"
                 {
                     let name = study["name"] as? String ?? ""
-                    let description = study["desc"] as? String ?? ""
+                    let description = study["description"] as? String ?? ""
                     let ownerID = study["owner"] as? String ?? ""
                     
                     self.retrieveOwner(ownerID: ownerID) { owner in
@@ -93,8 +91,8 @@ class FirebaseDatabaseService : DatabaseService {
             let firstName = owner?["firstName"] as? String ?? ""
             let lastName = owner?["lastName"] as? String ?? ""
             let email = owner?["email"] as? String ?? ""
-            let affiliation = owner?["affiliation"] as? String ?? "TBD"
-            let jobTitle = owner?["jobTitle"] as? String ?? "TBD"
+            let affiliation = owner?["affiliation"] as? String ?? ""
+            let jobTitle = owner?["jobTitle"] as? String ?? ""
             
             let ownerResearcher = Researcher(firstName: firstName, lastName: lastName, email: email, affiliation: affiliation, jobTitle: jobTitle)
             
@@ -119,13 +117,14 @@ class FirebaseDatabaseService : DatabaseService {
                 self.retrieveStudy(studyID: studyID as String, completion: { study in
                     indivStudyList.append(study!)
                     CurrentState.setIndividualStudyList(individualStudyList: indivStudyList)
-                    print(CurrentState.getIndividualStudyList())
                     completion(nil)
                 })
             }
         }) { error in
             completion(error)
         }
+        
+        CurrentState.setIndividualStudyList(individualStudyList: indivStudyList)
     }
     
     private func retrieveStudy(studyID: String, completion: @escaping(Study?) -> Void) {
@@ -133,7 +132,7 @@ class FirebaseDatabaseService : DatabaseService {
             let study = snapshot.value as? NSDictionary
             
             let name = study?["name"] as? String ?? ""
-            let description = study?["desc"] as? String ?? ""
+            let description = study?["description"] as? String ?? ""
             let ownerID = study?["owner"] as? String ?? ""
             
             self.retrieveOwner(ownerID: ownerID) { owner in

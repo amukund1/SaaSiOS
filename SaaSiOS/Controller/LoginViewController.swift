@@ -51,6 +51,11 @@ class LoginViewController: UIViewController {
                                     self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: self)
                                 }
                             }
+                            
+                            if CurrentState.getIndividualStudyList().count == 0
+                            {
+                                self.performSegue(withIdentifier: "completeVerifiedLoginSegue", sender: self)
+                            }
                         }
                         else
                         {
@@ -64,21 +69,6 @@ class LoginViewController: UIViewController {
                         self.present(alertController, animated: true, completion: nil)
                     }
                 }
-                /*
-                self.database.retrieveGlobalStudyList() { error in
-                    if error != nil
-                    {
-                        print(error?.localizedDescription)
-                    }
-                }
-                
-                
-                self.database.retrieveIndividualStudyList(userID: self.auth.getUserID(), completion: { error in
-                    if error != nil
-                    {
-                        print(error?.localizedDescription)
-                    }
-                })*/
             }
             else
             {

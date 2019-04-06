@@ -47,6 +47,11 @@ class WelcomeViewController: UIViewController {
                                 self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
                             }
                         }
+                        
+                        if CurrentState.getIndividualStudyList().count == 0
+                        {
+                            self.performSegue(withIdentifier: "resumeVerifiedUseSegue", sender: self)
+                        }
                     }
                     else
                     {
@@ -60,20 +65,6 @@ class WelcomeViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-            /*
-            self.database!.retrieveGlobalStudyList() { error in
-                if error != nil
-                {
-                    print(error?.localizedDescription)
-                }
-            }
-            
-             self.database!.retrieveIndividualStudyList(userID: (self.auth?.getUserID())!) { error in
-                 if error != nil
-                 {
-                 print(error?.localizedDescription)
-                 }
-             }*/
         }
     }
     
