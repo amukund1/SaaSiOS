@@ -8,6 +8,8 @@
 
 import UIKit
 
+import OAuthSwift
+
 class SettingsViewController: UIViewController {
     let auth: Authentication = CurrentState.getAuthentication()
     let database: DatabaseService = CurrentState.getDatabase()
@@ -23,6 +25,48 @@ class SettingsViewController: UIViewController {
         database.resetStudyParticipant()
     }
     
+    @IBAction func connectFitbit(_ sender: UIButton) {
+        authorizeFitbit()
+    }
+    
+    private func authorizeFitbit() {
+        let oauthswift = OAuth2Swift(
+            consumerKey:    "22DGF7",
+            consumerSecret: "547af9c314011e8a2cf87ffd20fc0541",
+            authorizeUrl:   "https://www.fitbit.com/oauth2/authorize",
+            accessTokenUrl: "https://api.fitbit.com/oauth2/token",
+            responseType:   "code"
+        )
+        oauthswift.accessTokenBasicAuthentification = true
+        
+        CurrentState.setOAuthSwift(oauthswift: oauthswift)
+        
+        let state = generateState(withLength: 20)
+        oauthswift.authorize(
+            withCallbackURL: URL(string: "https://sleepasasymptom.firebaseapp.com/")!, scope: "profile", state: state,
+            success: { credential, response, parameters in
+                print("successful authorization")
+            },
+            failure: { error in
+                print(error.description)
+            }
+        )
+    }
+    
+    /*
+    private func testFitbit2() {
+        let _ = oauthswift!.client.get(
+            "https://api.fitbit.com/1/user/-/profile.json",
+            parameters: [:],
+            success: { response in
+                let jsonDict = try? response.jsonObject()
+                print(jsonDict as Any)
+        },
+            failure: { error in
+                print(error.description)
+        }
+        )
+    }*/
     /*
     // MARK: - Navigation
 

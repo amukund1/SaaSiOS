@@ -6,12 +6,15 @@
 //  Copyright © 2019 Adithya Mukund. All rights reserved.
 //
 
+import OAuthSwift
+
 class CurrentState {
     private static let authentication: Authentication = FirebaseAuthentication()
     private static let database: DatabaseService = FirebaseDatabaseService()
     private static var studyParticipant: StudyParticipant? = nil
     private static var globalStudyList: [Study]? = nil
     private static var individualStudyList: [Study]? = nil
+    private static var oauthswift: OAuth2Swift?
     
     static func getAuthentication() -> Authentication {
         return authentication
@@ -43,5 +46,13 @@ class CurrentState {
     
     static func setIndividualStudyList(individualStudyList: [Study]) -> Void {
         self.individualStudyList = individualStudyList
+    }
+    
+    static func getOAuthSwift() -> OAuth2Swift {
+        return oauthswift!
+    }
+    
+    static func setOAuthSwift(oauthswift: OAuth2Swift) -> Void {
+        self.oauthswift = oauthswift
     }
 }
