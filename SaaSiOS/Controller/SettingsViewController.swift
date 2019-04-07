@@ -52,29 +52,5 @@ class SettingsViewController: UIViewController {
             }
         )
     }
-    
-    /*
-    private func testFitbit2() {
-        let _ = oauthswift!.client.get(
-            "https://api.fitbit.com/1/user/-/profile.json",
-            parameters: [:],
-            success: { response in
-                let jsonDict = try? response.jsonObject()
-                print(jsonDict as Any)
-        },
-            failure: { error in
-                print(error.description)
-        }
-        )
-    }*/
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

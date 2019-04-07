@@ -506,7 +506,42 @@
                     <view key="view" contentMode="scaleToFill" id="WhH-Xa-o7V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afA-yN-595">
+                                <rect key="frame" x="120" y="70" width="135" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="JSON Sleep Data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="EBL-fk-vv4"/>
+                                    <action selector="connectFitbit:" destination="nDe-ki-T0f" eventType="touchUpInside" id="RJV-lo-Y09"/>
+                                    <action selector="jsonSleepData:" destination="5dx-zC-nDm" eventType="touchUpInside" id="nIK-EK-in9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xse-Gv-2tg">
+                                <rect key="frame" x="115" y="140" width="145" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="JSON Heartrate Data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="A92-1g-CLf"/>
+                                    <action selector="connectFitbit:" destination="nDe-ki-T0f" eventType="touchUpInside" id="YTW-P8-TDe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xse-Gv-2tg" firstAttribute="leading" secondItem="qdd-uf-7Dp" secondAttribute="leading" constant="115" id="5EV-JR-oWW"/>
+                            <constraint firstItem="afA-yN-595" firstAttribute="leading" secondItem="qdd-uf-7Dp" secondAttribute="leading" constant="120" id="7Sf-aB-PDk"/>
+                            <constraint firstItem="qdd-uf-7Dp" firstAttribute="trailing" secondItem="xse-Gv-2tg" secondAttribute="trailing" constant="115" id="7Sr-N1-9ky"/>
+                            <constraint firstItem="xse-Gv-2tg" firstAttribute="top" secondItem="afA-yN-595" secondAttribute="bottom" constant="40" id="Cjm-8c-Sgu"/>
+                            <constraint firstItem="afA-yN-595" firstAttribute="top" secondItem="qdd-uf-7Dp" secondAttribute="top" constant="50" id="kkz-Jb-BUz"/>
+                            <constraint firstItem="qdd-uf-7Dp" firstAttribute="trailing" secondItem="afA-yN-595" secondAttribute="trailing" constant="120" id="woM-4I-PVk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qdd-uf-7Dp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Data" id="oTa-wu-RqU"/>
