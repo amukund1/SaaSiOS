@@ -29,6 +29,7 @@ class SettingsViewController: UIViewController {
         authorizeFitbit()
     }
     
+    
     private func authorizeFitbit() {
         let oauthswift = OAuth2Swift(
             consumerKey:    "22DGF7",
@@ -42,10 +43,12 @@ class SettingsViewController: UIViewController {
         CurrentState.setOAuthSwift(oauthswift: oauthswift)
         
         let state = generateState(withLength: 20)
+        
         oauthswift.authorize(
-            withCallbackURL: URL(string: "https://sleepasasymptom.firebaseapp.com/")!, scope: "profile", state: state,
-            success: { credential, response, parameters in
+            withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "profile", state: state,
+            success: { (credential, response, parameters) in
                 print("successful authorization")
+                ///get access token from here
             },
             failure: { error in
                 print(error.description)
