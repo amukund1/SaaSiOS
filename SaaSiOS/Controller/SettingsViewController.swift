@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
     
     
     private func authorizeFitbit() {
-        let oauthswift = OAuth2Swift(
+        var oauthswift = OAuth2Swift(
             consumerKey:    "22DGF7",
             consumerSecret: "547af9c314011e8a2cf87ffd20fc0541",
             authorizeUrl:   "https://www.fitbit.com/oauth2/authorize",
@@ -42,13 +42,16 @@ class SettingsViewController: UIViewController {
         
         CurrentState.setOAuthSwift(oauthswift: oauthswift)
         
+        oauthswift = CurrentState.getOAuthSwift()
+        
         let state = generateState(withLength: 20)
         
         oauthswift.authorize(
             withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "profile", state: state,
             success: { (credential, response, parameters) in
                 print("successful authorization")
-                ///get access token from here
+                oauthswift.client.credential.oauthToken = credential.oauthToken
+                oauthswift.client.credential.oauthTokenSecret = credential.oauthTokenSecret
             },
             failure: { error in
                 print(error.description)
