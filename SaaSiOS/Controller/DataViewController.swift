@@ -22,6 +22,9 @@ class DataViewController: UIViewController {
         getSleepData()
     }
     
+    @IBAction func jsonHeartrateData(_ sender: UIButton) {
+        getHeartrateData()
+    }
     
      private func getSleepData() {
          CurrentState.getOAuthSwift().client.get(
@@ -36,4 +39,18 @@ class DataViewController: UIViewController {
              }
          )
      }
+    
+    private func getHeartrateData() {
+        CurrentState.getOAuthSwift().client.get(
+            "https://api.fitbit.com/1/user/-/activities/heart/date/2019-02-27/1d.json",
+            parameters: [:],
+            success: { response in
+                let jsonDict = try? response.jsonObject()
+                print(jsonDict as Any)
+        },
+            failure: { error in
+                print(error.description)
+        }
+        )
+    }
 }

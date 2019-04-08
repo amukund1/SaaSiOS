@@ -530,6 +530,7 @@
                                 <connections>
                                     <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="A92-1g-CLf"/>
                                     <action selector="connectFitbit:" destination="nDe-ki-T0f" eventType="touchUpInside" id="YTW-P8-TDe"/>
+                                    <action selector="jsonHeartrateData:" destination="5dx-zC-nDm" eventType="touchUpInside" id="AdM-4y-hx1"/>
                                 </connections>
                             </button>
                         </subviews>
