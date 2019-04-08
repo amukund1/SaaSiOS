@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController {
         let state = generateState(withLength: 20)
         
         oauthswift.authorize(
-            withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "profile", state: state,
+            withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "sleep heartrate", state: state,
             success: { (credential, response, parameters) in
                 print("successful authorization")
                 oauthswift.client.credential.oauthToken = credential.oauthToken

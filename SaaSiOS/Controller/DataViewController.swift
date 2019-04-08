@@ -19,13 +19,13 @@ class DataViewController: UIViewController {
     }
     
     @IBAction func jsonSleepData(_ sender: UIButton) {
-        testFitbit2()
+        getSleepData()
     }
     
     
-     private func testFitbit2() {
+     private func getSleepData() {
          CurrentState.getOAuthSwift().client.get(
-             "https://api.fitbit.com/1/user/-/profile.json",
+             "https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2019-03-27&sort=desc&offset=0&limit=1",
              parameters: [:],
              success: { response in
                 let jsonDict = try? response.jsonObject()
