@@ -49,7 +49,9 @@ class SettingsViewController: UIViewController {
         oauthswift.authorize(
             withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "sleep heartrate", state: state,
             success: { (credential, response, parameters) in
-                print("successful authorization")
+                let alertController = UIAlertController(title: "Fitbit Sync Complete", message: "Your Fitbit has synchronized successfully.", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+                self.present(alertController, animated: true, completion: nil)
                 oauthswift.client.credential.oauthToken = credential.oauthToken
                 oauthswift.client.credential.oauthTokenSecret = credential.oauthTokenSecret
             },

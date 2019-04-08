@@ -954,23 +954,9 @@
             </objects>
             <point key="canvasLocation" x="2656.8000000000002" y="-631.0344827586207"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="55a-RT-psr">
-            <objects>
-                <viewController id="DtJ-Sh-ZVr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qze-Xv-gWN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="VQp-ah-Z0N"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ldO-yU-y9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jdJ-iK-tYx"/>
-        <segue reference="yhy-iS-PK9"/>
+        <segue reference="Hky-B4-GKm"/>
+        <segue reference="ILg-NS-hUr"/>
     </inferredMetricsTieBreakers>
 </document>
