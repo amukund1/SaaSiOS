@@ -83,7 +83,7 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
+    @IBAction func unwindToWelcomeViewController(segue: UIStoryboardSegue) {
         
     }
     

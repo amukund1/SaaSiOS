@@ -568,7 +568,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="nDe-ki-T0f" eventType="touchUpInside" id="Iv0-4y-6c8"/>
-                                    <segue destination="szR-D6-nP9" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="ZV5-bF-r3V"/>
+                                    <segue destination="szR-D6-nP9" kind="unwind" unwindAction="unwindToWelcomeViewControllerWithSegue:" id="HdR-ns-vJi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lT-Qn-5de">
@@ -830,7 +830,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="zYD-5t-H4H"/>
-                                    <segue destination="cVu-GE-6n7" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="fhu-zL-VE7"/>
+                                    <segue destination="cVu-GE-6n7" kind="unwind" unwindAction="unwindToWelcomeViewControllerWithSegue:" id="QDq-r4-ftO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -923,7 +923,7 @@
                                 <connections>
                                     <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="4Vf-6p-DaY"/>
                                     <action selector="resetPassword:" destination="rFB-aH-tXR" eventType="touchUpInside" id="5Ib-ec-LSW"/>
-                                    <segue destination="wPn-yd-R9V" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="FJL-P7-AjZ"/>
+                                    <segue destination="wPn-yd-R9V" kind="unwind" unwindAction="unwindToWelcomeViewControllerWithSegue:" id="xst-uC-Us0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -972,7 +972,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hky-B4-GKm"/>
-        <segue reference="ILg-NS-hUr"/>
+        <segue reference="jdJ-iK-tYx"/>
+        <segue reference="yhy-iS-PK9"/>
     </inferredMetricsTieBreakers>
 </document>
