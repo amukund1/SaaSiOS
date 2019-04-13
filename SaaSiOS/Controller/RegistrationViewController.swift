@@ -19,6 +19,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var registrationCountry: UITextField!
     @IBOutlet weak var registrationEmail: UITextField!
     @IBOutlet weak var registrationPassword: UITextField!
+    @IBOutlet weak var registrationConfirmPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,15 @@ class RegistrationViewController: UIViewController {
         
         if !isEmailFormatted()
         {
-            let alertController = UIAlertController(title: "Improperly Formatted Email", message: "Your email address is not properly formatted", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Improperly Formatted Email", message: "Please format your email properly.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        if !arePasswordEqual()
+        {
+            let alertController = UIAlertController(title: "Passwords don't Match", message: "Please make sure your passwords match.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
             self.present(alertController, animated: true, completion: nil)
             return
@@ -61,7 +70,7 @@ class RegistrationViewController: UIViewController {
     
     private func areAllFieldsComplete() -> Bool
     {
-        return isFirstNameFieldComplete() && isLastNameFieldComplete() && isBirthdateFieldComplete() && isZipcodeFieldComplete() && isCountryFieldComplete() && isEmailFieldComplete() && isPasswordFieldComplete()
+        return isFirstNameFieldComplete() && isLastNameFieldComplete() && isBirthdateFieldComplete() && isZipcodeFieldComplete() && isCountryFieldComplete() && isEmailFieldComplete() && isPasswordFieldComplete() && isConfirmPasswordFieldComplete()
     }
     
     private func isFirstNameFieldComplete() -> Bool
@@ -106,14 +115,13 @@ class RegistrationViewController: UIViewController {
         return registrationPassword.text!.count > 0
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func isConfirmPasswordFieldComplete() -> Bool
+    {
+        return registrationConfirmPassword.text!.count > 0
     }
-    */
 
+    private func arePasswordEqual() -> Bool
+    {
+        return registrationPassword.text! == registrationConfirmPassword.text!
+    }
 }

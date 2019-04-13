@@ -150,14 +150,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qHn-7E-KKU">
+                                <rect key="frame" x="40" y="460" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fsc-LL-GO5" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="40" id="2fg-2p-dks"/>
-                            <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="JkQ-3e-NqF" secondAttribute="trailing" constant="140" id="5eu-vv-rL3"/>
                             <constraint firstItem="NtK-4F-nVQ" firstAttribute="top" secondItem="yey-rY-OY2" secondAttribute="bottom" constant="15" id="8Ek-Ec-Js7"/>
                             <constraint firstItem="4Qx-dq-neC" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="40" id="8Yz-nC-LgJ"/>
-                            <constraint firstItem="JkQ-3e-NqF" firstAttribute="top" secondItem="NtK-4F-nVQ" secondAttribute="bottom" constant="90" id="AS3-ab-ZCh"/>
+                            <constraint firstItem="qHn-7E-KKU" firstAttribute="top" secondItem="NtK-4F-nVQ" secondAttribute="bottom" constant="15" id="9zC-JW-1Af"/>
+                            <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="JkQ-3e-NqF" secondAttribute="trailing" constant="140" id="CCH-hN-ivg"/>
                             <constraint firstItem="RsN-0o-9cY" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="40" id="Dak-8c-Unp"/>
                             <constraint firstItem="RsN-0o-9cY" firstAttribute="top" secondItem="fsc-LL-GO5" secondAttribute="bottom" constant="15" id="DjT-y9-kyJ"/>
                             <constraint firstItem="4Qx-dq-neC" firstAttribute="top" secondItem="RsN-0o-9cY" secondAttribute="bottom" constant="15" id="FjW-r2-CG8"/>
@@ -166,16 +172,19 @@
                             <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="Mzj-Gt-eXE" secondAttribute="trailing" constant="140" id="JnY-NO-gRG"/>
                             <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="RsN-0o-9cY" secondAttribute="trailing" constant="40" id="K48-Hb-QNf"/>
                             <constraint firstItem="Mzj-Gt-eXE" firstAttribute="top" secondItem="19q-dI-8oi" secondAttribute="top" constant="45" id="KAF-qM-C8n"/>
+                            <constraint firstItem="JkQ-3e-NqF" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="140" id="MMv-j0-ovK"/>
                             <constraint firstItem="g2C-qe-bhc" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="40" id="PsZ-IW-bSH"/>
                             <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="fsc-LL-GO5" secondAttribute="trailing" constant="40" id="Q8N-RZ-luQ"/>
+                            <constraint firstItem="JkQ-3e-NqF" firstAttribute="top" secondItem="qHn-7E-KKU" secondAttribute="bottom" constant="45" id="QGy-8R-O50"/>
                             <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="4Qx-dq-neC" secondAttribute="trailing" constant="40" id="QZW-Ip-TrC"/>
                             <constraint firstItem="Mzj-Gt-eXE" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="140" id="RQg-vO-wDZ"/>
                             <constraint firstItem="nea-bd-K4v" firstAttribute="top" secondItem="4Qx-dq-neC" secondAttribute="bottom" constant="15" id="TMY-jJ-Bqt"/>
                             <constraint firstItem="NtK-4F-nVQ" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="40" id="Ygu-bG-4Cn"/>
+                            <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="qHn-7E-KKU" secondAttribute="trailing" constant="40" id="dtr-zX-5Vd"/>
                             <constraint firstItem="fsc-LL-GO5" firstAttribute="top" secondItem="g2C-qe-bhc" secondAttribute="bottom" constant="15" id="et7-qt-AMA"/>
                             <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="yey-rY-OY2" secondAttribute="trailing" constant="40" id="g2b-Ev-swa"/>
+                            <constraint firstItem="qHn-7E-KKU" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="40" id="h8p-Ip-ZG9"/>
                             <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="nea-bd-K4v" secondAttribute="trailing" constant="40" id="hzv-KM-H2n"/>
-                            <constraint firstItem="JkQ-3e-NqF" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="140" id="lwO-mP-2Vf"/>
                             <constraint firstItem="yey-rY-OY2" firstAttribute="leading" secondItem="19q-dI-8oi" secondAttribute="leading" constant="40" id="pDb-8B-l6G"/>
                             <constraint firstItem="yey-rY-OY2" firstAttribute="top" secondItem="nea-bd-K4v" secondAttribute="bottom" constant="15" id="rKT-qk-wVP"/>
                             <constraint firstItem="19q-dI-8oi" firstAttribute="trailing" secondItem="g2C-qe-bhc" secondAttribute="trailing" constant="40" id="rl2-5f-I87"/>
@@ -186,6 +195,7 @@
                     <navigationItem key="navigationItem" id="yPg-zF-F9k"/>
                     <connections>
                         <outlet property="registrationBirthdate" destination="RsN-0o-9cY" id="Whd-TD-tQf"/>
+                        <outlet property="registrationConfirmPassword" destination="qHn-7E-KKU" id="4RR-kl-bkP"/>
                         <outlet property="registrationCountry" destination="nea-bd-K4v" id="LK0-cJ-76r"/>
                         <outlet property="registrationEmail" destination="yey-rY-OY2" id="7t1-7z-5xU"/>
                         <outlet property="registrationFirstName" destination="g2C-qe-bhc" id="fEh-2O-PjH"/>
@@ -973,6 +983,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jdJ-iK-tYx"/>
-        <segue reference="yhy-iS-PK9"/>
+        <segue reference="ns0-Qi-JyN"/>
     </inferredMetricsTieBreakers>
 </document>
