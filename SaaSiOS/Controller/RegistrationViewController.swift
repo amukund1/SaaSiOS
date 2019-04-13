@@ -30,6 +30,14 @@ class RegistrationViewController: UIViewController {
             return
         }
         
+        if !isEmailFormatted()
+        {
+            let alertController = UIAlertController(title: "Improperly Formatted Email", message: "Your email address is not properly formatted", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         let sp = StudyParticipant(firstName: registrationFirstName.text!, lastName: registrationLastName.text!, birthdate: registrationBirthdate.text!, zipCode: registrationZipCode.text!, country: registrationCountry.text!, email: registrationEmail.text!, password: registrationPassword.text!)
         
         auth.register(studyParticipant: sp) { error in
@@ -86,7 +94,7 @@ class RegistrationViewController: UIViewController {
         return registrationEmail.text!.count > 0
     }
     
-    /* https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift */
+    /* Source for Email Regex: https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift */
     private func isEmailFormatted() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
