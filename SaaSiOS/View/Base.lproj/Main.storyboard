@@ -804,7 +804,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc4-lG-9gq">
-                                <rect key="frame" x="133" y="433" width="109" height="30"/>
+                                <rect key="frame" x="133" y="393" width="109" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Reset Password">
@@ -821,24 +821,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L08-xj-Zhc">
+                                <rect key="frame" x="140" y="463" width="95" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="zYD-5t-H4H"/>
+                                    <segue destination="cVu-GE-6n7" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="fhu-zL-VE7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rc4-lG-9gq" firstAttribute="top" secondItem="1R1-Ld-7U6" secondAttribute="bottom" constant="40" id="3sp-Ki-dO2"/>
+                            <constraint firstItem="L08-xj-Zhc" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="140" id="9ak-At-yt7"/>
+                            <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="rc4-lG-9gq" secondAttribute="trailing" constant="133" id="FYX-xS-q8t"/>
                             <constraint firstItem="Rlq-tA-Trd" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="40" id="IPb-MR-mJY"/>
                             <constraint firstItem="1R1-Ld-7U6" firstAttribute="top" secondItem="Rlq-tA-Trd" secondAttribute="bottom" constant="80" id="Tce-jx-oy8"/>
                             <constraint firstItem="Rlq-tA-Trd" firstAttribute="top" secondItem="jWh-Sz-2jg" secondAttribute="bottom" constant="20" id="WsH-Ry-xTt"/>
                             <constraint firstItem="jWh-Sz-2jg" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="40" id="Xc0-oU-8tL"/>
                             <constraint firstItem="jWh-Sz-2jg" firstAttribute="top" secondItem="D4O-KC-Arv" secondAttribute="bottom" constant="70" id="Zlv-Kh-EUU"/>
+                            <constraint firstItem="rc4-lG-9gq" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="133" id="a4X-og-vaP"/>
                             <constraint firstItem="D4O-KC-Arv" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="80" id="aJf-eF-vhT"/>
+                            <constraint firstItem="L08-xj-Zhc" firstAttribute="top" secondItem="rc4-lG-9gq" secondAttribute="bottom" constant="40" id="aQF-50-bvB"/>
                             <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="1R1-Ld-7U6" secondAttribute="trailing" constant="140" id="gEZ-0t-vBW"/>
                             <constraint firstItem="D4O-KC-Arv" firstAttribute="top" secondItem="cDS-7e-f69" secondAttribute="top" constant="45" id="hCs-oz-a8B"/>
-                            <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="rc4-lG-9gq" secondAttribute="trailing" constant="133" id="iEk-Kk-hew"/>
                             <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="D4O-KC-Arv" secondAttribute="trailing" constant="80" id="lVM-yn-4DV"/>
-                            <constraint firstItem="rc4-lG-9gq" firstAttribute="top" secondItem="1R1-Ld-7U6" secondAttribute="bottom" constant="80" id="mMj-z7-bXU"/>
                             <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="jWh-Sz-2jg" secondAttribute="trailing" constant="40" id="roZ-n7-m1A"/>
-                            <constraint firstItem="rc4-lG-9gq" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="133" id="sGR-S8-1pI"/>
                             <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="Rlq-tA-Trd" secondAttribute="trailing" constant="40" id="sbL-A0-NyJ"/>
                             <constraint firstItem="1R1-Ld-7U6" firstAttribute="leading" secondItem="cDS-7e-f69" secondAttribute="leading" constant="140" id="u5A-hU-jMI"/>
+                            <constraint firstItem="cDS-7e-f69" firstAttribute="trailing" secondItem="L08-xj-Zhc" secondAttribute="trailing" constant="140" id="xTH-5h-hDn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cDS-7e-f69"/>
                     </view>
@@ -852,6 +867,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3g-dc-drp" sceneMemberID="firstResponder"/>
+                <exit id="cVu-GE-6n7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1620" y="133.5832083958021"/>
         </scene>
@@ -956,7 +972,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hky-B4-GKm"/>
-        <segue reference="ILg-NS-hUr"/>
+        <segue reference="jdJ-iK-tYx"/>
+        <segue reference="yhy-iS-PK9"/>
     </inferredMetricsTieBreakers>
 </document>
