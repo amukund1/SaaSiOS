@@ -50,7 +50,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mbR-Ux-LOa" kind="push" identifier="beginRegisterSegue" id="1ak-O2-aha"/>
+                                    <segue destination="mbR-Ux-LOa" kind="show" identifier="beginRegisterSegue" id="1ak-O2-aha"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -297,7 +297,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completeRegistration:" destination="mbR-Ux-LOa" eventType="touchUpInside" id="v2y-gP-WzX"/>
-                                    <segue destination="YBU-iO-oX2" kind="push" id="cAj-gP-GQQ"/>
+                                    <segue destination="YBU-iO-oX2" kind="show" id="cAj-gP-GQQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Studies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3N-aY-mOH">
@@ -366,7 +366,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kfm-EX-i6h" kind="push" identifier="studyInfoSegue" id="w2M-WG-yH2"/>
+                                            <segue destination="kfm-EX-i6h" kind="show" identifier="studyInfoSegue" id="w2M-WG-yH2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -972,7 +972,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jdJ-iK-tYx"/>
-        <segue reference="yhy-iS-PK9"/>
+        <segue reference="Hky-B4-GKm"/>
+        <segue reference="ILg-NS-hUr"/>
     </inferredMetricsTieBreakers>
 </document>
