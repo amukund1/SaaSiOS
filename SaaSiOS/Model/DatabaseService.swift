@@ -18,4 +18,6 @@ protocol DatabaseService {
     func joinStudy(userID: String, studyID: String)
     
     func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void)
+    
+    func addFitbitData(type: String, data: Any) -> Void
 }

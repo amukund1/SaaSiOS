@@ -9,6 +9,8 @@
 import FirebaseDatabase
 
 class FirebaseDatabaseService : DatabaseService {
+    let auth = CurrentState.getAuthentication()
+    
     var ref: DatabaseReference!
     var globalListHandle: DatabaseHandle?
     var indivListHandle: DatabaseHandle?
@@ -136,5 +138,9 @@ class FirebaseDatabaseService : DatabaseService {
                 completion(studyObject)
             }
         })
+    }
+    
+    func addFitbitData(type: String, data: Any) -> Void {
+        self.ref.child("study_participant").child(auth.getUserID()).child(type).setValue(data)
     }
 }

@@ -11,6 +11,7 @@ import OAuthSwift
 
 class Fitbit {
     private var oauthswift: OAuth2Swift? = nil
+    private var database: DatabaseService = CurrentState.getDatabase()
     
     func authorizeFitbit() {
         let oauthswift = OAuth2Swift(
@@ -53,37 +54,37 @@ class Fitbit {
     
     private func getSleepData()
     {
-        getData(resourceURL: "https://api.fitbit.com/1.2/user/-/sleep/date/today.json")
+        getData(type: "sleep", resourceURL: "https://api.fitbit.com/1.2/user/-/sleep/date/today.json")
     }
     
     private func getHeartRateData()
     {
-        getData(resourceURL: "https://api.fitbit.com/1/user/-/activities/heart/date/today/today.json")
+        getData(type: "heart_rate", resourceURL: "https://api.fitbit.com/1/user/-/activities/heart/date/today/today.json")
     }
     
     private func getActivity()
     {
-        getData(resourceURL: "https://api.fitbit.com/1/user/-/activities/date/today.json")
+        getData(type: "activity", resourceURL: "https://api.fitbit.com/1/user/-/activities/date/today.json")
     }
     
     private func getWeight()
     {
-        getData(resourceURL: "https://api.fitbit.com/1/user/-/body/log/weight/date/today.json")
+        getData(type: "weight", resourceURL: "https://api.fitbit.com/1/user/-/body/log/weight/date/today.json")
     }
     
     private func getNutrition()
     {
-        getData(resourceURL: "https://api.fitbit.com/1/user/-/foods/log/date/today.json")
+        getData(type: "nutrition", resourceURL: "https://api.fitbit.com/1/user/-/foods/log/date/today.json")
     }
     
-    private func getData(resourceURL: String)
+    private func getData(type: String, resourceURL: String)
     {
         self.oauthswift!.client.get(
             resourceURL,
             parameters: [:],
             success: { response in
                 let jsonDict = try? response.jsonObject()
-                print(jsonDict as Any)
+                self.database.addFitbitData(type: type, data: jsonDict!)
         },
             failure: { error in
                 print(error.description)
