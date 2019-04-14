@@ -516,43 +516,7 @@
                     <view key="view" contentMode="scaleToFill" id="WhH-Xa-o7V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afA-yN-595">
-                                <rect key="frame" x="120" y="70" width="135" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="JSON Sleep Data">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="EBL-fk-vv4"/>
-                                    <action selector="connectFitbit:" destination="nDe-ki-T0f" eventType="touchUpInside" id="RJV-lo-Y09"/>
-                                    <action selector="jsonSleepData:" destination="5dx-zC-nDm" eventType="touchUpInside" id="nIK-EK-in9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xse-Gv-2tg">
-                                <rect key="frame" x="115" y="140" width="145" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="JSON Heartrate Data">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="completeLogin:" destination="5yJ-6a-8ai" eventType="touchUpInside" id="A92-1g-CLf"/>
-                                    <action selector="connectFitbit:" destination="nDe-ki-T0f" eventType="touchUpInside" id="YTW-P8-TDe"/>
-                                    <action selector="jsonHeartrateData:" destination="5dx-zC-nDm" eventType="touchUpInside" id="AdM-4y-hx1"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="xse-Gv-2tg" firstAttribute="leading" secondItem="qdd-uf-7Dp" secondAttribute="leading" constant="115" id="5EV-JR-oWW"/>
-                            <constraint firstItem="afA-yN-595" firstAttribute="leading" secondItem="qdd-uf-7Dp" secondAttribute="leading" constant="120" id="7Sf-aB-PDk"/>
-                            <constraint firstItem="qdd-uf-7Dp" firstAttribute="trailing" secondItem="xse-Gv-2tg" secondAttribute="trailing" constant="115" id="7Sr-N1-9ky"/>
-                            <constraint firstItem="xse-Gv-2tg" firstAttribute="top" secondItem="afA-yN-595" secondAttribute="bottom" constant="40" id="Cjm-8c-Sgu"/>
-                            <constraint firstItem="afA-yN-595" firstAttribute="top" secondItem="qdd-uf-7Dp" secondAttribute="top" constant="50" id="kkz-Jb-BUz"/>
-                            <constraint firstItem="qdd-uf-7Dp" firstAttribute="trailing" secondItem="afA-yN-595" secondAttribute="trailing" constant="120" id="woM-4I-PVk"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qdd-uf-7Dp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Data" id="oTa-wu-RqU"/>
@@ -629,6 +593,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completeRegistration:" destination="mbR-Ux-LOa" eventType="touchUpInside" id="FcT-LX-w01"/>
+                                    <action selector="updateProfile:" destination="DPs-hH-9HF" eventType="touchUpInside" id="k6W-Pn-CDQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYF-FD-oGm">
@@ -679,18 +644,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLN-TC-3OS">
-                                <rect key="frame" x="40" y="314" width="45.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u63-A6-oFn">
-                                <rect key="frame" x="40" y="355" width="78.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-24-KbX">
                                 <rect key="frame" x="210.5" y="190" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -709,60 +662,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u67-bA-BWh">
-                                <rect key="frame" x="140" y="351" width="219" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTi-yU-UXg">
-                                <rect key="frame" x="140" y="310" width="219" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JYF-FD-oGm" firstAttribute="top" secondItem="Hov-da-PXU" secondAttribute="top" constant="47" id="0PJ-tn-VcF"/>
-                            <constraint firstItem="Hov-da-PXU" firstAttribute="trailing" secondItem="WTi-yU-UXg" secondAttribute="trailing" constant="16" id="1NY-LN-Urs"/>
                             <constraint firstItem="Hov-da-PXU" firstAttribute="trailing" secondItem="8Wt-Vg-Pfb" secondAttribute="trailing" constant="16" id="2Fd-DT-2Hk"/>
-                            <constraint firstItem="u67-bA-BWh" firstAttribute="top" secondItem="WTi-yU-UXg" secondAttribute="bottom" constant="11" id="2Wt-Fh-iYb"/>
                             <constraint firstItem="Hov-da-PXU" firstAttribute="trailing" secondItem="7BO-Gc-iOl" secondAttribute="trailing" constant="16" id="2ei-J2-SUI"/>
                             <constraint firstItem="BnV-C9-X4L" firstAttribute="top" secondItem="cjg-gs-PxC" secondAttribute="bottom" constant="20" id="2nC-hd-oKh"/>
                             <constraint firstItem="JYF-FD-oGm" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="140" id="5B6-TG-HGq"/>
                             <constraint firstItem="Hov-da-PXU" firstAttribute="trailing" secondItem="JYF-FD-oGm" secondAttribute="trailing" constant="140" id="7YO-OE-uhW"/>
+                            <constraint firstItem="aNU-uh-Yr4" firstAttribute="top" secondItem="8Wt-Vg-Pfb" secondAttribute="bottom" constant="190" id="7gH-9G-Brk"/>
                             <constraint firstItem="OeJ-wb-gAK" firstAttribute="top" secondItem="Hov-da-PXU" secondAttribute="top" constant="89" id="9Ad-d5-Dkj"/>
                             <constraint firstItem="8Wt-Vg-Pfb" firstAttribute="top" secondItem="7BO-Gc-iOl" secondAttribute="bottom" constant="16" id="9c4-v2-hLT"/>
                             <constraint firstItem="OeJ-wb-gAK" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="40" id="AUR-SX-INZ"/>
                             <constraint firstItem="S5H-nr-gDL" firstAttribute="leading" secondItem="OeJ-wb-gAK" secondAttribute="trailing" constant="80" id="F9w-pu-MSM"/>
                             <constraint firstItem="BnV-C9-X4L" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="40" id="IAA-fo-rNf"/>
                             <constraint firstItem="Fgv-24-KbX" firstAttribute="leading" secondItem="cjg-gs-PxC" secondAttribute="trailing" constant="95" id="IZy-wX-das"/>
-                            <constraint firstItem="Hov-da-PXU" firstAttribute="trailing" secondItem="u67-bA-BWh" secondAttribute="trailing" constant="16" id="Iq2-Os-3oi"/>
                             <constraint firstItem="dMb-ws-5Xh" firstAttribute="top" secondItem="OeJ-wb-gAK" secondAttribute="bottom" constant="20" id="JUI-SG-Wrd"/>
-                            <constraint firstItem="aNU-uh-Yr4" firstAttribute="top" secondItem="u67-bA-BWh" secondAttribute="bottom" constant="112" id="Jj1-bM-XAo"/>
                             <constraint firstItem="7BO-Gc-iOl" firstAttribute="top" secondItem="Fgv-24-KbX" secondAttribute="bottom" constant="16" id="KpC-vb-A0t"/>
-                            <constraint firstItem="u63-A6-oFn" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="40" id="MOH-6N-AT4"/>
-                            <constraint firstItem="Hov-da-PXU" firstAttribute="bottom" secondItem="u63-A6-oFn" secondAttribute="bottom" constant="242" id="R2j-Ye-8A7"/>
                             <constraint firstItem="S5H-nr-gDL" firstAttribute="top" secondItem="JYF-FD-oGm" secondAttribute="bottom" constant="20" id="RQi-a5-8Mv"/>
                             <constraint firstItem="cXN-FN-dcy" firstAttribute="top" secondItem="BnV-C9-X4L" secondAttribute="bottom" constant="20" id="TRV-FQ-Ome"/>
                             <constraint firstItem="FIg-ty-2Tk" firstAttribute="top" secondItem="S5H-nr-gDL" secondAttribute="bottom" constant="20" id="UNn-sR-msa"/>
-                            <constraint firstItem="u63-A6-oFn" firstAttribute="top" secondItem="nLN-TC-3OS" secondAttribute="bottom" constant="20" id="b9M-rr-L75"/>
                             <constraint firstItem="7BO-Gc-iOl" firstAttribute="leading" secondItem="BnV-C9-X4L" secondAttribute="trailing" constant="25" id="cBO-BD-r15"/>
                             <constraint firstItem="cjg-gs-PxC" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="40" id="d13-4C-aKE"/>
-                            <constraint firstItem="u67-bA-BWh" firstAttribute="leading" secondItem="u63-A6-oFn" secondAttribute="trailing" constant="21.5" id="l99-aN-EX2"/>
-                            <constraint firstItem="nLN-TC-3OS" firstAttribute="top" secondItem="cXN-FN-dcy" secondAttribute="bottom" constant="20" id="lpa-cn-iYE"/>
                             <constraint firstItem="aNU-uh-Yr4" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="139" id="mD1-OH-p5r"/>
                             <constraint firstItem="FIg-ty-2Tk" firstAttribute="leading" secondItem="dMb-ws-5Xh" secondAttribute="trailing" constant="80" id="mQV-Do-RGT"/>
                             <constraint firstItem="Hov-da-PXU" firstAttribute="trailing" secondItem="aNU-uh-Yr4" secondAttribute="trailing" constant="138" id="sQ2-2a-Ywd"/>
-                            <constraint firstItem="WTi-yU-UXg" firstAttribute="top" secondItem="8Wt-Vg-Pfb" secondAttribute="bottom" constant="7" id="tUE-Tp-q21"/>
                             <constraint firstItem="cXN-FN-dcy" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="40" id="wLH-mQ-Vcl"/>
                             <constraint firstItem="cjg-gs-PxC" firstAttribute="top" secondItem="dMb-ws-5Xh" secondAttribute="bottom" constant="20" id="wfy-b1-XYm"/>
                             <constraint firstItem="dMb-ws-5Xh" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="40" id="wkf-xL-Dvc"/>
-                            <constraint firstItem="WTi-yU-UXg" firstAttribute="leading" secondItem="nLN-TC-3OS" secondAttribute="trailing" constant="54.5" id="xJE-Fl-5hf"/>
                             <constraint firstItem="Fgv-24-KbX" firstAttribute="top" secondItem="FIg-ty-2Tk" secondAttribute="bottom" constant="20" id="yRL-kx-uNE"/>
                             <constraint firstItem="8Wt-Vg-Pfb" firstAttribute="leading" secondItem="cXN-FN-dcy" secondAttribute="trailing" constant="34" id="yzm-iF-2w8"/>
-                            <constraint firstItem="nLN-TC-3OS" firstAttribute="leading" secondItem="Hov-da-PXU" secondAttribute="leading" constant="40" id="z4E-3Y-uAS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hov-da-PXU"/>
                     </view>
@@ -770,10 +700,8 @@
                     <connections>
                         <outlet property="profileBirthdate" destination="Fgv-24-KbX" id="ly3-we-eIZ"/>
                         <outlet property="profileCountry" destination="8Wt-Vg-Pfb" id="9f6-2j-U51"/>
-                        <outlet property="profileEmail" destination="WTi-yU-UXg" id="LZp-dA-aAt"/>
                         <outlet property="profileFirstName" destination="S5H-nr-gDL" id="ESJ-Ds-3pJ"/>
                         <outlet property="profileLastName" destination="FIg-ty-2Tk" id="baA-bg-ISl"/>
-                        <outlet property="profilePassword" destination="u67-bA-BWh" id="bJi-BK-zuk"/>
                         <outlet property="profileZipCode" destination="7BO-Gc-iOl" id="zfs-sA-fD4"/>
                     </connections>
                 </viewController>

@@ -17,40 +17,4 @@ class DataViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func jsonSleepData(_ sender: UIButton) {
-        getSleepData()
-    }
-    
-    @IBAction func jsonHeartrateData(_ sender: UIButton) {
-        getHeartrateData()
-    }
-    
-     private func getSleepData() {
-         CurrentState.getOAuthSwift().client.get(
-             "https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2019-03-27&sort=desc&offset=0&limit=1",
-             parameters: [:],
-             success: { response in
-                let jsonDict = try? response.jsonObject()
-                print(jsonDict as Any)
-             },
-             failure: { error in
-                print(error.description)
-             }
-         )
-     }
-    
-    private func getHeartrateData() {
-        CurrentState.getOAuthSwift().client.get(
-            "https://api.fitbit.com/1/user/-/activities/heart/date/2019-02-27/1d.json",
-            parameters: [:],
-            success: { response in
-                let jsonDict = try? response.jsonObject()
-                print(jsonDict as Any)
-        },
-            failure: { error in
-                print(error.description)
-        }
-        )
-    }
 }

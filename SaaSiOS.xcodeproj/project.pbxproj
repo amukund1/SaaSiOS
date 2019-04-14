@@ -19,6 +19,7 @@
 		893CD1CE222A176C0083B260 /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */; };
 		893CD1D2222B17DF0083B260 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1D1222B17DF0083B260 /* DatabaseService.swift */; };
 		893CD1D4222B198D0083B260 /* StudyParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CD1D3222B198D0083B260 /* StudyParticipant.swift */; };
+		898495722262B35000846904 /* Fitbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898495712262B35000846904 /* Fitbit.swift */; };
 		89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE057B2224DC67007029D3 /* AppDelegate.swift */; };
 		89AE05812224DC67007029D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AE057F2224DC67007029D3 /* Main.storyboard */; };
 		89AE05832224DC68007029D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE05822224DC68007029D3 /* Assets.xcassets */; };
@@ -129,6 +130,7 @@
 		893CD1CD222A176C0083B260 /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		893CD1D1222B17DF0083B260 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		893CD1D3222B198D0083B260 /* StudyParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyParticipant.swift; sourceTree = "<group>"; };
+		898495712262B35000846904 /* Fitbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitbit.swift; sourceTree = "<group>"; };
 		898CA7642252BF020082E1EF /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = ../OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		89AE05782224DC67007029D3 /* SaaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE057B2224DC67007029D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				893CD1D3222B198D0083B260 /* StudyParticipant.swift */,
 				89EBD121222D9ED700E96AF3 /* Study.swift */,
 				891850002230952800AEBF93 /* Researcher.swift */,
+				898495712262B35000846904 /* Fitbit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				89F2F1392225CFF8003CA047 /* WelcomeViewController.swift in Sources */,
 				89F2F1452225D179003CA047 /* SettingsViewController.swift in Sources */,
 				893CD1D2222B17DF0083B260 /* DatabaseService.swift in Sources */,
+				898495722262B35000846904 /* Fitbit.swift in Sources */,
 				891850052232D47300AEBF93 /* StudyInformationViewController.swift in Sources */,
 				893CD1CC222A0EF00083B260 /* Authentication.swift in Sources */,
 				89EBD122222D9ED700E96AF3 /* Study.swift in Sources */,

@@ -13,6 +13,7 @@ import OAuthSwift
 class SettingsViewController: UIViewController {
     let auth: Authentication = CurrentState.getAuthentication()
     let database: DatabaseService = CurrentState.getDatabase()
+    let fitbit: Fitbit = CurrentState.getFitbit()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,39 +27,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func connectFitbit(_ sender: UIButton) {
-        authorizeFitbit()
+        fitbit.authorizeFitbit()
     }
-    
-    
-    private func authorizeFitbit() {
-        var oauthswift = OAuth2Swift(
-            consumerKey:    "22DGF7",
-            consumerSecret: "547af9c314011e8a2cf87ffd20fc0541",
-            authorizeUrl:   "https://www.fitbit.com/oauth2/authorize",
-            accessTokenUrl: "https://api.fitbit.com/oauth2/token",
-            responseType:   "code"
-        )
-        oauthswift.accessTokenBasicAuthentification = true
-        
-        CurrentState.setOAuthSwift(oauthswift: oauthswift)
-        
-        oauthswift = CurrentState.getOAuthSwift()
-        
-        let state = generateState(withLength: 20)
-        
-        oauthswift.authorize(
-            withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "sleep heartrate", state: state,
-            success: { (credential, response, parameters) in
-                let alertController = UIAlertController(title: "Fitbit Sync Complete", message: "Your Fitbit has synchronized successfully.", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
-                self.present(alertController, animated: true, completion: nil)
-                oauthswift.client.credential.oauthToken = credential.oauthToken
-                oauthswift.client.credential.oauthTokenSecret = credential.oauthTokenSecret
-            },
-            failure: { error in
-                print(error.description)
-            }
-        )
-    }
-
 }

@@ -14,7 +14,7 @@ class CurrentState {
     private static var studyParticipant: StudyParticipant? = nil
     private static var globalStudyList: [Study]? = nil
     private static var individualStudyList: [Study]? = nil
-    private static var oauthswift: OAuth2Swift?
+    private static var fitbit: Fitbit = Fitbit()
     
     static func getAuthentication() -> Authentication {
         return authentication
@@ -48,11 +48,7 @@ class CurrentState {
         self.individualStudyList = individualStudyList
     }
     
-    static func getOAuthSwift() -> OAuth2Swift {
-        return oauthswift!
-    }
-    
-    static func setOAuthSwift(oauthswift: OAuth2Swift) -> Void {
-        self.oauthswift = oauthswift
+    static func getFitbit() -> Fitbit {
+        return fitbit
     }
 }
