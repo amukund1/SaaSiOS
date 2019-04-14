@@ -59,7 +59,6 @@ class FirebaseDatabaseService : DatabaseService {
     func retrieveGlobalStudyList(completion: @escaping(Error?) -> Void) {
         var globalStudyList = [Study]()
         globalListHandle = ref?.child("study").observe(.childAdded, with: { snapshot in
-            print("global handler entered")
             let studyID = snapshot.key
             if let study = snapshot.value as? NSDictionary
             {
@@ -109,9 +108,6 @@ class FirebaseDatabaseService : DatabaseService {
     func retrieveIndividualStudyList(userID: String, completion: @escaping(Error?) -> Void) {
         var indivStudyList = [Study]()
         indivListHandle = ref?.child("study_participant").child(userID).child("studies").observe(.childAdded, with: { snapshot in
-            print("indiv handler entered")
-            
-            
             if let studyID = snapshot.value as? NSString
             {
                 self.retrieveStudy(studyID: studyID as String, completion: { study in
