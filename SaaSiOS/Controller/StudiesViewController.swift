@@ -9,9 +9,6 @@
 import UIKit
 
 class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    //private var selectedStudy: Study? = nil
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CurrentState.getIndividualStudyList().count
     }
@@ -26,8 +23,6 @@ class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func unwindToStudiesViewController(segue: UIStoryboardSegue) {
