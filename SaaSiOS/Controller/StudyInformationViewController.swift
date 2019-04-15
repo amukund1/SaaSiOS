@@ -48,5 +48,15 @@ class StudyInformationViewController: UIViewController {
     
     @IBAction func joinStudy(_ sender: UIButton) {
         database.joinStudy(userID: auth.getUserID(), studyID: study!.getID())
+        
+        database.retrieveIndividualStudyList(userID: self.auth.getUserID()) { error in
+            if error != nil
+            {
+                print(error?.localizedDescription)
+            } else
+            {
+                self.performSegue(withIdentifier: "unwindToStudiesSegue", sender: self)
+            }
+        }
     }
 }

@@ -351,6 +351,9 @@
                         <viewLayoutGuide key="safeArea" id="gSo-Vu-dQ6"/>
                     </view>
                     <navigationItem key="navigationItem" id="1fW-Ks-KMV"/>
+                    <connections>
+                        <outlet property="tableView" destination="uTk-ER-OzB" id="nOm-7e-j1X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Mn-8G-i6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,7 +464,6 @@
                                 <connections>
                                     <action selector="completeRegistration:" destination="mbR-Ux-LOa" eventType="touchUpInside" id="bTS-Tw-GBQ"/>
                                     <action selector="joinStudy:" destination="kfm-EX-i6h" eventType="touchUpInside" id="2M4-5r-LpE"/>
-                                    <segue destination="9Hs-MJ-I4G" kind="unwind" unwindAction="unwindToStudiesViewControllerWithSegue:" id="7yu-iA-sz7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -502,6 +504,7 @@
                         <outlet property="ownerName" destination="6VB-Cw-xe3" id="Kh7-hX-5OW"/>
                         <outlet property="studyDescription" destination="ZtM-G4-W0Z" id="Etb-7U-WM0"/>
                         <outlet property="studyName" destination="BbI-mA-cgB" id="8yk-h4-ErM"/>
+                        <segue destination="9Hs-MJ-I4G" kind="unwind" identifier="unwindToStudiesSegue" unwindAction="unwindToStudiesViewControllerWithSegue:" id="7G7-ky-VY8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K2-2b-OVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -911,6 +914,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jdJ-iK-tYx"/>
-        <segue reference="ns0-Qi-JyN"/>
+        <segue reference="yhy-iS-PK9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,9 @@
 import UIKit
 
 class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CurrentState.getIndividualStudyList().count
     }
@@ -23,6 +26,11 @@ class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     @IBAction func unwindToStudiesViewController(segue: UIStoryboardSegue) {
