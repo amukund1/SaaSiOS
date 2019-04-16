@@ -10,6 +10,7 @@ import UIKit
 
 class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var welcomeMessage: UILabel!
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,6 +27,7 @@ class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomeMessage.text = "Welcome " + CurrentState.getStudyParticipant().getFirstName() + "!"
     }
     
     override func viewWillAppear(_ animated: Bool) {

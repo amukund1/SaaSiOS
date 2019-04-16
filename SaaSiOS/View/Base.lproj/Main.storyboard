@@ -310,12 +310,6 @@
                                     <segue destination="YBU-iO-oX2" kind="show" id="cAj-gP-GQQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Studies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3N-aY-mOH">
-                                <rect key="frame" x="140" y="89" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uTk-ER-OzB">
                                 <rect key="frame" x="40" y="130" width="295" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -334,25 +328,32 @@
                                     <outlet property="delegate" destination="D2Q-RU-hx9" id="1IU-cy-FzD"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNu-T2-jDu">
+                                <rect key="frame" x="40" y="88" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gSo-Vu-dQ6" firstAttribute="trailing" secondItem="uTk-ER-OzB" secondAttribute="trailing" constant="40" id="15b-VZ-Grd"/>
-                            <constraint firstItem="gSo-Vu-dQ6" firstAttribute="trailing" secondItem="H3N-aY-mOH" secondAttribute="trailing" constant="140" id="FBM-Dh-JhI"/>
-                            <constraint firstItem="uTk-ER-OzB" firstAttribute="top" secondItem="H3N-aY-mOH" secondAttribute="bottom" constant="20" id="IqR-mu-bpZ"/>
+                            <constraint firstItem="gSo-Vu-dQ6" firstAttribute="trailing" secondItem="uTk-ER-OzB" secondAttribute="trailing" constant="40" id="B2J-tf-E2Q"/>
+                            <constraint firstItem="gPk-7n-rh1" firstAttribute="top" secondItem="uTk-ER-OzB" secondAttribute="bottom" constant="20" id="FOH-PM-ShW"/>
                             <constraint firstItem="gPk-7n-rh1" firstAttribute="leading" secondItem="gSo-Vu-dQ6" secondAttribute="leading" constant="140" id="Juh-Ub-cSK"/>
+                            <constraint firstItem="uTk-ER-OzB" firstAttribute="top" secondItem="gSo-Vu-dQ6" secondAttribute="top" constant="66" id="MWu-ZA-mWA"/>
                             <constraint firstItem="gSo-Vu-dQ6" firstAttribute="trailing" secondItem="gPk-7n-rh1" secondAttribute="trailing" constant="140" id="R7U-qu-8je"/>
-                            <constraint firstItem="H3N-aY-mOH" firstAttribute="leading" secondItem="gSo-Vu-dQ6" secondAttribute="leading" constant="140" id="SUl-t3-pqI"/>
-                            <constraint firstItem="H3N-aY-mOH" firstAttribute="top" secondItem="gSo-Vu-dQ6" secondAttribute="top" constant="25" id="TpT-Hv-2qs"/>
-                            <constraint firstItem="uTk-ER-OzB" firstAttribute="leading" secondItem="gSo-Vu-dQ6" secondAttribute="leading" constant="40" id="cDZ-by-Bm8"/>
-                            <constraint firstItem="gPk-7n-rh1" firstAttribute="top" secondItem="uTk-ER-OzB" secondAttribute="bottom" constant="20" id="dpZ-0a-f40"/>
+                            <constraint firstItem="gSo-Vu-dQ6" firstAttribute="trailing" secondItem="FNu-T2-jDu" secondAttribute="trailing" constant="40" id="Sht-tV-W9o"/>
                             <constraint firstItem="gSo-Vu-dQ6" firstAttribute="bottom" secondItem="gPk-7n-rh1" secondAttribute="bottom" constant="35" id="ipW-Xi-zNF"/>
+                            <constraint firstItem="FNu-T2-jDu" firstAttribute="top" secondItem="gSo-Vu-dQ6" secondAttribute="top" constant="24" id="jMv-Vh-VXg"/>
+                            <constraint firstItem="FNu-T2-jDu" firstAttribute="leading" secondItem="gSo-Vu-dQ6" secondAttribute="leading" constant="40" id="qBQ-Bw-5uK"/>
+                            <constraint firstItem="uTk-ER-OzB" firstAttribute="leading" secondItem="gSo-Vu-dQ6" secondAttribute="leading" constant="40" id="wzT-5N-GRF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSo-Vu-dQ6"/>
                     </view>
                     <navigationItem key="navigationItem" id="1fW-Ks-KMV"/>
                     <connections>
                         <outlet property="tableView" destination="uTk-ER-OzB" id="nOm-7e-j1X"/>
+                        <outlet property="welcomeMessage" destination="FNu-T2-jDu" id="O33-0z-aSa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Mn-8G-i6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
