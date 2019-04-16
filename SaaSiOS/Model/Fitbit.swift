@@ -30,12 +30,6 @@ class Fitbit {
         self.oauthswift!.authorize(
             withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "sleep heartrate weight activity nutrition", state: state,
             success: { (credential, response, parameters) in
-                /*
-                let alertController = UIAlertController(title: "Fitbit Sync Complete", message: "Your Fitbit has synchronized successfully.", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
-                self.present(alertController, animated: true, completion: nil)
-                */
-                
                 oauthswift.client.credential.oauthToken = credential.oauthToken
                 oauthswift.client.credential.oauthTokenExpiresAt = Date(timeIntervalSinceNow: 86400)
                 oauthswift.client.credential.oauthTokenSecret = credential.oauthTokenSecret
