@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     let database: DatabaseService = CurrentState.getDatabase()
+    let auth: Authentication = CurrentState.getAuthentication()
+    
     let sp = CurrentState.getStudyParticipant()
     
     @IBOutlet weak var profileFirstName: UILabel!
@@ -32,5 +34,10 @@ class ProfileViewController: UIViewController {
     @IBAction func updateProfile(_ sender: UIButton) {
         sp.setZipCode(zipCode: profileZipCode.text!)
         sp.setCountry(country: profileCountry.text!)
+        database.addStudyParticipant(studyParticipant: sp, userID: auth.getUserID())
+        
+        let alertController = UIAlertController(title: "Profile Updated!", message: "You successfully updated your profile.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
