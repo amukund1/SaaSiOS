@@ -10,6 +10,7 @@
 		1B13E2E0EC55962C9E17752D /* Pods_SaaSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3858AD0C6D89445333FBF096 /* Pods_SaaSiOS.framework */; };
 		57A5A5F4073B4F632D42D6D9 /* Pods_SaaSiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */; };
 		7314D5462C47CFBF3F78AA9F /* Pods_SaaSiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C961F0BF4BB9F0EEA1F762F /* Pods_SaaSiOSUITests.framework */; };
+		8902BDF8226630970092B22D /* IndividualStudyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902BDF7226630970092B22D /* IndividualStudyInfoViewController.swift */; };
 		891850012230952800AEBF93 /* Researcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891850002230952800AEBF93 /* Researcher.swift */; };
 		891850032230C14300AEBF93 /* StudyRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891850022230C14300AEBF93 /* StudyRepositoryViewController.swift */; };
 		891850052232D47300AEBF93 /* StudyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891850042232D47300AEBF93 /* StudyInformationViewController.swift */; };
@@ -121,6 +122,7 @@
 		3858AD0C6D89445333FBF096 /* Pods_SaaSiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaaSiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E027979769568A86BC57E2 /* Pods-SaaSiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaaSiOSTests.release.xcconfig"; path = "Target Support Files/Pods-SaaSiOSTests/Pods-SaaSiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD0321E79CEC1B52F535845 /* Pods_SaaSiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaaSiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8902BDF7226630970092B22D /* IndividualStudyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualStudyInfoViewController.swift; sourceTree = "<group>"; };
 		891850002230952800AEBF93 /* Researcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Researcher.swift; sourceTree = "<group>"; };
 		891850022230C14300AEBF93 /* StudyRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRepositoryViewController.swift; sourceTree = "<group>"; };
 		891850042232D47300AEBF93 /* StudyInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyInformationViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				89F2F1442225D179003CA047 /* SettingsViewController.swift */,
 				891850022230C14300AEBF93 /* StudyRepositoryViewController.swift */,
 				891850042232D47300AEBF93 /* StudyInformationViewController.swift */,
+				8902BDF7226630970092B22D /* IndividualStudyInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				89AE057C2224DC67007029D3 /* AppDelegate.swift in Sources */,
 				89EBD120222D8D5F00E96AF3 /* FirebaseDatabaseService.swift in Sources */,
 				89F2F13D2225D097003CA047 /* RegistrationViewController.swift in Sources */,
+				8902BDF8226630970092B22D /* IndividualStudyInfoViewController.swift in Sources */,
 				89F2F13F2225D0C9003CA047 /* StudiesViewController.swift in Sources */,
 				89F2F1432225D153003CA047 /* ProfileViewController.swift in Sources */,
 				89F2F1412225D11B003CA047 /* DataViewController.swift in Sources */,

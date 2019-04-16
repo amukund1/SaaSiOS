@@ -9,8 +9,11 @@
 import UIKit
 
 class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private var selectedStudy: Study? = nil
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var welcomeMessage: UILabel!
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,6 +27,11 @@ class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedStudy = CurrentState.getIndividualStudyList()[indexPath.row]
+        performSegue(withIdentifier: "indivStudyInfoSegue", sender: self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +41,14 @@ class StudiesViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is IndividualStudyInfoViewController
+        {
+            let vc = segue.destination as? IndividualStudyInfoViewController
+            vc?.setStudy(study: selectedStudy!)
+        }
     }
     
     @IBAction func unwindToStudiesViewController(segue: UIStoryboardSegue) {
