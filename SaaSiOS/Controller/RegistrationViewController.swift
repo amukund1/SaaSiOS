@@ -55,7 +55,13 @@ class RegistrationViewController: UIViewController {
             return
         }
         
-        
+        if !isOfAge()
+        {
+            let alertController = UIAlertController(title: "You are ineligible to register.", message: "You must be at least 19 years old.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
         
         let sp = StudyParticipant(firstName: registrationFirstName.text!, lastName: registrationLastName.text!, birthdate: registrationBirthdate.text!, zipCode: registrationZipCode.text!, country: registrationCountry.text!, email: registrationEmail.text!, password: registrationPassword.text!)
         
@@ -125,6 +131,18 @@ class RegistrationViewController: UIViewController {
         let dateRegex = "[0-9]{1,2}(/)[0-9]{1,2}(/)[0-9]{4}"
         let dateTest = NSPredicate(format:"SELF MATCHES %@", dateRegex)
         return dateTest.evaluate(with: registrationBirthdate.text)
+    }
+    
+    /* Source for Age Calculation: https://stackoverflow.com/questions/49966369/calculate-age-from-birth-date-using-textfield-and-nsdatecomponents-in-swift4 */
+    private func isOfAge() -> Bool {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "MM/dd/yyyy"
+        let birthdayDate = dateFormater.date(from: registrationBirthdate.text!)
+        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
+        let now = Date()
+        let calcAge = calendar.components(.year, from: birthdayDate!, to: now, options: [])
+        let age = calcAge.year
+        return age! >= 19
     }
     
     private func isPasswordFieldComplete() -> Bool

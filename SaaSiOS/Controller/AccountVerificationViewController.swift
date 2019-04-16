@@ -35,7 +35,7 @@ class AccountVerificationViewController: UIViewController {
         if !auth.isSignedIn()
         {
             database.resetStudyParticipant()
-            self.performSegue(withIdentifier: "accountVerificationLogoutUnwindSegue", sender: sender)
+            //self.performSegue(withIdentifier: "accountVerificationLogoutUnwindSegue", sender: sender)
         }
     }
 }

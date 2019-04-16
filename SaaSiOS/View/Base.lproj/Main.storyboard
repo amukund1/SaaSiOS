@@ -263,6 +263,7 @@
                                 <connections>
                                     <action selector="logout:" destination="ucj-82-4hk" eventType="touchUpInside" id="6OT-A3-Yud"/>
                                     <action selector="logout:" destination="nDe-ki-T0f" eventType="touchUpInside" id="AqL-Up-4zf"/>
+                                    <segue destination="ZL1-SM-KzM" kind="unwind" unwindAction="unwindToWelcomeViewControllerWithSegue:" id="T9q-af-qpH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -282,7 +283,6 @@
                     </view>
                     <connections>
                         <outlet property="verificationLabel" destination="bGz-z9-4dS" id="YTi-kv-uJ1"/>
-                        <segue destination="ZL1-SM-KzM" kind="unwind" identifier="accountVerificationLogoutUnwindSegue" unwindAction="unwindToThisViewControllerWithSegue:" id="SOe-Hj-Pys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIn-Iw-HAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
