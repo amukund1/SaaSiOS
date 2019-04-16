@@ -103,7 +103,7 @@ class FirebaseDatabaseService : DatabaseService {
     
     func joinStudy(userID: String, studyID: String) -> Void {
         self.ref.child("study_participant").child(userID).child("studies").child(String(studyID.hash)).setValue(studyID)
-        self.ref.child("study").child(studyID).child("participants").child(String(userID.hash)).setValue(userID)
+        self.ref.child("study").child(studyID).child("participants").child(userID).setValue(true)
     }
     
     
