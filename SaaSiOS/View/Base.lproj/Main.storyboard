@@ -591,6 +591,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G9a-jo-RKh"/>
                     </view>
+                    <connections>
+                        <outlet property="ownerAffiliation" destination="dRN-6X-KXL" id="FQ2-Y9-w7r"/>
+                        <outlet property="ownerEmail" destination="Iau-2D-qE1" id="6GL-hg-m4e"/>
+                        <outlet property="ownerJobTitle" destination="l7L-nI-cqr" id="Py5-6r-EFR"/>
+                        <outlet property="ownerName" destination="lq4-J0-RiG" id="KLG-8e-1dj"/>
+                        <outlet property="studyDescription" destination="J6I-30-ynx" id="5WN-e4-7wv"/>
+                        <outlet property="studyName" destination="v5T-ef-hg0" id="aAl-Ys-AxK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bs7-Vk-eL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
