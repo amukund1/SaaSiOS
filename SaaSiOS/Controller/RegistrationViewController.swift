@@ -31,6 +31,14 @@ class RegistrationViewController: UIViewController {
             return
         }
         
+        if !isBirthdateFormatted()
+        {
+            let alertController = UIAlertController(title: "Improperly Formatted Birthdate", message: "Please format your birthdate as mm/dd/yy.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         if !isEmailFormatted()
         {
             let alertController = UIAlertController(title: "Improperly Formatted Email", message: "Please format your email properly.", preferredStyle: .alert)
@@ -39,13 +47,15 @@ class RegistrationViewController: UIViewController {
             return
         }
         
-        if !arePasswordEqual()
+        if !arePasswordsEqual()
         {
             let alertController = UIAlertController(title: "Passwords don't Match", message: "Please make sure your passwords match.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
             self.present(alertController, animated: true, completion: nil)
             return
         }
+        
+        
         
         let sp = StudyParticipant(firstName: registrationFirstName.text!, lastName: registrationLastName.text!, birthdate: registrationBirthdate.text!, zipCode: registrationZipCode.text!, country: registrationCountry.text!, email: registrationEmail.text!, password: registrationPassword.text!)
         
@@ -105,9 +115,16 @@ class RegistrationViewController: UIViewController {
     
     /* Source for Email Regex: https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift */
     private func isEmailFormatted() -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailTest.evaluate(with: registrationEmail.text)
+    }
+    
+    /* Source for Date Regex: https://stackoverflow.com/questions/50005129/swift-regex-for-finding-date-in-string */
+    private func isBirthdateFormatted() -> Bool {
+        let dateRegex = "[0-9]{1,2}(/)[0-9]{1,2}(/)[0-9]{4}"
+        let dateTest = NSPredicate(format:"SELF MATCHES %@", dateRegex)
+        return dateTest.evaluate(with: registrationBirthdate.text)
     }
     
     private func isPasswordFieldComplete() -> Bool
@@ -120,7 +137,7 @@ class RegistrationViewController: UIViewController {
         return registrationConfirmPassword.text!.count > 0
     }
 
-    private func arePasswordEqual() -> Bool
+    private func arePasswordsEqual() -> Bool
     {
         return registrationPassword.text! == registrationConfirmPassword.text!
     }
