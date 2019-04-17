@@ -143,9 +143,9 @@ class FirebaseDatabaseService : DatabaseService {
     func addFitbitData(type: String, data: Any) -> Void {
         let today = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayFormatted = dateFormatter.string(from: today)
         print(todayFormatted)
-        self.ref.child("study_participant").child(auth.getUserID()).child("fitbit_data").child(todayFormatted).child(type).setValue(data)
+        self.ref.child("health_data").child(auth.getUserID()).child(todayFormatted).child(type).setValue(data)
     }
 }
