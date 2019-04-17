@@ -2,49 +2,52 @@
 //  Authentication.swift
 //  SaaSiOS
 //
-//  Created by Adithya Mukund on 3/1/19.
-//  Copyright © 2019 Adithya Mukund. All rights reserved.
-//
 
 protocol Authentication {
     
     /**
-     signs in the study participant into the app
+     Signs in the study participant into the app.
+     Parameters: email, password, completion handler
     */
     func signIn(email: String, password: String, completion: @escaping(Error?) -> Void)
     
     /**
-     registers the study participant for the app
+     Registers the study participant for the app.
+     Parameters: study participant, completion handler
      */
     func register(studyParticipant: StudyParticipant, completion: @escaping(Error?) -> Void)
     
     /**
-     signs out the study participant from the app
+     Signs out the study participant from the app.
      */
     func signOut() -> Void
     
     /**
-     returns whether or not the study participant is signed into the app
+     Determines whether or not the study participant is signed into the app.
+     Returns: true if study participant is signed in, false if not
      */
     func isSignedIn() -> Bool
     
     /**
-     returns whether or not the study participant has verified his or her account
+     Determines whether or not the study participant has verified his or her account.
+     Returns: true if study participant has verified his or her account, false if not
      */
     func isVerified() -> Bool
     
     /**
-     resets the password for the study participant
+     Resets the password for the study participant.
+     Parameters: email
      */
     func resetPassword(email: String) -> Void
     
     /**
-     sends verification link to the study participant's email
+     Sends verification link to the study participant's email
      */
     func sendVerificationLink() -> Void
     
     /**
-     returns the user id of the study participant
+     Retrieves the user id of the study participant.
+     Returns: user id
      */
     func getUserID() -> String
 }

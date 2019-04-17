@@ -2,9 +2,6 @@
 //  CurrentState.swift
 //  SaaSiOS
 //
-//  Created by Adithya Mukund on 3/5/19.
-//  Copyright © 2019 Adithya Mukund. All rights reserved.
-//
 
 import OAuthSwift
 
@@ -18,6 +15,7 @@ class CurrentState {
     
     /**
      Retrieves the Authentication instance used by current instance of app.
+     Returns: the authentication instance
     */
     static func getAuthentication() -> Authentication {
         return authentication
@@ -25,6 +23,7 @@ class CurrentState {
     
     /**
      Retrieves the DatabaseService instance used by current instance of app.
+     Returns: the database instance
      */
     static func getDatabase() -> DatabaseService {
         return database
@@ -32,6 +31,7 @@ class CurrentState {
     
     /**
      Retrieves the StudyParticipant currently using the app.
+     Returns: the study particant who is using the app
      */
     static func getStudyParticipant() -> StudyParticipant {
         return studyParticipant!
@@ -41,6 +41,7 @@ class CurrentState {
      Saves the StudyParticipant currently using the app.
      
      Precondition: studyParticipant != nil
+     Parameters: the study participant who is using the app
      */
     static func setStudyParticipant(studyParticipant: StudyParticipant?) -> Void {
         self.studyParticipant = studyParticipant
@@ -48,6 +49,7 @@ class CurrentState {
     
     /**
      Retrieves the list of all studies that the current StudyParticipant can join.
+     Returns: the list of all studies available to join
      */
     static func getGlobalStudyList() -> [Study] {
         return globalStudyList!
@@ -55,6 +57,7 @@ class CurrentState {
     
     /**
      Saves the list of all studies that the current StudyParticipant can join.
+     Parameters: the list of all studies available to join.
      */
     static func setGlobalStudyList(globalStudyList: [Study]) -> Void {
         self.globalStudyList = globalStudyList
@@ -62,13 +65,15 @@ class CurrentState {
     
     /**
      Retrieves the list of all studies that the current StudyParticipant has already joined.
+     Returns: the list of all studies that the current StudyParticipant has already joined.
      */
     static func getIndividualStudyList() -> [Study] {
         return individualStudyList!
     }
     
     /**
-     Saves the list of all studies that the current StudyParticipant can join.
+     Saves the list of all studies that the current StudyParticipant has already joined.
+     Parameters: the list of all studies that the current StudyParticipant has already joined
      */
     static func setIndividualStudyList(individualStudyList: [Study]) -> Void {
         self.individualStudyList = individualStudyList
@@ -76,6 +81,7 @@ class CurrentState {
     
     /**
      Retrieves the Fitbit instance used by the current instance of the app.
+     Returns: the current Fitbit instance
      */
     static func getFitbit() -> Fitbit {
         return fitbit

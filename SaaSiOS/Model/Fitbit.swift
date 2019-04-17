@@ -2,17 +2,17 @@
 //  Fitbit.swift
 //  SaaSiOS
 //
-//  Created by Adithya Mukund on 4/13/19.
-//  Copyright © 2019 Adithya Mukund. All rights reserved.
-//
 
 
-import OAuthSwift
+import OAuthSwift //https://github.com/OAuthSwift/OAuthSwift
 
 class Fitbit {
     private var oauthswift: OAuth2Swift? = nil
     private var database: DatabaseService = CurrentState.getDatabase()
     
+    /**
+     Authorizes Fitbit with study participant's Fitbit credentials.
+     */
     func authorizeFitbit() {
         let oauthswift = OAuth2Swift(
             consumerKey:    "22DGF7",
@@ -46,31 +46,50 @@ class Fitbit {
         )
     }
     
+    /**
+     Retrieves Fitbit sleep data.
+     */
     private func getSleepData()
     {
         getData(type: "sleep", resourceURL: "https://api.fitbit.com/1.2/user/-/sleep/date/today.json")
     }
     
+    /**
+     Retrieves Fitbit heart rate data.
+     */
     private func getHeartRateData()
     {
         getData(type: "heart_rate", resourceURL: "https://api.fitbit.com/1/user/-/activities/heart/date/today/today.json")
     }
     
+    /**
+     Retrieves Fitbit activity data.
+     */
     private func getActivity()
     {
         getData(type: "activity", resourceURL: "https://api.fitbit.com/1/user/-/activities/date/today.json")
     }
     
+    /**
+     Retrieves Fitbit weight data.
+     */
     private func getWeight()
     {
         getData(type: "weight", resourceURL: "https://api.fitbit.com/1/user/-/body/log/weight/date/today.json")
     }
     
+    /**
+     Retrieves Fitbit nutrition data.
+     */
     private func getNutrition()
     {
         getData(type: "nutrition", resourceURL: "https://api.fitbit.com/1/user/-/foods/log/date/today.json")
     }
     
+    /**
+     Retrieves Fitbit data.
+     Parameters: Fitbit data type (weight, nutrition, etc.), Fitbit data type url
+     */
     private func getData(type: String, resourceURL: String)
     {
         self.oauthswift!.client.get(

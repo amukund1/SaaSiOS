@@ -2,9 +2,6 @@
 //  IndividualStudyInfoViewController.swift
 //  SaaSiOS
 //
-//  Created by Adithya Mukund on 4/16/19.
-//  Copyright © 2019 Adithya Mukund. All rights reserved.
-//
 
 import UIKit
 

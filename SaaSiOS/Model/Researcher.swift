@@ -2,9 +2,6 @@
 //  Researcher.swift
 //  SaaSiOS
 //
-//  Created by Adithya Mukund on 3/6/19.
-//  Copyright © 2019 Adithya Mukund. All rights reserved.
-//
 
 class Researcher {
     private var firstName: String
@@ -21,22 +18,43 @@ class Researcher {
         self.jobTitle = jobTitle
     }
     
+    /**
+     Retrieves first name of researcher.
+     Returns: first name
+     */
     func getFirstName() -> String {
         return firstName
     }
     
+    /**
+     Retrieves last name of researcher.
+     Returns: last name
+     */
     func getLastName() -> String {
         return lastName
     }
     
+    /**
+     Retrieves email of researcher.
+     Returns: email
+     */
     func getEmail() -> String {
         return email
     }
     
+    /**
+     Retrieves affiliation of researcher.
+     Returns: affiliation
+     */
     func getAffiliation() -> String {
         return affiliation
     }
     
+    
+    /**
+     Retrieves job title of reseracher.
+     Returns: job title
+     */
     func getJobTitle() -> String {
         return jobTitle
     }

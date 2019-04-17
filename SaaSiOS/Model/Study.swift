@@ -2,9 +2,6 @@
 //  FirebaseDatabase.swift
 //  SaaSiOS
 //
-//  Created by Adithya Mukund on 3/4/19.
-//  Copyright © 2019 Adithya Mukund. All rights reserved.
-//
 
 class Study {
     private var name: String
@@ -19,18 +16,34 @@ class Study {
         self.id = id
     }
     
+    /**
+     Retrieves study name.
+     Returns: study name
+     */
     func getStudyName() -> String {
         return name
     }
     
+    /**
+     Retrieves study descrption.
+     Returns: study description
+     */
     func getDescription() -> String {
         return description
     }
     
+    /**
+     Retrieves study owner.
+     Returns: study owner
+     */
     func getOwner() -> Researcher {
         return owner
     }
     
+    /**
+     Retrieves study id.
+     Returns: study id
+     */
     func getID() -> String {
         return id
     }

@@ -2,9 +2,6 @@
 //  StudyInformationViewController.swift
 //  SaaSiOS
 //
-//  Created by Adithya Mukund on 3/8/19.
-//  Copyright © 2019 Adithya Mukund. All rights reserved.
-//
 
 import UIKit
 
