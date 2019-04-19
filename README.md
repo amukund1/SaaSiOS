@@ -31,7 +31,7 @@ N/A
 ## Pre-requisites
 
 Hardware: Mac
-Software: Xcode 10 IDE
+Software: Xcode 10 IDE (https://developer.apple.com/xcode/)
 
 ## Dependent Libraries
 
