@@ -12,6 +12,7 @@ class CurrentState {
     private static var globalStudyList: [Study]? = nil
     private static var individualStudyList: [Study]? = nil
     private static var fitbit: Fitbit = Fitbit()
+    private static var isFitbitAuthorized: Bool = false
     
     /**
      Retrieves the Authentication instance used by current instance of app.
@@ -86,4 +87,21 @@ class CurrentState {
     static func getFitbit() -> Fitbit {
         return fitbit
     }
+    
+    /**
+     Update Fitbit authorization state
+     Parameters: true if Fitbit is authorized, false if not
+    */
+    static func setIsFitbitAuthorized(isFitbitAuthorized: Bool) -> Void {
+        self.isFitbitAuthorized = isFitbitAuthorized
+    }
+    
+    /**
+     Retrieve Fitbit authorization state
+     Returns: true if Fitbit is authorized, false if not
+    */
+    static func getIsFitbitAuthorized() -> Bool {
+        return isFitbitAuthorized
+    }
+ 
 }

@@ -39,6 +39,8 @@ class Fitbit {
                 self.getActivity()
                 self.getWeight()
                 self.getNutrition()
+                
+                CurrentState.setIsFitbitAuthorized(isFitbitAuthorized: true)
         },
             failure: { error in
                 print(error.description)

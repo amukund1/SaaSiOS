@@ -23,5 +23,12 @@ class SettingsViewController: UIViewController {
     
     @IBAction func connectFitbit(_ sender: UIButton) {
         fitbit.authorizeFitbit()
+        
+        if CurrentState.getIsFitbitAuthorized()
+        {
+            let alertController = UIAlertController(title: "Successful Fitbit connection.", message: "Your Fitbit has successfully connected to your account.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
