@@ -31,7 +31,7 @@ class Fitbit {
             withCallbackURL: URL(string: "SaaSiOS://oauth-callback")!, scope: "sleep heartrate weight activity nutrition", state: state,
             success: { (credential, response, parameters) in
                 oauthswift.client.credential.oauthToken = credential.oauthToken
-                oauthswift.client.credential.oauthTokenExpiresAt = Date(timeIntervalSinceNow: 86400)
+                oauthswift.client.credential.oauthTokenExpiresAt = Date(timeIntervalSinceNow: 3.154 * pow(10, 7))
                 oauthswift.client.credential.oauthTokenSecret = credential.oauthTokenSecret
                 
                 self.getSleepData()

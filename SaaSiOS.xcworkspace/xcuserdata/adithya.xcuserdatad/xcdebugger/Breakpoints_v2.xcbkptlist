@@ -949,12 +949,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/Fitbit.swift"
-            timestampString = "577234783.184438"
+            timestampString = "577416572.182754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "getHeartRateData()"
+            landmarkName = "getWeight()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -965,12 +965,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaaSiOS/Model/Fitbit.swift"
-            timestampString = "577234783.184745"
+            timestampString = "577416572.184462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99"
-            landmarkName = "getWeight()"
+            landmarkName = "getData(type:resourceURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
